@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Back-End", "Back-End", "{8DBF8623-AA81-4021-8652-91FEC4005E69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Front-End", "Front-End", "{49A2E128-5115-4CB9-8BED-DB61FE8E53FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsbaRestaurant.Entities", "IsbaRestaurant.Entities\IsbaRestaurant.Entities.csproj", "{A07B2FAF-643F-41E7-BA1B-FA6F833C61AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsbaRestaurant.DataAccess", "IsbaRestaurant.DataAccess\IsbaRestaurant.DataAccess.csproj", "{F05897FC-59A7-4713-A223-D92D9E7C0026}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsbaRestaurant.Business", "IsbaRestaurant.Business\IsbaRestaurant.Business.csproj", "{83203773-72CC-4DAB-A877-C4BF32304261}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsbaRestaurant.Core", "IsbaRestaurant.Core\IsbaRestaurant.Core.csproj", "{992320F0-D289-4039-8AA3-3E9DE4EE5564}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A07B2FAF-643F-41E7-BA1B-FA6F833C61AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A07B2FAF-643F-41E7-BA1B-FA6F833C61AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A07B2FAF-643F-41E7-BA1B-FA6F833C61AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A07B2FAF-643F-41E7-BA1B-FA6F833C61AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F05897FC-59A7-4713-A223-D92D9E7C0026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F05897FC-59A7-4713-A223-D92D9E7C0026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F05897FC-59A7-4713-A223-D92D9E7C0026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F05897FC-59A7-4713-A223-D92D9E7C0026}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83203773-72CC-4DAB-A877-C4BF32304261}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83203773-72CC-4DAB-A877-C4BF32304261}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83203773-72CC-4DAB-A877-C4BF32304261}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83203773-72CC-4DAB-A877-C4BF32304261}.Release|Any CPU.Build.0 = Release|Any CPU
+		{992320F0-D289-4039-8AA3-3E9DE4EE5564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{992320F0-D289-4039-8AA3-3E9DE4EE5564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{992320F0-D289-4039-8AA3-3E9DE4EE5564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{992320F0-D289-4039-8AA3-3E9DE4EE5564}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A07B2FAF-643F-41E7-BA1B-FA6F833C61AD} = {8DBF8623-AA81-4021-8652-91FEC4005E69}
+		{F05897FC-59A7-4713-A223-D92D9E7C0026} = {8DBF8623-AA81-4021-8652-91FEC4005E69}
+		{83203773-72CC-4DAB-A877-C4BF32304261} = {8DBF8623-AA81-4021-8652-91FEC4005E69}
+		{992320F0-D289-4039-8AA3-3E9DE4EE5564} = {8DBF8623-AA81-4021-8652-91FEC4005E69}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F04E0487-4BC6-475A-B80C-066EC85D9B1E}
+	EndGlobalSection
+EndGlobal
