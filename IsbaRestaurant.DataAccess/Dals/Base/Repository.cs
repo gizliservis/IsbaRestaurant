@@ -1,4 +1,5 @@
-﻿using IsbaRestaurant.DataAccess.Interfaces.Base;
+﻿using IsbaRestaurant.Core.Extensions;
+using IsbaRestaurant.DataAccess.Interfaces.Base;
 using IsbaRestaurant.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -88,14 +89,14 @@ namespace IsbaRestaurant.DataAccess.Dals.Base
 
         public TEntity Get(Expression<Func<TEntity, bool>> filter, params Expression<Func<TEntity, object>>[] includes)
         {
-            return _context.Set<TEntity>().SingleOrDefault(filter);
+            return _context.Set<TEntity>().MultipleInculude(includes).SingleOrDefault(filter);
         }
 
         public IEnumerable<TEntity> GetList(Expression<Func<TEntity, bool>> filter,params Expression<Func<TEntity, object>>[] includes)
         {
             return filter == null
-                ? _context.Set<TEntity>().AsNoTracking().ToList()
-                : _context.Set<TEntity>().Where(filter).AsNoTracking().ToList();
+                ? _context.Set<TEntity>().MultipleInculude(includes).AsNoTracking().ToList()
+                : _context.Set<TEntity>().MultipleInculude(includes).Where(filter).AsNoTracking().ToList();
         }
 
         public bool HasChanges()
@@ -120,15 +121,15 @@ namespace IsbaRestaurant.DataAccess.Dals.Base
         public IQueryable<TEntity> Select(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TEntity>> selector,params Expression<Func<TEntity, object>>[] includes)
         {
             return filter == null
-                ? _context.Set<TEntity>().Select(selector)
-                : _context.Set<TEntity>().Where(filter).Select(selector);
+                ? _context.Set<TEntity>().MultipleInculude(includes).Select(selector)
+                : _context.Set<TEntity>().MultipleInculude(includes).Where(filter).Select(selector);
         }
 
         public IQueryable<TResult> Select<TResult>(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TResult>> selector, params Expression<Func<TEntity, object>>[] includes)
         {
             return filter == null
-                ? _context.Set<TEntity>().Select(selector)
-                : _context.Set<TEntity>().Where(filter).Select(selector);
+                ? _context.Set<TEntity>().MultipleInculude(includes).Select(selector)
+                : _context.Set<TEntity>().MultipleInculude(includes).Where(filter).Select(selector);
 
 
         }
