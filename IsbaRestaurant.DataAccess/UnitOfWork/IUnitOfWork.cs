@@ -1,0 +1,18 @@
+﻿using IsbaRestaurant.DataAccess.Interfaces.Base;
+using IsbaRestaurant.Entities.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace IsbaRestaurant.DataAccess.UnitOfWork
+{
+    public interface IUnitOfWork:IDisposable
+    {
+        IRepository<TEntity> Dal<TEntity>() where TEntity : class, IEntity, new();
+        bool HasChanges();
+        bool DetectChanges();
+        bool Commit();
+    }
+}
