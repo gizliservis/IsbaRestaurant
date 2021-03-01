@@ -41,7 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Managers\Base\BaseManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Base\IBaseService.cs" />
+    <Compile Include="Services\IEkMalzemeService.cs" />
+    <Compile Include="Services\ITanimService.cs" />
+    <Compile Include="Services\IPorsiyonService.cs" />
+    <Compile Include="Services\IUrunService.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IsbaRestaurant.Entities\IsbaRestaurant.Entities.csproj">
+      <Project>{a07b2faf-643f-41e7-ba1b-fa6f833c61ad}</Project>
+      <Name>IsbaRestaurant.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

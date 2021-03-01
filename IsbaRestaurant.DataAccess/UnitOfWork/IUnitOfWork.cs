@@ -12,7 +12,7 @@ namespace IsbaRestaurant.DataAccess.UnitOfWork
     {
         IRepository<TEntity> Dal<TEntity>() where TEntity : class, IEntity, new();
         bool HasChanges();
-        bool DetectChanges();
+        void DetectChanges();
         bool Commit();
     }
 }
