@@ -1,4 +1,5 @@
 ﻿using IsbaRestaurant.Business.Services.Base;
+using IsbaRestaurant.DataAccess.UnitOfWork;
 using IsbaRestaurant.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -12,91 +13,96 @@ namespace IsbaRestaurant.Business.Managers.Base
 {
     public class BaseManager<TEntity> : IBaseService<TEntity> where TEntity : class, IEntity, new()
     {
+       private IUnitOfWork _uow;
         private bool disposedValue;
-
-        public void Add(TEntity entity)
+        public BaseManager(IUnitOfWork uow)
         {
-            throw new NotImplementedException();
+            _uow = uow;
         }
 
-        public void Add(IEnumerable<TEntity> entities)
+        public virtual void Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            _uow.Dal<TEntity>().Add(entity);
         }
 
-        public void AddOrUpdate(TEntity entity)
+        public virtual void Add(IEnumerable<TEntity> entities)
         {
-            throw new NotImplementedException();
+            _uow.Dal<TEntity>().Add(entities);
         }
 
-        public void AddOrUpdate(IEnumerable<TEntity> entities)
+        public virtual void AddOrUpdate(TEntity entity)
         {
-            throw new NotImplementedException();
+            _uow.Dal<TEntity>().AddOrUpdate(entity);
         }
 
-        public BindingList<TEntity> BindingList()
+        public virtual void AddOrUpdate(IEnumerable<TEntity> entities)
         {
-            throw new NotImplementedException();
+            _uow.Dal<TEntity>().AddOrUpdate(entities);
         }
 
-        public void Delete(TEntity entity)
+        public virtual BindingList<TEntity> BindingList()
         {
-            throw new NotImplementedException();
+            return _uow.Dal<TEntity>().BindingList();
         }
 
-        public void Delete(IEnumerable<TEntity> entities)
+        public virtual void Delete(TEntity entity)
         {
-            throw new NotImplementedException();
+            _uow.Dal<TEntity>().Delete(entity);
         }
 
-        public void Delete(Expression<Func<TEntity, bool>> filter)
+        public virtual void Delete(IEnumerable<TEntity> entities)
         {
-            throw new NotImplementedException();
+            _uow.Dal<TEntity>().Delete(entities);
         }
 
-        public bool Exist(Expression<Func<TEntity, bool>> filter)
+        public virtual void Delete(Expression<Func<TEntity, bool>> filter)
         {
-            throw new NotImplementedException();
+            _uow.Dal<TEntity>().Delete(filter);
         }
 
-        public TEntity Get(Expression<Func<TEntity, bool>> filter, params Expression<Func<TEntity, object>>[] includes)
+        public virtual bool Exist(Expression<Func<TEntity, bool>> filter)
         {
-            throw new NotImplementedException();
+           return _uow.Dal<TEntity>().Exist(filter);
         }
 
-        public IEnumerable<TEntity> GetList(Expression<Func<TEntity, bool>> filter, params Expression<Func<TEntity, object>>[] includes)
+        public virtual TEntity Get(Expression<Func<TEntity, bool>> filter, params Expression<Func<TEntity, object>>[] includes)
         {
-            throw new NotImplementedException();
+            return _uow.Dal<TEntity>().Get(filter, includes);
+        }
+
+        public virtual IEnumerable<TEntity> GetList(Expression<Func<TEntity, bool>> filter, params Expression<Func<TEntity, object>>[] includes)
+        {
+            return _uow.Dal<TEntity>().GetList(filter, includes);
         }
 
         public bool HasChanges()
         {
-            throw new NotImplementedException();
+            return _uow.Dal<TEntity>().HasChanges();
         }
 
-        public void Load(Expression<Func<TEntity, bool>> filter, params Expression<Func<TEntity, object>>[] includes)
+        public virtual void Load(Expression<Func<TEntity, bool>> filter, params Expression<Func<TEntity, object>>[] includes)
         {
-            throw new NotImplementedException();
+            _uow.Dal<TEntity>().Load(filter, includes);
         }
 
-        public IQueryable<TEntity> Select(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TEntity>> selector, params Expression<Func<TEntity, object>>[] includes)
+        public virtual IQueryable<TEntity> Select(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TEntity>> selector, params Expression<Func<TEntity, object>>[] includes)
         {
-            throw new NotImplementedException();
+            return _uow.Dal<TEntity>().Select(filter, selector, includes);
         }
 
-        public IQueryable<TResult> Select<TResult>(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TResult>> selector, params Expression<Func<TEntity, object>>[] includes)
+        public virtual IQueryable<TResult> Select<TResult>(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TResult>> selector, params Expression<Func<TEntity, object>>[] includes)
         {
-            throw new NotImplementedException();
+            return _uow.Dal<TEntity>().Select(filter, selector, includes);
         }
 
-        public void Update(TEntity entity)
+        public virtual void Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            _uow.Dal<TEntity>().Update(entity);
         }
 
-        public void Update(IEnumerable<TEntity> entities)
+        public virtual void Update(IEnumerable<TEntity> entities)
         {
-            throw new NotImplementedException();
+            _uow.Dal<TEntity>().Update(entities);
         }
 
         protected virtual void Dispose(bool disposing)

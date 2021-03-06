@@ -50,6 +50,10 @@
     <Compile Include="Services\IUrunService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\IsbaRestaurant.DataAccess\IsbaRestaurant.DataAccess.csproj">
+      <Project>{f05897fc-59a7-4713-a223-d92d9e7c0026}</Project>
+      <Name>IsbaRestaurant.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IsbaRestaurant.Entities\IsbaRestaurant.Entities.csproj">
       <Project>{a07b2faf-643f-41e7-ba1b-fa6f833c61ad}</Project>
       <Name>IsbaRestaurant.Entities</Name>
