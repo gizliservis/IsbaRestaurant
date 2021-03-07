@@ -18,6 +18,7 @@ namespace IsbaRestaurant.DataAccess.Contexts.Base
         public BaseContext(string connectionString):base(connectionString)
         {
             Configuration.LazyLoadingEnabled = false;
+            ConnectionString = connectionString;
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using IsbaRestaurant.Entities.Tables;
 using IsbaRestaurant.Entities.Tables.Base;
 using IsbaRestaurant.DataAccess.Mappings;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace IsbaRestaurant.DataAccess.Contexts.Restaurant
 {
@@ -27,6 +28,8 @@ namespace IsbaRestaurant.DataAccess.Contexts.Restaurant
         public DbSet<EkMalzeme> EkMalzemeler { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Types<EntityBase>().Configure(c =>
             {
                 c.HasKey(e => e.Id);

@@ -32,6 +32,7 @@ namespace IsbaRestaurant.Core.Functions
         public static bool Check(string connectionString=null)
         {
             SqlConnectionStringBuilder ConnectionStringBuilder = new SqlConnectionStringBuilder(connectionString?? Get());
+            ConnectionStringBuilder.InitialCatalog = "master";
             using (SqlConnection connection=new SqlConnection(ConnectionStringBuilder.ConnectionString))
             {
                 try
