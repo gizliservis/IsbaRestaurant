@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsbaRestaurant.UI.BackOffic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsbaRestaurant.UI.FrontOffice", "IsbaRestaurant.UI.FrontOffice\IsbaRestaurant.UI.FrontOffice.csproj", "{2F32736F-B033-49A1-812A-3ED366CBD68B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsbaRestaurant.UserControls", "IsbaRestaurant.UserControls\IsbaRestaurant.UserControls.csproj", "{DCB37C2B-EA78-4D88-ADFC-A9BA9EB3F44E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{2F32736F-B033-49A1-812A-3ED366CBD68B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F32736F-B033-49A1-812A-3ED366CBD68B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F32736F-B033-49A1-812A-3ED366CBD68B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCB37C2B-EA78-4D88-ADFC-A9BA9EB3F44E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCB37C2B-EA78-4D88-ADFC-A9BA9EB3F44E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCB37C2B-EA78-4D88-ADFC-A9BA9EB3F44E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCB37C2B-EA78-4D88-ADFC-A9BA9EB3F44E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{992320F0-D289-4039-8AA3-3E9DE4EE5564} = {8DBF8623-AA81-4021-8652-91FEC4005E69}
 		{20A53921-D8C2-4FBA-B302-CB0601426A26} = {49A2E128-5115-4CB9-8BED-DB61FE8E53FC}
 		{2F32736F-B033-49A1-812A-3ED366CBD68B} = {49A2E128-5115-4CB9-8BED-DB61FE8E53FC}
+		{DCB37C2B-EA78-4D88-ADFC-A9BA9EB3F44E} = {49A2E128-5115-4CB9-8BED-DB61FE8E53FC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F04E0487-4BC6-475A-B80C-066EC85D9B1E}

@@ -31,26 +31,26 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
         {
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.gridControlUrunler = new DevExpress.XtraGrid.GridControl();
             this.gridUrunler = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colFotograf = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.picFotograf = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.colAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBarkod = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUrunGrup = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFotografEkle = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnFotografEkle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.picFotograf = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlUrunler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridUrunler)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFotografEkle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFotograf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFotografEkle)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -80,35 +80,15 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Menü";
             // 
-            // simpleButton1
+            // simpleButton5
             // 
-            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton1.Location = new System.Drawing.Point(2, 23);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton1.Size = new System.Drawing.Size(90, 62);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Text = "Ekle";
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton2.Location = new System.Drawing.Point(92, 23);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton2.Size = new System.Drawing.Size(90, 62);
-            this.simpleButton2.TabIndex = 1;
-            this.simpleButton2.Text = "Düzenle";
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton3.Location = new System.Drawing.Point(182, 23);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton3.Size = new System.Drawing.Size(90, 62);
-            this.simpleButton3.TabIndex = 2;
-            this.simpleButton3.Text = "Sil";
+            this.simpleButton5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.simpleButton5.Location = new System.Drawing.Point(868, 23);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.simpleButton5.Size = new System.Drawing.Size(90, 62);
+            this.simpleButton5.TabIndex = 4;
+            this.simpleButton5.Text = "Kapat";
             // 
             // simpleButton4
             // 
@@ -120,15 +100,36 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.simpleButton4.TabIndex = 3;
             this.simpleButton4.Text = "Güncelle";
             // 
-            // simpleButton5
+            // simpleButton3
             // 
-            this.simpleButton5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.simpleButton5.Location = new System.Drawing.Point(868, 23);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton5.Size = new System.Drawing.Size(90, 62);
-            this.simpleButton5.TabIndex = 4;
-            this.simpleButton5.Text = "Kapat";
+            this.simpleButton3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.simpleButton3.Location = new System.Drawing.Point(182, 23);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.simpleButton3.Size = new System.Drawing.Size(90, 62);
+            this.simpleButton3.TabIndex = 2;
+            this.simpleButton3.Text = "Sil";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.simpleButton2.Location = new System.Drawing.Point(92, 23);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.simpleButton2.Size = new System.Drawing.Size(90, 62);
+            this.simpleButton2.TabIndex = 1;
+            this.simpleButton2.Text = "Düzenle";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.simpleButton1.Location = new System.Drawing.Point(2, 23);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.simpleButton1.Size = new System.Drawing.Size(90, 62);
+            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.Text = "Ekle";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // gridControlUrunler
             // 
@@ -168,6 +169,10 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.colFotograf.Visible = true;
             this.colFotograf.VisibleIndex = 0;
             this.colFotograf.Width = 150;
+            // 
+            // picFotograf
+            // 
+            this.picFotograf.Name = "picFotograf";
             // 
             // colAdi
             // 
@@ -218,10 +223,6 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.btnFotografEkle.Name = "btnFotografEkle";
             this.btnFotografEkle.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             // 
-            // picFotograf
-            // 
-            this.picFotograf.Name = "picFotograf";
-            // 
             // FrmUrun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,8 +237,8 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlUrunler)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridUrunler)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFotografEkle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFotograf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFotografEkle)).EndInit();
             this.ResumeLayout(false);
 
         }

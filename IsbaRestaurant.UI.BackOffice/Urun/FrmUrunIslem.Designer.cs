@@ -29,40 +29,50 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUrunIslem));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupAltMenu = new DevExpress.XtraEditors.GroupControl();
-            this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
+            this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabUrunBilgi = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.tabPorsiyon = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.tabEkMalzeme = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupUrunBilgi = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtBarkod = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.txtUrunAdi = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.txtKategori = new DevExpress.XtraEditors.ButtonEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.picUrunFoto = new DevExpress.XtraEditors.PictureEdit();
-            this.txtUrunAciklama = new DevExpress.XtraEditors.MemoEdit();
-            this.btnResimEkle = new DevExpress.XtraEditors.SimpleButton();
             this.btnResimSil = new DevExpress.XtraEditors.SimpleButton();
+            this.btnResimEkle = new DevExpress.XtraEditors.SimpleButton();
+            this.txtUrunAciklama = new DevExpress.XtraEditors.MemoEdit();
+            this.picUrunFoto = new DevExpress.XtraEditors.PictureEdit();
+            this.txtKategori = new DevExpress.XtraEditors.ButtonEdit();
+            this.txtUrunAdi = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txtBarkod = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.tabPorsiyon = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.gridControlPorsiyon = new DevExpress.XtraGrid.GridControl();
             this.gridPorsiyon = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colPorsiyonAdi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPorsiyonFiyat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPorsiyonCarpan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPorsiyonBirim = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupPorsiyonMenu = new DevExpress.XtraEditors.GroupControl();
             this.groupPorsiyonBilgi = new DevExpress.XtraEditors.GroupControl();
-            this.txtPorsiyonAdi = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.txtBirim = new DevExpress.XtraEditors.ButtonEdit();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
+            this.txtEkMalzemeCarpan = new DevExpress.XtraEditors.CalcEdit();
             this.txtPorsiyonFiyat = new DevExpress.XtraEditors.CalcEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.txtEkMalzemeCarpan = new DevExpress.XtraEditors.CalcEdit();
-            this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
+            this.txtPorsiyonAdi = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.groupPorsiyonMenu = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.tabEkMalzeme = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.gridEkMalzeme = new DevExpress.XtraGrid.GridControl();
             this.gridMalzeme = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMalzemeAdi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMalzemeFiyat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMalzemeAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupEkmalzemeMenu = new DevExpress.XtraEditors.GroupControl();
             this.groupEkmalzemeBilgi = new DevExpress.XtraEditors.GroupControl();
             this.txtEkMalzemeAciklama = new DevExpress.XtraEditors.MemoEdit();
@@ -71,49 +81,55 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.txtBirim = new DevExpress.XtraEditors.ButtonEdit();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.controlMenuPorsiyon = new IsbaRestaurant.UserControls.ControlMenuKayit();
+            this.controlMenuEkMalzeme = new IsbaRestaurant.UserControls.ControlMenuKayit();
             ((System.ComponentModel.ISupportInitialize)(this.groupAltMenu)).BeginInit();
             this.groupAltMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabUrunBilgi.SuspendLayout();
-            this.tabPorsiyon.SuspendLayout();
-            this.tabEkMalzeme.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupUrunBilgi)).BeginInit();
             this.groupUrunBilgi.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBarkod.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUrunAdi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKategori.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUrunFoto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUrunAciklama.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUrunFoto.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKategori.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUrunAdi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBarkod.Properties)).BeginInit();
+            this.tabPorsiyon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPorsiyon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridPorsiyon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupPorsiyonMenu)).BeginInit();
+            this.groupPorsiyonMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupPorsiyonBilgi)).BeginInit();
             this.groupPorsiyonBilgi.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPorsiyonAdi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPorsiyonFiyat.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEkMalzemeCarpan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBirim.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupPorsiyonMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEkMalzemeCarpan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPorsiyonFiyat.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPorsiyonAdi.Properties)).BeginInit();
+            this.tabEkMalzeme.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEkMalzeme)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMalzeme)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupEkmalzemeMenu)).BeginInit();
+            this.groupEkmalzemeMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupEkmalzemeBilgi)).BeginInit();
             this.groupEkmalzemeBilgi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtEkMalzemeAciklama.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEkMalzemeFiyat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEkmalzemeAdi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBirim.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.labelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl1.ImageOptions.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelControl1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("labelControl1.ImageOptions.Image")));
             this.labelControl1.Location = new System.Drawing.Point(0, 0);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(651, 46);
@@ -125,31 +141,33 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.groupAltMenu.Controls.Add(this.btnKaydet);
             this.groupAltMenu.Controls.Add(this.btnKapat);
             this.groupAltMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupAltMenu.Location = new System.Drawing.Point(0, 444);
+            this.groupAltMenu.Location = new System.Drawing.Point(0, 461);
             this.groupAltMenu.Name = "groupAltMenu";
             this.groupAltMenu.Size = new System.Drawing.Size(651, 80);
             this.groupAltMenu.TabIndex = 2;
-            this.groupAltMenu.Text = "groupControl1";
-            // 
-            // btnKapat
-            // 
-            this.btnKapat.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnKapat.Location = new System.Drawing.Point(559, 23);
-            this.btnKapat.Name = "btnKapat";
-            this.btnKapat.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnKapat.Size = new System.Drawing.Size(90, 55);
-            this.btnKapat.TabIndex = 0;
-            this.btnKapat.Text = "Kapat";
+            this.groupAltMenu.Text = "Menü";
             // 
             // btnKaydet
             // 
             this.btnKaydet.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKaydet.ImageOptions.Image")));
             this.btnKaydet.Location = new System.Drawing.Point(469, 23);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnKaydet.Size = new System.Drawing.Size(90, 55);
             this.btnKaydet.TabIndex = 0;
             this.btnKaydet.Text = "Kaydet";
+            // 
+            // btnKapat
+            // 
+            this.btnKapat.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnKapat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKapat.ImageOptions.Image")));
+            this.btnKapat.Location = new System.Drawing.Point(559, 23);
+            this.btnKapat.Name = "btnKapat";
+            this.btnKapat.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnKapat.Size = new System.Drawing.Size(90, 55);
+            this.btnKapat.TabIndex = 0;
+            this.btnKapat.Text = "Kapat";
             // 
             // tabPane1
             // 
@@ -159,13 +177,14 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPane1.Location = new System.Drawing.Point(0, 46);
             this.tabPane1.Name = "tabPane1";
+            this.tabPane1.PageProperties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabUrunBilgi,
             this.tabPorsiyon,
             this.tabEkMalzeme});
-            this.tabPane1.RegularSize = new System.Drawing.Size(651, 398);
+            this.tabPane1.RegularSize = new System.Drawing.Size(651, 415);
             this.tabPane1.SelectedPage = this.tabPorsiyon;
-            this.tabPane1.Size = new System.Drawing.Size(651, 398);
+            this.tabPane1.Size = new System.Drawing.Size(651, 415);
             this.tabPane1.TabIndex = 3;
             this.tabPane1.Text = "tabPane1";
             // 
@@ -173,26 +192,9 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             // 
             this.tabUrunBilgi.Caption = "Ürün Bilgisi";
             this.tabUrunBilgi.Controls.Add(this.groupUrunBilgi);
+            this.tabUrunBilgi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabUrunBilgi.ImageOptions.Image")));
             this.tabUrunBilgi.Name = "tabUrunBilgi";
-            this.tabUrunBilgi.Size = new System.Drawing.Size(651, 369);
-            // 
-            // tabPorsiyon
-            // 
-            this.tabPorsiyon.Caption = "Porsiyon";
-            this.tabPorsiyon.Controls.Add(this.gridControlPorsiyon);
-            this.tabPorsiyon.Controls.Add(this.groupPorsiyonMenu);
-            this.tabPorsiyon.Controls.Add(this.groupPorsiyonBilgi);
-            this.tabPorsiyon.Name = "tabPorsiyon";
-            this.tabPorsiyon.Size = new System.Drawing.Size(651, 369);
-            // 
-            // tabEkMalzeme
-            // 
-            this.tabEkMalzeme.Caption = "Ek Malzeme";
-            this.tabEkMalzeme.Controls.Add(this.gridEkMalzeme);
-            this.tabEkMalzeme.Controls.Add(this.groupEkmalzemeMenu);
-            this.tabEkMalzeme.Controls.Add(this.groupEkmalzemeBilgi);
-            this.tabEkMalzeme.Name = "tabEkMalzeme";
-            this.tabEkMalzeme.Size = new System.Drawing.Size(651, 369);
+            this.tabUrunBilgi.Size = new System.Drawing.Size(651, 376);
             // 
             // groupUrunBilgi
             // 
@@ -210,61 +212,44 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.groupUrunBilgi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupUrunBilgi.Location = new System.Drawing.Point(0, 0);
             this.groupUrunBilgi.Name = "groupUrunBilgi";
-            this.groupUrunBilgi.Size = new System.Drawing.Size(651, 369);
+            this.groupUrunBilgi.Size = new System.Drawing.Size(651, 376);
             this.groupUrunBilgi.TabIndex = 0;
             this.groupUrunBilgi.Text = "Ürün Bilgileri";
             // 
-            // labelControl2
+            // btnResimSil
             // 
-            this.labelControl2.Appearance.Options.UseTextOptions = true;
-            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl2.Location = new System.Drawing.Point(33, 44);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(100, 20);
-            this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "Barkod :";
+            this.btnResimSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnResimSil.ImageOptions.Image")));
+            this.btnResimSil.Location = new System.Drawing.Point(544, 322);
+            this.btnResimSil.Name = "btnResimSil";
+            this.btnResimSil.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnResimSil.Size = new System.Drawing.Size(101, 37);
+            this.btnResimSil.TabIndex = 5;
+            this.btnResimSil.Text = "Sil";
             // 
-            // txtBarkod
+            // btnResimEkle
             // 
-            this.txtBarkod.EditValue = "";
-            this.txtBarkod.Location = new System.Drawing.Point(139, 44);
-            this.txtBarkod.Name = "txtBarkod";
-            this.txtBarkod.Size = new System.Drawing.Size(197, 20);
-            this.txtBarkod.TabIndex = 1;
+            this.btnResimEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnResimEkle.ImageOptions.Image")));
+            this.btnResimEkle.Location = new System.Drawing.Point(420, 322);
+            this.btnResimEkle.Name = "btnResimEkle";
+            this.btnResimEkle.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnResimEkle.Size = new System.Drawing.Size(101, 38);
+            this.btnResimEkle.TabIndex = 5;
+            this.btnResimEkle.Text = "Ekle";
             // 
-            // labelControl3
+            // txtUrunAciklama
             // 
-            this.labelControl3.Appearance.Options.UseTextOptions = true;
-            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl3.Location = new System.Drawing.Point(33, 70);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(100, 20);
-            this.labelControl3.TabIndex = 0;
-            this.labelControl3.Text = "Adı :";
+            this.txtUrunAciklama.Location = new System.Drawing.Point(140, 122);
+            this.txtUrunAciklama.Name = "txtUrunAciklama";
+            this.txtUrunAciklama.Size = new System.Drawing.Size(260, 237);
+            this.txtUrunAciklama.TabIndex = 4;
             // 
-            // txtUrunAdi
+            // picUrunFoto
             // 
-            this.txtUrunAdi.EditValue = "";
-            this.txtUrunAdi.Location = new System.Drawing.Point(139, 70);
-            this.txtUrunAdi.Name = "txtUrunAdi";
-            this.txtUrunAdi.Size = new System.Drawing.Size(506, 20);
-            this.txtUrunAdi.TabIndex = 1;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Options.UseTextOptions = true;
-            this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl4.Location = new System.Drawing.Point(33, 96);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(100, 20);
-            this.labelControl4.TabIndex = 0;
-            this.labelControl4.Text = "Ürün Kategorisi :";
+            this.picUrunFoto.Location = new System.Drawing.Point(420, 121);
+            this.picUrunFoto.Name = "picUrunFoto";
+            this.picUrunFoto.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picUrunFoto.Size = new System.Drawing.Size(225, 195);
+            this.picUrunFoto.TabIndex = 3;
             // 
             // txtKategori
             // 
@@ -275,6 +260,14 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtKategori.Size = new System.Drawing.Size(505, 20);
             this.txtKategori.TabIndex = 2;
+            // 
+            // txtUrunAdi
+            // 
+            this.txtUrunAdi.EditValue = "";
+            this.txtUrunAdi.Location = new System.Drawing.Point(139, 70);
+            this.txtUrunAdi.Name = "txtUrunAdi";
+            this.txtUrunAdi.Size = new System.Drawing.Size(506, 20);
+            this.txtUrunAdi.TabIndex = 1;
             // 
             // labelControl5
             // 
@@ -288,54 +281,123 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.labelControl5.TabIndex = 0;
             this.labelControl5.Text = "Açıklama :";
             // 
-            // picUrunFoto
+            // labelControl4
             // 
-            this.picUrunFoto.Location = new System.Drawing.Point(420, 121);
-            this.picUrunFoto.Name = "picUrunFoto";
-            this.picUrunFoto.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picUrunFoto.Size = new System.Drawing.Size(225, 195);
-            this.picUrunFoto.TabIndex = 3;
+            this.labelControl4.Appearance.Options.UseTextOptions = true;
+            this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.labelControl4.Location = new System.Drawing.Point(33, 96);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(100, 20);
+            this.labelControl4.TabIndex = 0;
+            this.labelControl4.Text = "Ürün Kategorisi :";
             // 
-            // txtUrunAciklama
+            // labelControl3
             // 
-            this.txtUrunAciklama.Location = new System.Drawing.Point(140, 122);
-            this.txtUrunAciklama.Name = "txtUrunAciklama";
-            this.txtUrunAciklama.Size = new System.Drawing.Size(260, 237);
-            this.txtUrunAciklama.TabIndex = 4;
+            this.labelControl3.Appearance.Options.UseTextOptions = true;
+            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.labelControl3.Location = new System.Drawing.Point(33, 70);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(100, 20);
+            this.labelControl3.TabIndex = 0;
+            this.labelControl3.Text = "Adı :";
             // 
-            // btnResimEkle
+            // txtBarkod
             // 
-            this.btnResimEkle.Location = new System.Drawing.Point(420, 322);
-            this.btnResimEkle.Name = "btnResimEkle";
-            this.btnResimEkle.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnResimEkle.Size = new System.Drawing.Size(101, 38);
-            this.btnResimEkle.TabIndex = 5;
-            this.btnResimEkle.Text = "Ekle";
+            this.txtBarkod.EditValue = "";
+            this.txtBarkod.Location = new System.Drawing.Point(139, 44);
+            this.txtBarkod.Name = "txtBarkod";
+            this.txtBarkod.Size = new System.Drawing.Size(197, 20);
+            this.txtBarkod.TabIndex = 1;
             // 
-            // btnResimSil
+            // labelControl2
             // 
-            this.btnResimSil.Location = new System.Drawing.Point(544, 322);
-            this.btnResimSil.Name = "btnResimSil";
-            this.btnResimSil.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnResimSil.Size = new System.Drawing.Size(101, 37);
-            this.btnResimSil.TabIndex = 5;
-            this.btnResimSil.Text = "Sil";
+            this.labelControl2.Appearance.Options.UseTextOptions = true;
+            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.labelControl2.Location = new System.Drawing.Point(33, 44);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(100, 20);
+            this.labelControl2.TabIndex = 0;
+            this.labelControl2.Text = "Barkod :";
+            // 
+            // tabPorsiyon
+            // 
+            this.tabPorsiyon.Caption = "Porsiyon";
+            this.tabPorsiyon.Controls.Add(this.gridControlPorsiyon);
+            this.tabPorsiyon.Controls.Add(this.groupPorsiyonMenu);
+            this.tabPorsiyon.Controls.Add(this.groupPorsiyonBilgi);
+            this.tabPorsiyon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabPorsiyon.ImageOptions.Image")));
+            this.tabPorsiyon.Name = "tabPorsiyon";
+            this.tabPorsiyon.Size = new System.Drawing.Size(651, 376);
             // 
             // gridControlPorsiyon
             // 
             this.gridControlPorsiyon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlPorsiyon.Location = new System.Drawing.Point(0, 221);
+            this.gridControlPorsiyon.Location = new System.Drawing.Point(0, 243);
             this.gridControlPorsiyon.MainView = this.gridPorsiyon;
             this.gridControlPorsiyon.Name = "gridControlPorsiyon";
-            this.gridControlPorsiyon.Size = new System.Drawing.Size(651, 148);
+            this.gridControlPorsiyon.Size = new System.Drawing.Size(651, 133);
             this.gridControlPorsiyon.TabIndex = 0;
             this.gridControlPorsiyon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridPorsiyon});
             // 
             // gridPorsiyon
             // 
+            this.gridPorsiyon.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colPorsiyonAdi,
+            this.colPorsiyonFiyat,
+            this.colPorsiyonCarpan,
+            this.colPorsiyonBirim});
             this.gridPorsiyon.GridControl = this.gridControlPorsiyon;
             this.gridPorsiyon.Name = "gridPorsiyon";
+            this.gridPorsiyon.OptionsView.ShowGroupPanel = false;
+            // 
+            // colPorsiyonAdi
+            // 
+            this.colPorsiyonAdi.Caption = "Adı";
+            this.colPorsiyonAdi.FieldName = "Adi";
+            this.colPorsiyonAdi.Name = "colPorsiyonAdi";
+            this.colPorsiyonAdi.Visible = true;
+            this.colPorsiyonAdi.VisibleIndex = 0;
+            // 
+            // colPorsiyonFiyat
+            // 
+            this.colPorsiyonFiyat.Caption = "Fiyatı";
+            this.colPorsiyonFiyat.FieldName = "Fiyat";
+            this.colPorsiyonFiyat.Name = "colPorsiyonFiyat";
+            this.colPorsiyonFiyat.Visible = true;
+            this.colPorsiyonFiyat.VisibleIndex = 2;
+            // 
+            // colPorsiyonCarpan
+            // 
+            this.colPorsiyonCarpan.Caption = "Çarpan";
+            this.colPorsiyonCarpan.FieldName = "EkMalzemeCarpan";
+            this.colPorsiyonCarpan.Name = "colPorsiyonCarpan";
+            this.colPorsiyonCarpan.Visible = true;
+            this.colPorsiyonCarpan.VisibleIndex = 3;
+            // 
+            // colPorsiyonBirim
+            // 
+            this.colPorsiyonBirim.Caption = "Birimi";
+            this.colPorsiyonBirim.FieldName = "Birim.Adi";
+            this.colPorsiyonBirim.Name = "colPorsiyonBirim";
+            this.colPorsiyonBirim.Visible = true;
+            this.colPorsiyonBirim.VisibleIndex = 1;
+            // 
+            // groupPorsiyonMenu
+            // 
+            this.groupPorsiyonMenu.Controls.Add(this.controlMenuPorsiyon);
+            this.groupPorsiyonMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupPorsiyonMenu.Location = new System.Drawing.Point(0, 162);
+            this.groupPorsiyonMenu.Name = "groupPorsiyonMenu";
+            this.groupPorsiyonMenu.Size = new System.Drawing.Size(651, 81);
+            this.groupPorsiyonMenu.TabIndex = 2;
+            this.groupPorsiyonMenu.Text = "Porsiyon Menüsü";
             // 
             // groupPorsiyonBilgi
             // 
@@ -356,36 +418,43 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.groupPorsiyonBilgi.TabIndex = 1;
             this.groupPorsiyonBilgi.Text = "Porsiyon Bilgisi";
             // 
-            // txtPorsiyonAdi
+            // txtBirim
             // 
-            this.txtPorsiyonAdi.Location = new System.Drawing.Point(108, 26);
-            this.txtPorsiyonAdi.Name = "txtPorsiyonAdi";
-            this.txtPorsiyonAdi.Size = new System.Drawing.Size(538, 20);
-            this.txtPorsiyonAdi.TabIndex = 3;
+            this.txtBirim.Location = new System.Drawing.Point(109, 88);
+            this.txtBirim.Name = "txtBirim";
+            this.txtBirim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtBirim.Size = new System.Drawing.Size(537, 20);
+            this.txtBirim.TabIndex = 9;
             // 
-            // labelControl6
+            // labelControl14
             // 
-            this.labelControl6.Appearance.Options.UseTextOptions = true;
-            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl6.Location = new System.Drawing.Point(2, 26);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(100, 20);
-            this.labelControl6.TabIndex = 2;
-            this.labelControl6.Text = "Porsiyon Adı :";
+            this.labelControl14.Appearance.Options.UseTextOptions = true;
+            this.labelControl14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl14.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl14.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.labelControl14.Location = new System.Drawing.Point(0, 88);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(100, 20);
+            this.labelControl14.TabIndex = 8;
+            this.labelControl14.Text = "Birimi :";
             // 
-            // labelControl7
+            // txtAciklama
             // 
-            this.labelControl7.Appearance.Options.UseTextOptions = true;
-            this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl7.Location = new System.Drawing.Point(2, 52);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(100, 29);
-            this.labelControl7.TabIndex = 2;
-            this.labelControl7.Text = "Fiyat :";
+            this.txtAciklama.Location = new System.Drawing.Point(108, 114);
+            this.txtAciklama.Name = "txtAciklama";
+            this.txtAciklama.Size = new System.Drawing.Size(537, 42);
+            this.txtAciklama.TabIndex = 5;
+            // 
+            // txtEkMalzemeCarpan
+            // 
+            this.txtEkMalzemeCarpan.Location = new System.Drawing.Point(456, 49);
+            this.txtEkMalzemeCarpan.Name = "txtEkMalzemeCarpan";
+            this.txtEkMalzemeCarpan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtEkMalzemeCarpan.Properties.Appearance.Options.UseFont = true;
+            this.txtEkMalzemeCarpan.Properties.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.Never;
+            this.txtEkMalzemeCarpan.Size = new System.Drawing.Size(190, 30);
+            this.txtEkMalzemeCarpan.TabIndex = 4;
             // 
             // txtPorsiyonFiyat
             // 
@@ -409,22 +478,12 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.labelControl8.TabIndex = 2;
             this.labelControl8.Text = "Ek Malzeme Çarpan :";
             // 
-            // txtEkMalzemeCarpan
+            // txtPorsiyonAdi
             // 
-            this.txtEkMalzemeCarpan.Location = new System.Drawing.Point(456, 49);
-            this.txtEkMalzemeCarpan.Name = "txtEkMalzemeCarpan";
-            this.txtEkMalzemeCarpan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtEkMalzemeCarpan.Properties.Appearance.Options.UseFont = true;
-            this.txtEkMalzemeCarpan.Properties.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.Never;
-            this.txtEkMalzemeCarpan.Size = new System.Drawing.Size(190, 30);
-            this.txtEkMalzemeCarpan.TabIndex = 4;
-            // 
-            // txtAciklama
-            // 
-            this.txtAciklama.Location = new System.Drawing.Point(108, 114);
-            this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(537, 42);
-            this.txtAciklama.TabIndex = 5;
+            this.txtPorsiyonAdi.Location = new System.Drawing.Point(108, 26);
+            this.txtPorsiyonAdi.Name = "txtPorsiyonAdi";
+            this.txtPorsiyonAdi.Size = new System.Drawing.Size(538, 20);
+            this.txtPorsiyonAdi.TabIndex = 3;
             // 
             // labelControl9
             // 
@@ -438,37 +497,92 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.labelControl9.TabIndex = 2;
             this.labelControl9.Text = "Açıklama :";
             // 
-            // groupPorsiyonMenu
+            // labelControl7
             // 
-            this.groupPorsiyonMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupPorsiyonMenu.Location = new System.Drawing.Point(0, 162);
-            this.groupPorsiyonMenu.Name = "groupPorsiyonMenu";
-            this.groupPorsiyonMenu.Size = new System.Drawing.Size(651, 59);
-            this.groupPorsiyonMenu.TabIndex = 2;
-            this.groupPorsiyonMenu.Text = "Porsiyon Menüsü";
+            this.labelControl7.Appearance.Options.UseTextOptions = true;
+            this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.labelControl7.Location = new System.Drawing.Point(2, 52);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(100, 29);
+            this.labelControl7.TabIndex = 2;
+            this.labelControl7.Text = "Fiyat :";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Options.UseTextOptions = true;
+            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.labelControl6.Location = new System.Drawing.Point(2, 26);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(100, 20);
+            this.labelControl6.TabIndex = 2;
+            this.labelControl6.Text = "Porsiyon Adı :";
+            // 
+            // tabEkMalzeme
+            // 
+            this.tabEkMalzeme.Caption = "Ek Malzeme";
+            this.tabEkMalzeme.Controls.Add(this.gridEkMalzeme);
+            this.tabEkMalzeme.Controls.Add(this.groupEkmalzemeMenu);
+            this.tabEkMalzeme.Controls.Add(this.groupEkmalzemeBilgi);
+            this.tabEkMalzeme.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabEkMalzeme.ImageOptions.Image")));
+            this.tabEkMalzeme.Name = "tabEkMalzeme";
+            this.tabEkMalzeme.Size = new System.Drawing.Size(651, 376);
             // 
             // gridEkMalzeme
             // 
             this.gridEkMalzeme.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridEkMalzeme.Location = new System.Drawing.Point(0, 215);
+            this.gridEkMalzeme.Location = new System.Drawing.Point(0, 226);
             this.gridEkMalzeme.MainView = this.gridMalzeme;
             this.gridEkMalzeme.Name = "gridEkMalzeme";
-            this.gridEkMalzeme.Size = new System.Drawing.Size(651, 154);
+            this.gridEkMalzeme.Size = new System.Drawing.Size(651, 150);
             this.gridEkMalzeme.TabIndex = 3;
             this.gridEkMalzeme.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridMalzeme});
             // 
             // gridMalzeme
             // 
+            this.gridMalzeme.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMalzemeAdi,
+            this.colMalzemeFiyat,
+            this.colMalzemeAciklama});
             this.gridMalzeme.GridControl = this.gridEkMalzeme;
             this.gridMalzeme.Name = "gridMalzeme";
+            this.gridMalzeme.OptionsView.ShowGroupPanel = false;
+            // 
+            // colMalzemeAdi
+            // 
+            this.colMalzemeAdi.Caption = "Adı";
+            this.colMalzemeAdi.FieldName = "EkMalzemeAdi";
+            this.colMalzemeAdi.Name = "colMalzemeAdi";
+            this.colMalzemeAdi.Visible = true;
+            this.colMalzemeAdi.VisibleIndex = 0;
+            // 
+            // colMalzemeFiyat
+            // 
+            this.colMalzemeFiyat.Caption = "Fiyatı";
+            this.colMalzemeFiyat.FieldName = "Fiyat";
+            this.colMalzemeFiyat.Name = "colMalzemeFiyat";
+            this.colMalzemeFiyat.Visible = true;
+            this.colMalzemeFiyat.VisibleIndex = 1;
+            // 
+            // colMalzemeAciklama
+            // 
+            this.colMalzemeAciklama.Caption = "Açiklama";
+            this.colMalzemeAciklama.FieldName = "Aciklama";
+            this.colMalzemeAciklama.Name = "colMalzemeAciklama";
+            this.colMalzemeAciklama.Visible = true;
+            this.colMalzemeAciklama.VisibleIndex = 2;
             // 
             // groupEkmalzemeMenu
             // 
+            this.groupEkmalzemeMenu.Controls.Add(this.controlMenuEkMalzeme);
             this.groupEkmalzemeMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupEkmalzemeMenu.Location = new System.Drawing.Point(0, 143);
             this.groupEkmalzemeMenu.Name = "groupEkmalzemeMenu";
-            this.groupEkmalzemeMenu.Size = new System.Drawing.Size(651, 72);
+            this.groupEkmalzemeMenu.Size = new System.Drawing.Size(651, 83);
             this.groupEkmalzemeMenu.TabIndex = 5;
             this.groupEkmalzemeMenu.Text = "Ek Malzeme Menüsü";
             // 
@@ -547,32 +661,33 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.labelControl13.TabIndex = 2;
             this.labelControl13.Text = "Ek Malzeme Adı :";
             // 
-            // txtBirim
+            // controlMenuPorsiyon
             // 
-            this.txtBirim.Location = new System.Drawing.Point(109, 88);
-            this.txtBirim.Name = "txtBirim";
-            this.txtBirim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.txtBirim.Size = new System.Drawing.Size(537, 20);
-            this.txtBirim.TabIndex = 9;
+            this.controlMenuPorsiyon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlMenuPorsiyon.KapatVisibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            this.controlMenuPorsiyon.KayitAc = false;
+            this.controlMenuPorsiyon.Location = new System.Drawing.Point(2, 23);
+            this.controlMenuPorsiyon.Name = "controlMenuPorsiyon";
+            this.controlMenuPorsiyon.SecVisibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            this.controlMenuPorsiyon.Size = new System.Drawing.Size(647, 56);
+            this.controlMenuPorsiyon.TabIndex = 0;
             // 
-            // labelControl14
+            // controlMenuEkMalzeme
             // 
-            this.labelControl14.Appearance.Options.UseTextOptions = true;
-            this.labelControl14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl14.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl14.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl14.Location = new System.Drawing.Point(0, 88);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(100, 20);
-            this.labelControl14.TabIndex = 8;
-            this.labelControl14.Text = "Birimi :";
+            this.controlMenuEkMalzeme.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlMenuEkMalzeme.KapatVisibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            this.controlMenuEkMalzeme.KayitAc = false;
+            this.controlMenuEkMalzeme.Location = new System.Drawing.Point(2, 23);
+            this.controlMenuEkMalzeme.Name = "controlMenuEkMalzeme";
+            this.controlMenuEkMalzeme.SecVisibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            this.controlMenuEkMalzeme.Size = new System.Drawing.Size(647, 58);
+            this.controlMenuEkMalzeme.TabIndex = 0;
             // 
             // FrmUrunIslem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 524);
+            this.ClientSize = new System.Drawing.Size(651, 541);
             this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.groupAltMenu);
             this.Controls.Add(this.labelControl1);
@@ -587,33 +702,35 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
             this.tabPane1.ResumeLayout(false);
             this.tabUrunBilgi.ResumeLayout(false);
-            this.tabPorsiyon.ResumeLayout(false);
-            this.tabEkMalzeme.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupUrunBilgi)).EndInit();
             this.groupUrunBilgi.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtBarkod.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUrunAdi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKategori.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUrunFoto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUrunAciklama.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUrunFoto.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKategori.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUrunAdi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBarkod.Properties)).EndInit();
+            this.tabPorsiyon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPorsiyon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridPorsiyon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupPorsiyonMenu)).EndInit();
+            this.groupPorsiyonMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupPorsiyonBilgi)).EndInit();
             this.groupPorsiyonBilgi.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtPorsiyonAdi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPorsiyonFiyat.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEkMalzemeCarpan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBirim.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupPorsiyonMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEkMalzemeCarpan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPorsiyonFiyat.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPorsiyonAdi.Properties)).EndInit();
+            this.tabEkMalzeme.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridEkMalzeme)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMalzeme)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupEkmalzemeMenu)).EndInit();
+            this.groupEkmalzemeMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupEkmalzemeBilgi)).EndInit();
             this.groupEkmalzemeBilgi.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtEkMalzemeAciklama.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEkMalzemeFiyat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEkmalzemeAdi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBirim.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -664,5 +781,14 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.ButtonEdit txtBirim;
         private DevExpress.XtraEditors.LabelControl labelControl14;
+        private DevExpress.XtraGrid.Columns.GridColumn colPorsiyonAdi;
+        private DevExpress.XtraGrid.Columns.GridColumn colPorsiyonFiyat;
+        private DevExpress.XtraGrid.Columns.GridColumn colPorsiyonCarpan;
+        private DevExpress.XtraGrid.Columns.GridColumn colPorsiyonBirim;
+        private DevExpress.XtraGrid.Columns.GridColumn colMalzemeAdi;
+        private DevExpress.XtraGrid.Columns.GridColumn colMalzemeFiyat;
+        private DevExpress.XtraGrid.Columns.GridColumn colMalzemeAciklama;
+        private UserControls.ControlMenuKayit controlMenuPorsiyon;
+        private UserControls.ControlMenuKayit controlMenuEkMalzeme;
     }
 }

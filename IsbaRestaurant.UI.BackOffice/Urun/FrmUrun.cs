@@ -20,5 +20,11 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             InitializeComponent();
             gridControlUrunler.DataSource = worker.UrunService.GetList(null, c => c.UrunGrup);
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            FrmUrunIslem form = new FrmUrunIslem(new Entities.Tables.Urun());
+            form.ShowDialog();
+        }
     }
 }
