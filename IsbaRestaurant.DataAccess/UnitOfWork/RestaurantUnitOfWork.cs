@@ -1,4 +1,5 @@
-﻿using IsbaRestaurant.DataAccess.Contexts.Restaurant;
+﻿using IsbaRestaurant.Core.Functions;
+using IsbaRestaurant.DataAccess.Contexts.Restaurant;
 using IsbaRestaurant.DataAccess.Dals;
 using IsbaRestaurant.DataAccess.Dals.Base;
 using IsbaRestaurant.DataAccess.Functions;
