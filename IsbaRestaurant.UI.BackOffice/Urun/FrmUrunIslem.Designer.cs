@@ -56,6 +56,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.colPorsiyonCarpan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPorsiyonBirim = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupPorsiyonMenu = new DevExpress.XtraEditors.GroupControl();
+            this.controlMenuPorsiyon = new IsbaRestaurant.UserControls.ControlMenuKayit();
             this.groupPorsiyonBilgi = new DevExpress.XtraEditors.GroupControl();
             this.txtBirim = new DevExpress.XtraEditors.ButtonEdit();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
@@ -68,12 +69,13 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.tabEkMalzeme = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.gridEkMalzeme = new DevExpress.XtraGrid.GridControl();
+            this.gridControlEkMalzeme = new DevExpress.XtraGrid.GridControl();
             this.gridMalzeme = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMalzemeAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMalzemeFiyat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMalzemeAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupEkmalzemeMenu = new DevExpress.XtraEditors.GroupControl();
+            this.controlMenuEkMalzeme = new IsbaRestaurant.UserControls.ControlMenuKayit();
             this.groupEkmalzemeBilgi = new DevExpress.XtraEditors.GroupControl();
             this.txtEkMalzemeAciklama = new DevExpress.XtraEditors.MemoEdit();
             this.txtEkMalzemeFiyat = new DevExpress.XtraEditors.CalcEdit();
@@ -81,8 +83,6 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.controlMenuPorsiyon = new IsbaRestaurant.UserControls.ControlMenuKayit();
-            this.controlMenuEkMalzeme = new IsbaRestaurant.UserControls.ControlMenuKayit();
             ((System.ComponentModel.ISupportInitialize)(this.groupAltMenu)).BeginInit();
             this.groupAltMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
@@ -108,7 +108,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             ((System.ComponentModel.ISupportInitialize)(this.txtPorsiyonFiyat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPorsiyonAdi.Properties)).BeginInit();
             this.tabEkMalzeme.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridEkMalzeme)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlEkMalzeme)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMalzeme)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupEkmalzemeMenu)).BeginInit();
             this.groupEkmalzemeMenu.SuspendLayout();
@@ -157,6 +157,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.btnKaydet.Size = new System.Drawing.Size(90, 55);
             this.btnKaydet.TabIndex = 0;
             this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnKapat
             // 
@@ -258,8 +259,10 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.txtKategori.Name = "txtKategori";
             this.txtKategori.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtKategori.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtKategori.Size = new System.Drawing.Size(505, 20);
             this.txtKategori.TabIndex = 2;
+            this.txtKategori.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtKategori_ButtonClick);
             // 
             // txtUrunAdi
             // 
@@ -399,6 +402,22 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.groupPorsiyonMenu.TabIndex = 2;
             this.groupPorsiyonMenu.Text = "Porsiyon Menüsü";
             // 
+            // controlMenuPorsiyon
+            // 
+            this.controlMenuPorsiyon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlMenuPorsiyon.KapatVisibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            this.controlMenuPorsiyon.KayitAc = false;
+            this.controlMenuPorsiyon.Location = new System.Drawing.Point(2, 23);
+            this.controlMenuPorsiyon.Name = "controlMenuPorsiyon";
+            this.controlMenuPorsiyon.SecVisibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            this.controlMenuPorsiyon.Size = new System.Drawing.Size(647, 56);
+            this.controlMenuPorsiyon.TabIndex = 0;
+            this.controlMenuPorsiyon.EkleClick += new System.EventHandler(this.controlMenuPorsiyon_EkleClick);
+            this.controlMenuPorsiyon.DuzenleClick += new System.EventHandler(this.controlMenuPorsiyon_DuzenleClick);
+            this.controlMenuPorsiyon.KaydetClick += new System.EventHandler(this.controlMenuPorsiyon_KaydetClick);
+            this.controlMenuPorsiyon.VazgecClick += new System.EventHandler(this.controlMenuPorsiyon_VazgecClick);
+            this.controlMenuPorsiyon.SilClick += new System.EventHandler(this.controlMenuPorsiyon_SilClick);
+            // 
             // groupPorsiyonBilgi
             // 
             this.groupPorsiyonBilgi.Controls.Add(this.txtBirim);
@@ -417,6 +436,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.groupPorsiyonBilgi.Size = new System.Drawing.Size(651, 162);
             this.groupPorsiyonBilgi.TabIndex = 1;
             this.groupPorsiyonBilgi.Text = "Porsiyon Bilgisi";
+            this.groupPorsiyonBilgi.Visible = false;
             // 
             // txtBirim
             // 
@@ -424,8 +444,10 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.txtBirim.Name = "txtBirim";
             this.txtBirim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtBirim.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtBirim.Size = new System.Drawing.Size(537, 20);
             this.txtBirim.TabIndex = 9;
+            this.txtBirim.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtBirim_ButtonClick);
             // 
             // labelControl14
             // 
@@ -524,22 +546,22 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             // tabEkMalzeme
             // 
             this.tabEkMalzeme.Caption = "Ek Malzeme";
-            this.tabEkMalzeme.Controls.Add(this.gridEkMalzeme);
+            this.tabEkMalzeme.Controls.Add(this.gridControlEkMalzeme);
             this.tabEkMalzeme.Controls.Add(this.groupEkmalzemeMenu);
             this.tabEkMalzeme.Controls.Add(this.groupEkmalzemeBilgi);
             this.tabEkMalzeme.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabEkMalzeme.ImageOptions.Image")));
             this.tabEkMalzeme.Name = "tabEkMalzeme";
             this.tabEkMalzeme.Size = new System.Drawing.Size(651, 376);
             // 
-            // gridEkMalzeme
+            // gridControlEkMalzeme
             // 
-            this.gridEkMalzeme.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridEkMalzeme.Location = new System.Drawing.Point(0, 226);
-            this.gridEkMalzeme.MainView = this.gridMalzeme;
-            this.gridEkMalzeme.Name = "gridEkMalzeme";
-            this.gridEkMalzeme.Size = new System.Drawing.Size(651, 150);
-            this.gridEkMalzeme.TabIndex = 3;
-            this.gridEkMalzeme.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControlEkMalzeme.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlEkMalzeme.Location = new System.Drawing.Point(0, 226);
+            this.gridControlEkMalzeme.MainView = this.gridMalzeme;
+            this.gridControlEkMalzeme.Name = "gridControlEkMalzeme";
+            this.gridControlEkMalzeme.Size = new System.Drawing.Size(651, 150);
+            this.gridControlEkMalzeme.TabIndex = 3;
+            this.gridControlEkMalzeme.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridMalzeme});
             // 
             // gridMalzeme
@@ -548,14 +570,14 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.colMalzemeAdi,
             this.colMalzemeFiyat,
             this.colMalzemeAciklama});
-            this.gridMalzeme.GridControl = this.gridEkMalzeme;
+            this.gridMalzeme.GridControl = this.gridControlEkMalzeme;
             this.gridMalzeme.Name = "gridMalzeme";
             this.gridMalzeme.OptionsView.ShowGroupPanel = false;
             // 
             // colMalzemeAdi
             // 
             this.colMalzemeAdi.Caption = "Adı";
-            this.colMalzemeAdi.FieldName = "EkMalzemeAdi";
+            this.colMalzemeAdi.FieldName = "EkmalzemeAdi";
             this.colMalzemeAdi.Name = "colMalzemeAdi";
             this.colMalzemeAdi.Visible = true;
             this.colMalzemeAdi.VisibleIndex = 0;
@@ -586,6 +608,22 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.groupEkmalzemeMenu.TabIndex = 5;
             this.groupEkmalzemeMenu.Text = "Ek Malzeme Menüsü";
             // 
+            // controlMenuEkMalzeme
+            // 
+            this.controlMenuEkMalzeme.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlMenuEkMalzeme.KapatVisibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            this.controlMenuEkMalzeme.KayitAc = false;
+            this.controlMenuEkMalzeme.Location = new System.Drawing.Point(2, 23);
+            this.controlMenuEkMalzeme.Name = "controlMenuEkMalzeme";
+            this.controlMenuEkMalzeme.SecVisibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            this.controlMenuEkMalzeme.Size = new System.Drawing.Size(647, 58);
+            this.controlMenuEkMalzeme.TabIndex = 0;
+            this.controlMenuEkMalzeme.EkleClick += new System.EventHandler(this.controlMenuEkMalzeme_EkleClick);
+            this.controlMenuEkMalzeme.DuzenleClick += new System.EventHandler(this.controlMenuEkMalzeme_DuzenleClick);
+            this.controlMenuEkMalzeme.KaydetClick += new System.EventHandler(this.controlMenuEkMalzeme_KaydetClick);
+            this.controlMenuEkMalzeme.VazgecClick += new System.EventHandler(this.controlMenuEkMalzeme_VazgecClick);
+            this.controlMenuEkMalzeme.SilClick += new System.EventHandler(this.controlMenuEkMalzeme_SilClick);
+            // 
             // groupEkmalzemeBilgi
             // 
             this.groupEkmalzemeBilgi.Controls.Add(this.txtEkMalzemeAciklama);
@@ -600,6 +638,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.groupEkmalzemeBilgi.Size = new System.Drawing.Size(651, 143);
             this.groupEkmalzemeBilgi.TabIndex = 4;
             this.groupEkmalzemeBilgi.Text = "Ek Malzeme Bilgisi";
+            this.groupEkmalzemeBilgi.Visible = false;
             // 
             // txtEkMalzemeAciklama
             // 
@@ -661,28 +700,6 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.labelControl13.TabIndex = 2;
             this.labelControl13.Text = "Ek Malzeme Adı :";
             // 
-            // controlMenuPorsiyon
-            // 
-            this.controlMenuPorsiyon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlMenuPorsiyon.KapatVisibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-            this.controlMenuPorsiyon.KayitAc = false;
-            this.controlMenuPorsiyon.Location = new System.Drawing.Point(2, 23);
-            this.controlMenuPorsiyon.Name = "controlMenuPorsiyon";
-            this.controlMenuPorsiyon.SecVisibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-            this.controlMenuPorsiyon.Size = new System.Drawing.Size(647, 56);
-            this.controlMenuPorsiyon.TabIndex = 0;
-            // 
-            // controlMenuEkMalzeme
-            // 
-            this.controlMenuEkMalzeme.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlMenuEkMalzeme.KapatVisibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-            this.controlMenuEkMalzeme.KayitAc = false;
-            this.controlMenuEkMalzeme.Location = new System.Drawing.Point(2, 23);
-            this.controlMenuEkMalzeme.Name = "controlMenuEkMalzeme";
-            this.controlMenuEkMalzeme.SecVisibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-            this.controlMenuEkMalzeme.Size = new System.Drawing.Size(647, 58);
-            this.controlMenuEkMalzeme.TabIndex = 0;
-            // 
             // FrmUrunIslem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -722,7 +739,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             ((System.ComponentModel.ISupportInitialize)(this.txtPorsiyonFiyat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPorsiyonAdi.Properties)).EndInit();
             this.tabEkMalzeme.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridEkMalzeme)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlEkMalzeme)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMalzeme)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupEkmalzemeMenu)).EndInit();
             this.groupEkmalzemeMenu.ResumeLayout(false);
@@ -769,7 +786,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraGrid.GridControl gridEkMalzeme;
+        private DevExpress.XtraGrid.GridControl gridControlEkMalzeme;
         private DevExpress.XtraGrid.Views.Grid.GridView gridMalzeme;
         private DevExpress.XtraEditors.GroupControl groupEkmalzemeMenu;
         private DevExpress.XtraEditors.GroupControl groupEkmalzemeBilgi;

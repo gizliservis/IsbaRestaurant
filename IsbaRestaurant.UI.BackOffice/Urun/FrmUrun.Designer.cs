@@ -119,6 +119,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.simpleButton2.Size = new System.Drawing.Size(90, 62);
             this.simpleButton2.TabIndex = 1;
             this.simpleButton2.Text = "Düzenle";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton1
             // 

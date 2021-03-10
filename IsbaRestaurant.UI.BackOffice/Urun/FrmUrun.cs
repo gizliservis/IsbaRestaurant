@@ -26,5 +26,11 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             FrmUrunIslem form = new FrmUrunIslem(new Entities.Tables.Urun());
             form.ShowDialog();
         }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            FrmUrunIslem form = new FrmUrunIslem((Entities.Tables.Urun)gridUrunler.GetFocusedRow());
+            form.ShowDialog();
+        }
     }
 }
