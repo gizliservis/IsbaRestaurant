@@ -169,6 +169,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.btnKapat.Size = new System.Drawing.Size(90, 55);
             this.btnKapat.TabIndex = 0;
             this.btnKapat.Text = "Kapat";
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // tabPane1
             // 

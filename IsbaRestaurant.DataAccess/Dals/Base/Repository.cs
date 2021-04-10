@@ -109,11 +109,11 @@ namespace IsbaRestaurant.DataAccess.Dals.Base
         {
             if (filter == null)
             {
-                _context.Set<TEntity>().Load();
+                _context.Set<TEntity>().MultipleInculude(includes).Load();
             }
             else
             {
-                _context.Set<TEntity>().Where(filter).Load();
+                _context.Set<TEntity>().MultipleInculude(includes).Where(filter).Load();
             }
 
         }

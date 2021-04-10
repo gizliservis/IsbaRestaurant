@@ -139,6 +139,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.btnKaydet.Size = new System.Drawing.Size(90, 55);
             this.btnKaydet.TabIndex = 0;
             this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnKapat
             // 
@@ -150,6 +151,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.btnKapat.Size = new System.Drawing.Size(90, 55);
             this.btnKapat.TabIndex = 0;
             this.btnKapat.Text = "Kapat";
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // labelControl1
             // 
@@ -182,7 +184,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.tabTelefon,
             this.tabAdres});
             this.tabPane1.RegularSize = new System.Drawing.Size(650, 408);
-            this.tabPane1.SelectedPage = this.tabTelefon;
+            this.tabPane1.SelectedPage = this.tabMusteriBilgi;
             this.tabPane1.Size = new System.Drawing.Size(650, 408);
             this.tabPane1.TabIndex = 5;
             this.tabPane1.Text = "tabPane1";

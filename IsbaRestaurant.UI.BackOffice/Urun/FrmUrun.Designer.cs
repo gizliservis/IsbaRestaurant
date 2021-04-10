@@ -31,11 +31,6 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
         {
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.gridControlUrunler = new DevExpress.XtraGrid.GridControl();
             this.gridUrunler = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colFotograf = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -45,6 +40,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.colUrunGrup = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFotografEkle = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnFotografEkle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.controlMenu = new IsbaRestaurant.UserControls.ControlAnaMenuAlt();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlUrunler)).BeginInit();
@@ -68,69 +64,13 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.simpleButton5);
-            this.groupControl1.Controls.Add(this.simpleButton4);
-            this.groupControl1.Controls.Add(this.simpleButton3);
-            this.groupControl1.Controls.Add(this.simpleButton2);
-            this.groupControl1.Controls.Add(this.simpleButton1);
+            this.groupControl1.Controls.Add(this.controlMenu);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl1.Location = new System.Drawing.Point(0, 415);
+            this.groupControl1.Location = new System.Drawing.Point(0, 421);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(960, 87);
+            this.groupControl1.Size = new System.Drawing.Size(960, 81);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Menü";
-            // 
-            // simpleButton5
-            // 
-            this.simpleButton5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.simpleButton5.Location = new System.Drawing.Point(868, 23);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton5.Size = new System.Drawing.Size(90, 62);
-            this.simpleButton5.TabIndex = 4;
-            this.simpleButton5.Text = "Kapat";
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton4.Location = new System.Drawing.Point(272, 23);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton4.Size = new System.Drawing.Size(90, 62);
-            this.simpleButton4.TabIndex = 3;
-            this.simpleButton4.Text = "Güncelle";
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton3.Location = new System.Drawing.Point(182, 23);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton3.Size = new System.Drawing.Size(90, 62);
-            this.simpleButton3.TabIndex = 2;
-            this.simpleButton3.Text = "Sil";
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton2.Location = new System.Drawing.Point(92, 23);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton2.Size = new System.Drawing.Size(90, 62);
-            this.simpleButton2.TabIndex = 1;
-            this.simpleButton2.Text = "Düzenle";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton1.Location = new System.Drawing.Point(2, 23);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton1.Size = new System.Drawing.Size(90, 62);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Text = "Ekle";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // gridControlUrunler
             // 
@@ -141,7 +81,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.gridControlUrunler.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnFotografEkle,
             this.picFotograf});
-            this.gridControlUrunler.Size = new System.Drawing.Size(960, 369);
+            this.gridControlUrunler.Size = new System.Drawing.Size(960, 375);
             this.gridControlUrunler.TabIndex = 2;
             this.gridControlUrunler.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridUrunler});
@@ -224,6 +164,20 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.btnFotografEkle.Name = "btnFotografEkle";
             this.btnFotografEkle.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             // 
+            // controlMenu
+            // 
+            this.controlMenu.ButtonFont = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.controlMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlMenu.Location = new System.Drawing.Point(2, 23);
+            this.controlMenu.Name = "controlMenu";
+            this.controlMenu.Size = new System.Drawing.Size(956, 56);
+            this.controlMenu.TabIndex = 0;
+            this.controlMenu.ButonEkle += new System.EventHandler(this.controlMenu_ButonEkle);
+            this.controlMenu.ButonDuzenle += new System.EventHandler(this.controlMenu_ButonDuzenle);
+            this.controlMenu.ButonSil += new System.EventHandler(this.controlMenu_ButonSil);
+            this.controlMenu.ButonGuncelle += new System.EventHandler(this.controlMenu_ButonGuncelle);
+            this.controlMenu.ButonKapat += new System.EventHandler(this.controlMenu_ButonKapat);
+            // 
             // FrmUrun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,11 +202,6 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
 
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraGrid.GridControl gridControlUrunler;
         private DevExpress.XtraGrid.Views.Grid.GridView gridUrunler;
         private DevExpress.XtraGrid.Columns.GridColumn colFotograf;
@@ -262,5 +211,6 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
         private DevExpress.XtraGrid.Columns.GridColumn colUrunGrup;
         private DevExpress.XtraGrid.Columns.GridColumn colFotografEkle;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnFotografEkle;
+        private UserControls.ControlAnaMenuAlt controlMenu;
     }
 }

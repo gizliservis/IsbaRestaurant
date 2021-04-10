@@ -19,6 +19,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
         Entities.Tables.Musteri _musteriEntity;
         Telefon _telefonEntity;
         Adres _adresEntity;
+        public bool Kaydedildi = false;
         public FrmMusteriIslem(Entities.Tables.Musteri musteriEntity)
         {
             InitializeComponent();
@@ -29,7 +30,9 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             }
             worker.TelefonService.Load(c => c.MusteriId == _musteriEntity.Id);
             gridControlTelefon.DataSource = worker.TelefonService.BindingList();
-            worker.AdresService.Load(c=>c.MusteriId)
+            worker.AdresService.Load(c => c.MusteriId == _musteriEntity.Id);
+            gridControlAdres.DataSource = worker.AdresService.BindingList();
+            MusteriBindng();
         }
         void MusteriBindng()
         {
@@ -63,7 +66,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             txtIl.DataBindings.Add("Text", _adresEntity, "Il", false, DataSourceUpdateMode.OnPropertyChanged);
             txtIlce.DataBindings.Add("Text", _adresEntity, "Ilce", false, DataSourceUpdateMode.OnPropertyChanged);
             txtSemt.DataBindings.Add("Text", _adresEntity, "Semt", false, DataSourceUpdateMode.OnPropertyChanged);
-            txtAdres.DataBindings.Add("Text", _adresEntity, "Adres", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtAdres.DataBindings.Add("Text", _adresEntity, "Adresi", false, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void controlMenuTelefon_EkleClick(object sender, EventArgs e)
@@ -141,6 +144,19 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
         {
             controlMenuAdres.KayitAc = false;
             groupAdresBilgi.Visible = false;
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            worker.MusteriService.AddOrUpdate(_musteriEntity);
+            worker.Commit();
+            Kaydedildi = true;
+            Close();
+        }
+
+        private void btnKapat_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

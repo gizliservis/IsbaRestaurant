@@ -1,4 +1,5 @@
 ﻿using IsbaRestaurant.Core.Functions;
+using IsbaRestaurant.UI.BackOffice.Musteri;
 using IsbaRestaurant.UI.BackOffice.Urun;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,11 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             form.Show();
         }
 
-       
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FrmMusteri form = new FrmMusteri();
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }
