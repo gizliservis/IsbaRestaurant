@@ -123,7 +123,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(960, 46);
             this.labelControl1.TabIndex = 2;
-            this.labelControl1.Text = "Ürünler";
+            this.labelControl1.Text = "Müşteriler";
             // 
             // gridControlMusteri
             // 

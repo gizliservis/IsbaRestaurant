@@ -38,7 +38,10 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.tabMusteriBilgi = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupMusteriBilgi = new DevExpress.XtraEditors.GroupControl();
             this.txtMusteriAciklama = new DevExpress.XtraEditors.MemoEdit();
+            this.txtSirketAdi = new DevExpress.XtraEditors.TextEdit();
+            this.txtMusteriSoyadi = new DevExpress.XtraEditors.TextEdit();
             this.txtMusteriAdi = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -47,41 +50,38 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.tabTelefon = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.gridControlTelefon = new DevExpress.XtraGrid.GridControl();
             this.gridTelefon = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colTelefonTip = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTelefon = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupTelefonMenu = new DevExpress.XtraEditors.GroupControl();
             this.controlMenuTelefon = new IsbaRestaurant.UserControls.ControlMenuKayit();
             this.groupTelefonBilgi = new DevExpress.XtraEditors.GroupControl();
             this.txtTelefonAciklama = new DevExpress.XtraEditors.MemoEdit();
             this.txtTelefonNumarasi = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.cmbTelefonTip = new DevExpress.XtraEditors.ComboBoxEdit();
             this.tabAdres = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.gridControlAdres = new DevExpress.XtraGrid.GridControl();
             this.gridAdres = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.groupAdresMenu = new DevExpress.XtraEditors.GroupControl();
-            this.controlMenuAdres = new IsbaRestaurant.UserControls.ControlMenuKayit();
-            this.groupAdresBilgi = new DevExpress.XtraEditors.GroupControl();
-            this.txtAdresAciklama = new DevExpress.XtraEditors.MemoEdit();
-            this.txtIl = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.txtMusteriSoyadi = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.txtSirketAdi = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.cmbTelefonTip = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.txtIlce = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.txtSemt = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.cmbAdresTip = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.colTelefonTip = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTelefon = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAdresTip = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIl = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIlce = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAdres = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupAdresMenu = new DevExpress.XtraEditors.GroupControl();
+            this.controlMenuAdres = new IsbaRestaurant.UserControls.ControlMenuKayit();
+            this.groupAdresBilgi = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.cmbAdresTip = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtAdres = new DevExpress.XtraEditors.MemoEdit();
+            this.txtIlce = new DevExpress.XtraEditors.TextEdit();
+            this.txtSemt = new DevExpress.XtraEditors.TextEdit();
+            this.txtIl = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupAltMenu)).BeginInit();
             this.groupAltMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
@@ -90,6 +90,8 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             ((System.ComponentModel.ISupportInitialize)(this.groupMusteriBilgi)).BeginInit();
             this.groupMusteriBilgi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMusteriAciklama.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSirketAdi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMusteriSoyadi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMusteriAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKartNo.Properties)).BeginInit();
             this.tabTelefon.SuspendLayout();
@@ -101,6 +103,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.groupTelefonBilgi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTelefonAciklama.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTelefonNumarasi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTelefonTip.Properties)).BeginInit();
             this.tabAdres.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlAdres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAdres)).BeginInit();
@@ -108,14 +111,11 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.groupAdresMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupAdresBilgi)).BeginInit();
             this.groupAdresBilgi.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAdresAciklama.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIl.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMusteriSoyadi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSirketAdi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTelefonTip.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbAdresTip.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAdres.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIlce.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSemt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbAdresTip.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIl.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupAltMenu
@@ -166,7 +166,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(650, 46);
             this.labelControl1.TabIndex = 3;
-            this.labelControl1.Text = "Ürün İşlem";
+            this.labelControl1.Text = "Müşteri İşlem";
             // 
             // tabPane1
             // 
@@ -191,7 +191,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             // 
             this.tabMusteriBilgi.Caption = "Müşteri Bilgisi";
             this.tabMusteriBilgi.Controls.Add(this.groupMusteriBilgi);
-            this.tabMusteriBilgi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabUrunBilgi.ImageOptions.Image")));
+            this.tabMusteriBilgi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabMusteriBilgi.ImageOptions.Image")));
             this.tabMusteriBilgi.Name = "tabMusteriBilgi";
             this.tabMusteriBilgi.Size = new System.Drawing.Size(650, 369);
             // 
@@ -221,6 +221,22 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.txtMusteriAciklama.Size = new System.Drawing.Size(504, 211);
             this.txtMusteriAciklama.TabIndex = 4;
             // 
+            // txtSirketAdi
+            // 
+            this.txtSirketAdi.EditValue = "";
+            this.txtSirketAdi.Location = new System.Drawing.Point(139, 121);
+            this.txtSirketAdi.Name = "txtSirketAdi";
+            this.txtSirketAdi.Size = new System.Drawing.Size(506, 20);
+            this.txtSirketAdi.TabIndex = 1;
+            // 
+            // txtMusteriSoyadi
+            // 
+            this.txtMusteriSoyadi.EditValue = "";
+            this.txtMusteriSoyadi.Location = new System.Drawing.Point(139, 95);
+            this.txtMusteriSoyadi.Name = "txtMusteriSoyadi";
+            this.txtMusteriSoyadi.Size = new System.Drawing.Size(506, 20);
+            this.txtMusteriSoyadi.TabIndex = 1;
+            // 
             // txtMusteriAdi
             // 
             this.txtMusteriAdi.EditValue = "";
@@ -228,6 +244,18 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.txtMusteriAdi.Name = "txtMusteriAdi";
             this.txtMusteriAdi.Size = new System.Drawing.Size(506, 20);
             this.txtMusteriAdi.TabIndex = 1;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Options.UseTextOptions = true;
+            this.labelControl10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.labelControl10.Location = new System.Drawing.Point(33, 122);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(100, 20);
+            this.labelControl10.TabIndex = 0;
+            this.labelControl10.Text = "Şirket Adı :";
             // 
             // labelControl5
             // 
@@ -291,7 +319,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.tabTelefon.Controls.Add(this.gridControlTelefon);
             this.tabTelefon.Controls.Add(this.groupTelefonMenu);
             this.tabTelefon.Controls.Add(this.groupTelefonBilgi);
-            this.tabTelefon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabPorsiyon.ImageOptions.Image")));
+            this.tabTelefon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabTelefon.ImageOptions.Image")));
             this.tabTelefon.Name = "tabTelefon";
             this.tabTelefon.Size = new System.Drawing.Size(650, 369);
             // 
@@ -316,6 +344,33 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.gridTelefon.Name = "gridTelefon";
             this.gridTelefon.OptionsView.ShowGroupPanel = false;
             // 
+            // colTelefonTip
+            // 
+            this.colTelefonTip.Caption = "Telefon Tipi";
+            this.colTelefonTip.FieldName = "TelefonTip";
+            this.colTelefonTip.Name = "colTelefonTip";
+            this.colTelefonTip.OptionsColumn.AllowEdit = false;
+            this.colTelefonTip.Visible = true;
+            this.colTelefonTip.VisibleIndex = 0;
+            // 
+            // colTelefon
+            // 
+            this.colTelefon.Caption = "Telefon";
+            this.colTelefon.FieldName = "Telefonu";
+            this.colTelefon.Name = "colTelefon";
+            this.colTelefon.OptionsColumn.AllowEdit = false;
+            this.colTelefon.Visible = true;
+            this.colTelefon.VisibleIndex = 1;
+            // 
+            // colAciklama
+            // 
+            this.colAciklama.Caption = "Açıklama";
+            this.colAciklama.FieldName = "Aciklama";
+            this.colAciklama.Name = "colAciklama";
+            this.colAciklama.OptionsColumn.AllowEdit = false;
+            this.colAciklama.Visible = true;
+            this.colAciklama.VisibleIndex = 2;
+            // 
             // groupTelefonMenu
             // 
             this.groupTelefonMenu.Controls.Add(this.controlMenuTelefon);
@@ -336,6 +391,11 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.controlMenuTelefon.SecVisibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             this.controlMenuTelefon.Size = new System.Drawing.Size(646, 56);
             this.controlMenuTelefon.TabIndex = 0;
+            this.controlMenuTelefon.EkleClick += new System.EventHandler(this.controlMenuTelefon_EkleClick);
+            this.controlMenuTelefon.DuzenleClick += new System.EventHandler(this.controlMenuTelefon_DuzenleClick);
+            this.controlMenuTelefon.KaydetClick += new System.EventHandler(this.controlMenuTelefon_KaydetClick);
+            this.controlMenuTelefon.VazgecClick += new System.EventHandler(this.controlMenuTelefon_VazgecClick);
+            this.controlMenuTelefon.SilClick += new System.EventHandler(this.controlMenuTelefon_SilClick);
             // 
             // groupTelefonBilgi
             // 
@@ -369,6 +429,18 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.txtTelefonNumarasi.Size = new System.Drawing.Size(538, 20);
             this.txtTelefonNumarasi.TabIndex = 3;
             // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Options.UseTextOptions = true;
+            this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.labelControl7.Location = new System.Drawing.Point(0, 26);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(100, 20);
+            this.labelControl7.TabIndex = 2;
+            this.labelControl7.Text = "Telefon Tipi :";
+            // 
             // labelControl9
             // 
             this.labelControl9.Appearance.Options.UseTextOptions = true;
@@ -393,13 +465,22 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.labelControl6.TabIndex = 2;
             this.labelControl6.Text = "Telefon Numarası :";
             // 
+            // cmbTelefonTip
+            // 
+            this.cmbTelefonTip.Location = new System.Drawing.Point(106, 26);
+            this.cmbTelefonTip.Name = "cmbTelefonTip";
+            this.cmbTelefonTip.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbTelefonTip.Size = new System.Drawing.Size(538, 20);
+            this.cmbTelefonTip.TabIndex = 3;
+            // 
             // tabAdres
             // 
             this.tabAdres.Caption = "Adres Bilgileri";
             this.tabAdres.Controls.Add(this.gridControlAdres);
             this.tabAdres.Controls.Add(this.groupAdresMenu);
             this.tabAdres.Controls.Add(this.groupAdresBilgi);
-            this.tabAdres.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabEkMalzeme.ImageOptions.Image")));
+            this.tabAdres.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabAdres.ImageOptions.Image")));
             this.tabAdres.Name = "tabAdres";
             this.tabAdres.Size = new System.Drawing.Size(650, 369);
             // 
@@ -424,220 +505,6 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.gridAdres.GridControl = this.gridControlAdres;
             this.gridAdres.Name = "gridAdres";
             this.gridAdres.OptionsView.ShowGroupPanel = false;
-            // 
-            // groupAdresMenu
-            // 
-            this.groupAdresMenu.Controls.Add(this.controlMenuAdres);
-            this.groupAdresMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupAdresMenu.Location = new System.Drawing.Point(0, 143);
-            this.groupAdresMenu.Name = "groupAdresMenu";
-            this.groupAdresMenu.Size = new System.Drawing.Size(650, 83);
-            this.groupAdresMenu.TabIndex = 5;
-            this.groupAdresMenu.Text = "Adres Menüsü";
-            // 
-            // controlMenuAdres
-            // 
-            this.controlMenuAdres.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlMenuAdres.KapatVisibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-            this.controlMenuAdres.KayitAc = false;
-            this.controlMenuAdres.Location = new System.Drawing.Point(2, 23);
-            this.controlMenuAdres.Name = "controlMenuAdres";
-            this.controlMenuAdres.SecVisibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-            this.controlMenuAdres.Size = new System.Drawing.Size(646, 58);
-            this.controlMenuAdres.TabIndex = 0;
-            // 
-            // groupAdresBilgi
-            // 
-            this.groupAdresBilgi.Controls.Add(this.labelControl14);
-            this.groupAdresBilgi.Controls.Add(this.cmbAdresTip);
-            this.groupAdresBilgi.Controls.Add(this.txtAdresAciklama);
-            this.groupAdresBilgi.Controls.Add(this.txtIlce);
-            this.groupAdresBilgi.Controls.Add(this.txtSemt);
-            this.groupAdresBilgi.Controls.Add(this.txtIl);
-            this.groupAdresBilgi.Controls.Add(this.labelControl8);
-            this.groupAdresBilgi.Controls.Add(this.labelControl12);
-            this.groupAdresBilgi.Controls.Add(this.labelControl11);
-            this.groupAdresBilgi.Controls.Add(this.labelControl13);
-            this.groupAdresBilgi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupAdresBilgi.Location = new System.Drawing.Point(0, 0);
-            this.groupAdresBilgi.Name = "groupAdresBilgi";
-            this.groupAdresBilgi.Size = new System.Drawing.Size(650, 143);
-            this.groupAdresBilgi.TabIndex = 4;
-            this.groupAdresBilgi.Text = "Adres Bilgisi";
-            this.groupAdresBilgi.Visible = false;
-            // 
-            // txtAdresAciklama
-            // 
-            this.txtAdresAciklama.Location = new System.Drawing.Point(109, 77);
-            this.txtAdresAciklama.Name = "txtAdresAciklama";
-            this.txtAdresAciklama.Size = new System.Drawing.Size(537, 58);
-            this.txtAdresAciklama.TabIndex = 5;
-            // 
-            // txtIl
-            // 
-            this.txtIl.Location = new System.Drawing.Point(434, 26);
-            this.txtIl.Name = "txtIl";
-            this.txtIl.Size = new System.Drawing.Size(212, 20);
-            this.txtIl.TabIndex = 3;
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Appearance.Options.UseTextOptions = true;
-            this.labelControl11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl11.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl11.Location = new System.Drawing.Point(2, 78);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(100, 57);
-            this.labelControl11.TabIndex = 2;
-            this.labelControl11.Text = "Adres :";
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Appearance.Options.UseTextOptions = true;
-            this.labelControl13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl13.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl13.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl13.Location = new System.Drawing.Point(328, 26);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(100, 20);
-            this.labelControl13.TabIndex = 2;
-            this.labelControl13.Text = "İl :";
-            // 
-            // txtMusteriSoyadi
-            // 
-            this.txtMusteriSoyadi.EditValue = "";
-            this.txtMusteriSoyadi.Location = new System.Drawing.Point(139, 95);
-            this.txtMusteriSoyadi.Name = "txtMusteriSoyadi";
-            this.txtMusteriSoyadi.Size = new System.Drawing.Size(506, 20);
-            this.txtMusteriSoyadi.TabIndex = 1;
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Appearance.Options.UseTextOptions = true;
-            this.labelControl10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl10.Location = new System.Drawing.Point(33, 122);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(100, 20);
-            this.labelControl10.TabIndex = 0;
-            this.labelControl10.Text = "Şirket Adı :";
-            // 
-            // txtSirketAdi
-            // 
-            this.txtSirketAdi.EditValue = "";
-            this.txtSirketAdi.Location = new System.Drawing.Point(139, 121);
-            this.txtSirketAdi.Name = "txtSirketAdi";
-            this.txtSirketAdi.Size = new System.Drawing.Size(506, 20);
-            this.txtSirketAdi.TabIndex = 1;
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.Options.UseTextOptions = true;
-            this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl7.Location = new System.Drawing.Point(0, 26);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(100, 20);
-            this.labelControl7.TabIndex = 2;
-            this.labelControl7.Text = "Telefon Tipi :";
-            // 
-            // cmbTelefonTip
-            // 
-            this.cmbTelefonTip.Location = new System.Drawing.Point(106, 26);
-            this.cmbTelefonTip.Name = "cmbTelefonTip";
-            this.cmbTelefonTip.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbTelefonTip.Size = new System.Drawing.Size(538, 20);
-            this.cmbTelefonTip.TabIndex = 3;
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.Options.UseTextOptions = true;
-            this.labelControl8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl8.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl8.Location = new System.Drawing.Point(328, 51);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(100, 20);
-            this.labelControl8.TabIndex = 2;
-            this.labelControl8.Text = "İlçe :";
-            // 
-            // txtIlce
-            // 
-            this.txtIlce.Location = new System.Drawing.Point(434, 51);
-            this.txtIlce.Name = "txtIlce";
-            this.txtIlce.Size = new System.Drawing.Size(212, 20);
-            this.txtIlce.TabIndex = 3;
-            // 
-            // labelControl12
-            // 
-            this.labelControl12.Appearance.Options.UseTextOptions = true;
-            this.labelControl12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl12.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl12.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl12.Location = new System.Drawing.Point(2, 52);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(100, 20);
-            this.labelControl12.TabIndex = 2;
-            this.labelControl12.Text = "Semt :";
-            // 
-            // txtSemt
-            // 
-            this.txtSemt.Location = new System.Drawing.Point(108, 52);
-            this.txtSemt.Name = "txtSemt";
-            this.txtSemt.Size = new System.Drawing.Size(212, 20);
-            this.txtSemt.TabIndex = 3;
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Appearance.Options.UseTextOptions = true;
-            this.labelControl14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl14.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl14.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl14.Location = new System.Drawing.Point(6, 27);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(100, 20);
-            this.labelControl14.TabIndex = 6;
-            this.labelControl14.Text = "Adres Tipi :";
-            // 
-            // cmbAdresTip
-            // 
-            this.cmbAdresTip.Location = new System.Drawing.Point(112, 27);
-            this.cmbAdresTip.Name = "cmbAdresTip";
-            this.cmbAdresTip.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbAdresTip.Size = new System.Drawing.Size(208, 20);
-            this.cmbAdresTip.TabIndex = 7;
-            // 
-            // colTelefonTip
-            // 
-            this.colTelefonTip.Caption = "Telefon Tipi";
-            this.colTelefonTip.FieldName = "TelefonTip";
-            this.colTelefonTip.Name = "colTelefonTip";
-            this.colTelefonTip.OptionsColumn.AllowEdit = false;
-            this.colTelefonTip.Visible = true;
-            this.colTelefonTip.VisibleIndex = 0;
-            // 
-            // colTelefon
-            // 
-            this.colTelefon.Caption = "Telefon";
-            this.colTelefon.FieldName = "Telefonu";
-            this.colTelefon.Name = "colTelefon";
-            this.colTelefon.OptionsColumn.AllowEdit = false;
-            this.colTelefon.Visible = true;
-            this.colTelefon.VisibleIndex = 1;
-            // 
-            // colAciklama
-            // 
-            this.colAciklama.Caption = "Açıklama";
-            this.colAciklama.FieldName = "Aciklama";
-            this.colAciklama.Name = "colAciklama";
-            this.colAciklama.OptionsColumn.AllowEdit = false;
-            this.colAciklama.Visible = true;
-            this.colAciklama.VisibleIndex = 2;
             // 
             // colAdresTip
             // 
@@ -671,6 +538,149 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.colAdres.Visible = true;
             this.colAdres.VisibleIndex = 3;
             // 
+            // groupAdresMenu
+            // 
+            this.groupAdresMenu.Controls.Add(this.controlMenuAdres);
+            this.groupAdresMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupAdresMenu.Location = new System.Drawing.Point(0, 143);
+            this.groupAdresMenu.Name = "groupAdresMenu";
+            this.groupAdresMenu.Size = new System.Drawing.Size(650, 83);
+            this.groupAdresMenu.TabIndex = 5;
+            this.groupAdresMenu.Text = "Adres Menüsü";
+            // 
+            // controlMenuAdres
+            // 
+            this.controlMenuAdres.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlMenuAdres.KapatVisibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            this.controlMenuAdres.KayitAc = false;
+            this.controlMenuAdres.Location = new System.Drawing.Point(2, 23);
+            this.controlMenuAdres.Name = "controlMenuAdres";
+            this.controlMenuAdres.SecVisibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            this.controlMenuAdres.Size = new System.Drawing.Size(646, 58);
+            this.controlMenuAdres.TabIndex = 0;
+            this.controlMenuAdres.EkleClick += new System.EventHandler(this.controlMenuAdres_EkleClick);
+            this.controlMenuAdres.DuzenleClick += new System.EventHandler(this.controlMenuAdres_DuzenleClick);
+            this.controlMenuAdres.KaydetClick += new System.EventHandler(this.controlMenuAdres_KaydetClick);
+            this.controlMenuAdres.VazgecClick += new System.EventHandler(this.controlMenuAdres_VazgecClick);
+            this.controlMenuAdres.SilClick += new System.EventHandler(this.controlMenuAdres_SilClick);
+            // 
+            // groupAdresBilgi
+            // 
+            this.groupAdresBilgi.Controls.Add(this.labelControl14);
+            this.groupAdresBilgi.Controls.Add(this.cmbAdresTip);
+            this.groupAdresBilgi.Controls.Add(this.txtAdres);
+            this.groupAdresBilgi.Controls.Add(this.txtIlce);
+            this.groupAdresBilgi.Controls.Add(this.txtSemt);
+            this.groupAdresBilgi.Controls.Add(this.txtIl);
+            this.groupAdresBilgi.Controls.Add(this.labelControl8);
+            this.groupAdresBilgi.Controls.Add(this.labelControl12);
+            this.groupAdresBilgi.Controls.Add(this.labelControl11);
+            this.groupAdresBilgi.Controls.Add(this.labelControl13);
+            this.groupAdresBilgi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupAdresBilgi.Location = new System.Drawing.Point(0, 0);
+            this.groupAdresBilgi.Name = "groupAdresBilgi";
+            this.groupAdresBilgi.Size = new System.Drawing.Size(650, 143);
+            this.groupAdresBilgi.TabIndex = 4;
+            this.groupAdresBilgi.Text = "Adres Bilgisi";
+            this.groupAdresBilgi.Visible = false;
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Appearance.Options.UseTextOptions = true;
+            this.labelControl14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl14.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl14.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.labelControl14.Location = new System.Drawing.Point(6, 27);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(100, 20);
+            this.labelControl14.TabIndex = 6;
+            this.labelControl14.Text = "Adres Tipi :";
+            // 
+            // cmbAdresTip
+            // 
+            this.cmbAdresTip.Location = new System.Drawing.Point(112, 27);
+            this.cmbAdresTip.Name = "cmbAdresTip";
+            this.cmbAdresTip.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbAdresTip.Size = new System.Drawing.Size(208, 20);
+            this.cmbAdresTip.TabIndex = 7;
+            // 
+            // txtAdres
+            // 
+            this.txtAdres.Location = new System.Drawing.Point(109, 77);
+            this.txtAdres.Name = "txtAdres";
+            this.txtAdres.Size = new System.Drawing.Size(537, 58);
+            this.txtAdres.TabIndex = 5;
+            // 
+            // txtIlce
+            // 
+            this.txtIlce.Location = new System.Drawing.Point(434, 51);
+            this.txtIlce.Name = "txtIlce";
+            this.txtIlce.Size = new System.Drawing.Size(212, 20);
+            this.txtIlce.TabIndex = 3;
+            // 
+            // txtSemt
+            // 
+            this.txtSemt.Location = new System.Drawing.Point(108, 52);
+            this.txtSemt.Name = "txtSemt";
+            this.txtSemt.Size = new System.Drawing.Size(212, 20);
+            this.txtSemt.TabIndex = 3;
+            // 
+            // txtIl
+            // 
+            this.txtIl.Location = new System.Drawing.Point(434, 26);
+            this.txtIl.Name = "txtIl";
+            this.txtIl.Size = new System.Drawing.Size(212, 20);
+            this.txtIl.TabIndex = 3;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Options.UseTextOptions = true;
+            this.labelControl8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl8.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.labelControl8.Location = new System.Drawing.Point(328, 51);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(100, 20);
+            this.labelControl8.TabIndex = 2;
+            this.labelControl8.Text = "İlçe :";
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Options.UseTextOptions = true;
+            this.labelControl12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl12.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl12.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.labelControl12.Location = new System.Drawing.Point(2, 52);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(100, 20);
+            this.labelControl12.TabIndex = 2;
+            this.labelControl12.Text = "Semt :";
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Options.UseTextOptions = true;
+            this.labelControl11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl11.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.labelControl11.Location = new System.Drawing.Point(2, 78);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(100, 57);
+            this.labelControl11.TabIndex = 2;
+            this.labelControl11.Text = "Adres :";
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Options.UseTextOptions = true;
+            this.labelControl13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl13.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl13.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.labelControl13.Location = new System.Drawing.Point(328, 26);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(100, 20);
+            this.labelControl13.TabIndex = 2;
+            this.labelControl13.Text = "İl :";
+            // 
             // FrmMusteriIslem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -693,6 +703,8 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             ((System.ComponentModel.ISupportInitialize)(this.groupMusteriBilgi)).EndInit();
             this.groupMusteriBilgi.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtMusteriAciklama.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSirketAdi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMusteriSoyadi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMusteriAdi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKartNo.Properties)).EndInit();
             this.tabTelefon.ResumeLayout(false);
@@ -704,6 +716,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.groupTelefonBilgi.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtTelefonAciklama.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTelefonNumarasi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTelefonTip.Properties)).EndInit();
             this.tabAdres.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlAdres)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAdres)).EndInit();
@@ -711,14 +724,11 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.groupAdresMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupAdresBilgi)).EndInit();
             this.groupAdresBilgi.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtAdresAciklama.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIl.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMusteriSoyadi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSirketAdi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTelefonTip.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbAdresTip.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAdres.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIlce.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSemt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbAdresTip.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIl.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -760,7 +770,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
         private DevExpress.XtraEditors.GroupControl groupAdresMenu;
         private UserControls.ControlMenuKayit controlMenuAdres;
         private DevExpress.XtraEditors.GroupControl groupAdresBilgi;
-        private DevExpress.XtraEditors.MemoEdit txtAdresAciklama;
+        private DevExpress.XtraEditors.MemoEdit txtAdres;
         private DevExpress.XtraEditors.TextEdit txtIlce;
         private DevExpress.XtraEditors.TextEdit txtSemt;
         private DevExpress.XtraEditors.TextEdit txtIl;
