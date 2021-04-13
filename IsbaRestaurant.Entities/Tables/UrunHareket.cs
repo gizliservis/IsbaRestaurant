@@ -1,4 +1,5 @@
-﻿using IsbaRestaurant.Entities.Tables.Base;
+﻿using IsbaRestaurant.Entities.Enums;
+using IsbaRestaurant.Entities.Tables.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;

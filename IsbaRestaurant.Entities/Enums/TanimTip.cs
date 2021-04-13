@@ -9,6 +9,8 @@ namespace IsbaRestaurant.Entities.Enums
     public enum TanimTip
     {
         Birim,
-        UrunGrup
+        UrunGrup,
+        CariTİpi,
+        Konum
     }
 }

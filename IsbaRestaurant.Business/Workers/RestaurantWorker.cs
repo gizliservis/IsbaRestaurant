@@ -19,6 +19,11 @@ namespace IsbaRestaurant.Business.Workers
         public IMusteriService MusteriService { get; set; }
         public ITelefonService TelefonService{ get; set; }
         public IAdresService AdresService { get; set; }
+        public IAdisyonService AdisyonService { get; set; }
+        public IEkMalzemeHareketService EkMalzemeHareketService { get; set; }
+        public IGarsonService GarsonService { get; set; }
+        public IMasaService MasaService { get; set; }
+        public IUrunHareketService UrunHareketService { get; set; }
         
 
         private bool disposedValue;
@@ -32,6 +37,11 @@ namespace IsbaRestaurant.Business.Workers
             MusteriService = new MusteriManager(_uow);
             TelefonService = new TelefonManager(_uow);
             AdresService = new AdresManager(_uow);
+            AdisyonService = new AdisyonManager(_uow);
+            EkMalzemeHareketService = new EkMalzemeHareketManager(_uow);
+            GarsonService = new GarsonManager(_uow);
+            MasaService = new MasaManager(_uow);
+            UrunHareketService = new UrunHareketManager(_uow);
 
         }
         public bool Commit()

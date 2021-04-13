@@ -58,7 +58,7 @@
     <Compile Include="Tables\Telefon.cs" />
     <Compile Include="Tables\Urun.cs" />
     <Compile Include="Tables\UrunHareket.cs" />
-    <Compile Include="Tables\UrunHareketTip.cs" />
+    <Compile Include="Enums\UrunHareketTip.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -17,9 +17,9 @@ namespace IsbaRestaurant.DataAccess.Mappings
 
             ToTable("Adisyonlar");
             Property(c => c.Tutar).HasColumnName("Tutar");
-            Property(c => c.Indirim).HasColumnName("Tutar");
-            Property(c => c.GarsonId).HasColumnName("Tutar");
-            Property(c => c.MasaId).HasColumnName("Tutar");
+            Property(c => c.Indirim).HasColumnName("Indirim");
+            Property(c => c.GarsonId).HasColumnName("GarsonId");
+            Property(c => c.MasaId).HasColumnName("MasaId");
         }
     }
 }
