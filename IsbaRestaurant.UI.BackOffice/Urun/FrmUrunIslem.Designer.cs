@@ -167,7 +167,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.btnKapat.Name = "btnKapat";
             this.btnKapat.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnKapat.Size = new System.Drawing.Size(90, 55);
-            this.btnKapat.TabIndex = 0;
+            this.btnKapat.TabIndex = 1;
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
@@ -185,7 +185,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.tabPorsiyon,
             this.tabEkMalzeme});
             this.tabPane1.RegularSize = new System.Drawing.Size(651, 415);
-            this.tabPane1.SelectedPage = this.tabPorsiyon;
+            this.tabPane1.SelectedPage = this.tabUrunBilgi;
             this.tabPane1.Size = new System.Drawing.Size(651, 415);
             this.tabPane1.TabIndex = 3;
             this.tabPane1.Text = "tabPane1";
@@ -235,7 +235,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.btnResimEkle.Name = "btnResimEkle";
             this.btnResimEkle.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnResimEkle.Size = new System.Drawing.Size(101, 38);
-            this.btnResimEkle.TabIndex = 5;
+            this.btnResimEkle.TabIndex = 4;
             this.btnResimEkle.Text = "Ekle";
             // 
             // txtUrunAciklama
@@ -243,7 +243,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.txtUrunAciklama.Location = new System.Drawing.Point(140, 122);
             this.txtUrunAciklama.Name = "txtUrunAciklama";
             this.txtUrunAciklama.Size = new System.Drawing.Size(260, 237);
-            this.txtUrunAciklama.TabIndex = 4;
+            this.txtUrunAciklama.TabIndex = 3;
             // 
             // picUrunFoto
             // 
@@ -315,7 +315,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.txtBarkod.Location = new System.Drawing.Point(139, 44);
             this.txtBarkod.Name = "txtBarkod";
             this.txtBarkod.Size = new System.Drawing.Size(197, 20);
-            this.txtBarkod.TabIndex = 1;
+            this.txtBarkod.TabIndex = 0;
             // 
             // labelControl2
             // 
@@ -447,7 +447,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtBirim.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtBirim.Size = new System.Drawing.Size(537, 20);
-            this.txtBirim.TabIndex = 9;
+            this.txtBirim.TabIndex = 2;
             this.txtBirim.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtBirim_ButtonClick);
             // 
             // labelControl14
@@ -467,7 +467,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.txtAciklama.Location = new System.Drawing.Point(108, 114);
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Size = new System.Drawing.Size(537, 42);
-            this.txtAciklama.TabIndex = 5;
+            this.txtAciklama.TabIndex = 4;
             // 
             // txtEkMalzemeCarpan
             // 
@@ -477,7 +477,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.txtEkMalzemeCarpan.Properties.Appearance.Options.UseFont = true;
             this.txtEkMalzemeCarpan.Properties.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.Never;
             this.txtEkMalzemeCarpan.Size = new System.Drawing.Size(190, 30);
-            this.txtEkMalzemeCarpan.TabIndex = 4;
+            this.txtEkMalzemeCarpan.TabIndex = 3;
             // 
             // txtPorsiyonFiyat
             // 
@@ -487,7 +487,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.txtPorsiyonFiyat.Properties.Appearance.Options.UseFont = true;
             this.txtPorsiyonFiyat.Properties.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.Never;
             this.txtPorsiyonFiyat.Size = new System.Drawing.Size(218, 30);
-            this.txtPorsiyonFiyat.TabIndex = 4;
+            this.txtPorsiyonFiyat.TabIndex = 1;
             // 
             // labelControl8
             // 
@@ -506,7 +506,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.txtPorsiyonAdi.Location = new System.Drawing.Point(108, 26);
             this.txtPorsiyonAdi.Name = "txtPorsiyonAdi";
             this.txtPorsiyonAdi.Size = new System.Drawing.Size(538, 20);
-            this.txtPorsiyonAdi.TabIndex = 3;
+            this.txtPorsiyonAdi.TabIndex = 0;
             // 
             // labelControl9
             // 
@@ -561,7 +561,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.gridControlEkMalzeme.MainView = this.gridMalzeme;
             this.gridControlEkMalzeme.Name = "gridControlEkMalzeme";
             this.gridControlEkMalzeme.Size = new System.Drawing.Size(651, 150);
-            this.gridControlEkMalzeme.TabIndex = 3;
+            this.gridControlEkMalzeme.TabIndex = 0;
             this.gridControlEkMalzeme.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridMalzeme});
             // 
@@ -646,7 +646,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.txtEkMalzemeAciklama.Location = new System.Drawing.Point(109, 87);
             this.txtEkMalzemeAciklama.Name = "txtEkMalzemeAciklama";
             this.txtEkMalzemeAciklama.Size = new System.Drawing.Size(537, 48);
-            this.txtEkMalzemeAciklama.TabIndex = 5;
+            this.txtEkMalzemeAciklama.TabIndex = 2;
             // 
             // txtEkMalzemeFiyat
             // 
@@ -656,14 +656,14 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.txtEkMalzemeFiyat.Properties.Appearance.Options.UseFont = true;
             this.txtEkMalzemeFiyat.Properties.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.Never;
             this.txtEkMalzemeFiyat.Size = new System.Drawing.Size(537, 30);
-            this.txtEkMalzemeFiyat.TabIndex = 4;
+            this.txtEkMalzemeFiyat.TabIndex = 1;
             // 
             // txtEkmalzemeAdi
             // 
             this.txtEkmalzemeAdi.Location = new System.Drawing.Point(108, 26);
             this.txtEkmalzemeAdi.Name = "txtEkmalzemeAdi";
             this.txtEkmalzemeAdi.Size = new System.Drawing.Size(538, 20);
-            this.txtEkmalzemeAdi.TabIndex = 3;
+            this.txtEkmalzemeAdi.TabIndex = 0;
             // 
             // labelControl11
             // 

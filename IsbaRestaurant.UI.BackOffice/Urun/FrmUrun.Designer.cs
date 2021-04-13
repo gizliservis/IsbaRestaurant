@@ -31,6 +31,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
         {
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.controlMenu = new IsbaRestaurant.UserControls.ControlAnaMenuAlt();
             this.gridControlUrunler = new DevExpress.XtraGrid.GridControl();
             this.gridUrunler = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colFotograf = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -40,7 +41,6 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.colUrunGrup = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFotografEkle = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnFotografEkle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.controlMenu = new IsbaRestaurant.UserControls.ControlAnaMenuAlt();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlUrunler)).BeginInit();
@@ -71,6 +71,20 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.groupControl1.Size = new System.Drawing.Size(960, 81);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Menü";
+            // 
+            // controlMenu
+            // 
+            this.controlMenu.ButtonFont = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.controlMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlMenu.Location = new System.Drawing.Point(2, 23);
+            this.controlMenu.Name = "controlMenu";
+            this.controlMenu.Size = new System.Drawing.Size(956, 56);
+            this.controlMenu.TabIndex = 0;
+            this.controlMenu.ButonEkle += new System.EventHandler(this.controlMenu_ButonEkle);
+            this.controlMenu.ButonDuzenle += new System.EventHandler(this.controlMenu_ButonDuzenle);
+            this.controlMenu.ButonSil += new System.EventHandler(this.controlMenu_ButonSil);
+            this.controlMenu.ButonGuncelle += new System.EventHandler(this.controlMenu_ButonGuncelle);
+            this.controlMenu.ButonKapat += new System.EventHandler(this.controlMenu_ButonKapat);
             // 
             // gridControlUrunler
             // 
@@ -164,20 +178,6 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.btnFotografEkle.Name = "btnFotografEkle";
             this.btnFotografEkle.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             // 
-            // controlMenu
-            // 
-            this.controlMenu.ButtonFont = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.controlMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlMenu.Location = new System.Drawing.Point(2, 23);
-            this.controlMenu.Name = "controlMenu";
-            this.controlMenu.Size = new System.Drawing.Size(956, 56);
-            this.controlMenu.TabIndex = 0;
-            this.controlMenu.ButonEkle += new System.EventHandler(this.controlMenu_ButonEkle);
-            this.controlMenu.ButonDuzenle += new System.EventHandler(this.controlMenu_ButonDuzenle);
-            this.controlMenu.ButonSil += new System.EventHandler(this.controlMenu_ButonSil);
-            this.controlMenu.ButonGuncelle += new System.EventHandler(this.controlMenu_ButonGuncelle);
-            this.controlMenu.ButonKapat += new System.EventHandler(this.controlMenu_ButonKapat);
-            // 
             // FrmUrun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,8 +186,12 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.Controls.Add(this.gridControlUrunler);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.labelControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmUrun";
-            this.Text = "FrmUrun";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Ürünler";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlUrunler)).EndInit();

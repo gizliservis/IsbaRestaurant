@@ -72,6 +72,7 @@
     <Compile Include="Interfaces\IPorsiyonDal.cs" />
     <Compile Include="Interfaces\ITanimDal.cs" />
     <Compile Include="Interfaces\IUrunDal.cs" />
+    <Compile Include="Mappings\AdisyonMap.cs" />
     <Compile Include="Mappings\AdresMap.cs" />
     <Compile Include="Mappings\EkMalzemeMap.cs" />
     <Compile Include="Mappings\MusteriMap.cs" />

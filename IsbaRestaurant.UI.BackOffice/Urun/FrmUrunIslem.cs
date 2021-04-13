@@ -47,7 +47,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             txtUrunAdi.DataBindings.Add("Text", _urunEntity, "Adi", false, DataSourceUpdateMode.OnPropertyChanged);
             txtUrunAciklama.DataBindings.Add("Text", _urunEntity, "Aciklama", false, DataSourceUpdateMode.OnPropertyChanged);
              picUrunFoto.DataBindings.Add("EditValue", _urunEntity, "Fotograf", false, DataSourceUpdateMode.OnPropertyChanged);
-             txtKategori.DataBindings.Add("Text", _urunEntity, "UrunGrup.Adi", false, DataSourceUpdateMode.Never);
+             txtKategori.DataBindings.Add("Text", _urunEntity , "UrunGrup.Adi", false, DataSourceUpdateMode.Never);
 
 
         }
@@ -78,6 +78,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
         {
             controlMenuPorsiyon.KayitAc = true;
             groupPorsiyonBilgi.Visible = true;
+            groupAltMenu.Enabled = false;
             _PorsiyonEntity = new Porsiyon();
             _PorsiyonEntity.UrunId = _urunEntity.Id;
             PorsiyonBinding();
@@ -85,14 +86,23 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
 
         private void controlMenuPorsiyon_DuzenleClick(object sender, EventArgs e)
         {
+            if (gridPorsiyon.GetFocusedRow()==null)
+            {
+                return;
+            }
             controlMenuPorsiyon.KayitAc = true;
             groupPorsiyonBilgi.Visible = true;
+            groupAltMenu.Enabled = false;
             _PorsiyonEntity = (Porsiyon)gridPorsiyon.GetFocusedRow();
             PorsiyonBinding();
         }
 
         private void controlMenuPorsiyon_SilClick(object sender, EventArgs e)
         {
+            if (gridPorsiyon.GetFocusedRow() == null)
+            {
+                return;
+            }
             if (MessageBox.Show("Seçili Olan Veriyi Silmek İstermisiniz.", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 gridPorsiyon.DeleteSelectedRows();
@@ -103,6 +113,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
         {
             controlMenuPorsiyon.KayitAc = false;
             groupPorsiyonBilgi.Visible = false;
+            groupAltMenu.Enabled = true;
             worker.TanimService.Load(c => c.Id == _PorsiyonEntity.BirimId);
             worker.PorsiyonService.AddOrUpdate(_PorsiyonEntity);
           
@@ -112,6 +123,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
         {
             controlMenuPorsiyon.KayitAc = false;
             groupPorsiyonBilgi.Visible = false;
+            groupAltMenu.Enabled = true;
 
         }
 
@@ -127,6 +139,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
         {
             controlMenuEkMalzeme.KayitAc = true;
             groupEkmalzemeBilgi.Visible = true;
+            groupAltMenu.Enabled = false;
             _ekMalzemeEntity = new EkMalzeme();
             _ekMalzemeEntity.UrunId = _urunEntity.Id;
             EkmalzemeBinding();
@@ -134,14 +147,23 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
 
         private void controlMenuEkMalzeme_DuzenleClick(object sender, EventArgs e)
         {
+            if (gridMalzeme.GetFocusedRow() == null)
+            {
+                return;
+            }
             controlMenuEkMalzeme.KayitAc = true;
             groupEkmalzemeBilgi.Visible = true;
+            groupAltMenu.Enabled = false;
             _ekMalzemeEntity = (EkMalzeme)gridMalzeme.GetFocusedRow();
             EkmalzemeBinding();
         }
 
         private void controlMenuEkMalzeme_SilClick(object sender, EventArgs e)
         {
+            if (gridMalzeme.GetFocusedRow() == null)
+            {
+                return;
+            }
             if (MessageBox.Show("Seçili Olan Veriyi Silmek İstermisiniz.", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 gridMalzeme.DeleteSelectedRows();
@@ -152,6 +174,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
         {
             controlMenuEkMalzeme.KayitAc = false;
             groupEkmalzemeBilgi.Visible = false;
+            groupAltMenu.Enabled = true;
             worker.EkMalzemeService.AddOrUpdate(_ekMalzemeEntity);
         }
 
@@ -159,6 +182,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
         {
             controlMenuEkMalzeme.KayitAc = false;
             groupEkmalzemeBilgi.Visible = false;
+            groupAltMenu.Enabled = true;
 
         }
 

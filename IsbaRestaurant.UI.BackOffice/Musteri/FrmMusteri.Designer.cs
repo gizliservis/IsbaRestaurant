@@ -30,6 +30,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.controlMenu = new IsbaRestaurant.UserControls.ControlAnaMenuAlt();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControlMusteri = new DevExpress.XtraGrid.GridControl();
             this.gridMusteri = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -37,7 +38,6 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.colSoyadi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSirket = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKartNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.controlMenu = new IsbaRestaurant.UserControls.ControlAnaMenuAlt();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMusteri)).BeginInit();
@@ -53,6 +53,20 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.groupControl1.Size = new System.Drawing.Size(960, 81);
             this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "Menü";
+            // 
+            // controlMenu
+            // 
+            this.controlMenu.ButtonFont = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.controlMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlMenu.Location = new System.Drawing.Point(2, 23);
+            this.controlMenu.Name = "controlMenu";
+            this.controlMenu.Size = new System.Drawing.Size(956, 56);
+            this.controlMenu.TabIndex = 0;
+            this.controlMenu.ButonEkle += new System.EventHandler(this.controlMenu_ButonEkle);
+            this.controlMenu.ButonDuzenle += new System.EventHandler(this.controlMenu_ButonDuzenle);
+            this.controlMenu.ButonSil += new System.EventHandler(this.controlMenu_ButonSil);
+            this.controlMenu.ButonGuncelle += new System.EventHandler(this.controlMenu_ButonGuncelle);
+            this.controlMenu.ButonKapat += new System.EventHandler(this.controlMenu_ButonKapat);
             // 
             // labelControl1
             // 
@@ -119,20 +133,6 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.colKartNo.Name = "colKartNo";
             this.colKartNo.Visible = true;
             this.colKartNo.VisibleIndex = 0;
-            // 
-            // controlMenu
-            // 
-            this.controlMenu.ButtonFont = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.controlMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlMenu.Location = new System.Drawing.Point(2, 23);
-            this.controlMenu.Name = "controlMenu";
-            this.controlMenu.Size = new System.Drawing.Size(956, 56);
-            this.controlMenu.TabIndex = 0;
-            this.controlMenu.ButonEkle += new System.EventHandler(this.controlMenu_ButonEkle);
-            this.controlMenu.ButonDuzenle += new System.EventHandler(this.controlMenu_ButonDuzenle);
-            this.controlMenu.ButonSil += new System.EventHandler(this.controlMenu_ButonSil);
-            this.controlMenu.ButonGuncelle += new System.EventHandler(this.controlMenu_ButonGuncelle);
-            this.controlMenu.ButonKapat += new System.EventHandler(this.controlMenu_ButonKapat);
             // 
             // FrmMusteri
             // 

@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using IsbaRestaurant.Business.Workers;
+using IsbaRestaurant.Entities.Enums;
 using IsbaRestaurant.Entities.Tables;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,8 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             gridControlTelefon.DataSource = worker.TelefonService.BindingList();
             worker.AdresService.Load(c => c.MusteriId == _musteriEntity.Id);
             gridControlAdres.DataSource = worker.AdresService.BindingList();
+            lookTelefonTip.Properties.DataSource = Enum.GetValues(typeof(TelefonAdresTip));
+            lookAdresTip.Properties.DataSource = Enum.GetValues(typeof(TelefonAdresTip));
             MusteriBindng();
         }
         void MusteriBindng()
@@ -52,8 +55,10 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
         {
             txtTelefonNumarasi.DataBindings.Clear();
             txtTelefonAciklama.DataBindings.Clear();
+            lookTelefonTip.DataBindings.Clear();
 
             txtTelefonNumarasi.DataBindings.Add("Text", _telefonEntity, "Telefonu", false, DataSourceUpdateMode.OnPropertyChanged);
+            lookTelefonTip.DataBindings.Add("EditValue", _telefonEntity, "TelefonTip", false, DataSourceUpdateMode.OnPropertyChanged);
             txtTelefonAciklama.DataBindings.Add("Text", _telefonEntity, "Aciklama", false, DataSourceUpdateMode.OnPropertyChanged);
         }
         void AdresBinding()
@@ -62,8 +67,10 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             txtIlce.DataBindings.Clear();
             txtSemt.DataBindings.Clear();
             txtAdres.DataBindings.Clear();
+            lookAdresTip.DataBindings.Clear();
 
             txtIl.DataBindings.Add("Text", _adresEntity, "Il", false, DataSourceUpdateMode.OnPropertyChanged);
+            lookAdresTip.DataBindings.Add("EditValue", _adresEntity, "TelefonAdresTip", false, DataSourceUpdateMode.OnPropertyChanged);
             txtIlce.DataBindings.Add("Text", _adresEntity, "Ilce", false, DataSourceUpdateMode.OnPropertyChanged);
             txtSemt.DataBindings.Add("Text", _adresEntity, "Semt", false, DataSourceUpdateMode.OnPropertyChanged);
             txtAdres.DataBindings.Add("Text", _adresEntity, "Adresi", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -75,19 +82,30 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             _telefonEntity.MusteriId = _musteriEntity.Id;
             controlMenuTelefon.KayitAc = true;
             groupTelefonBilgi.Visible = true;
+            groupAltMenu.Enabled = false;
             TelefonBinding();
+
         }
 
         private void controlMenuTelefon_DuzenleClick(object sender, EventArgs e)
         {
+            if (gridTelefon.GetFocusedRow()==null)
+            {
+                return;
+            }
             _telefonEntity = (Telefon)gridTelefon.GetFocusedRow();
             controlMenuTelefon.KayitAc = true;
             groupTelefonBilgi.Visible = true;
+            groupAltMenu.Enabled = false;
             TelefonBinding();
         }
 
         private void controlMenuTelefon_SilClick(object sender, EventArgs e)
         {
+            if (gridTelefon.GetFocusedRow() == null)
+            {
+                return;
+            }
             if (MessageBox.Show("Seçili Olan Kaydı Silmek İstediğinize Eminmisiniz","Uyarı",MessageBoxButtons.YesNo)==DialogResult.Yes)
             {
                 gridTelefon.DeleteSelectedRows();
@@ -99,12 +117,14 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             worker.TelefonService.AddOrUpdate(_telefonEntity);
             controlMenuTelefon.KayitAc = false;
             groupTelefonBilgi.Visible = false;
+            groupAltMenu.Enabled = true;
         }
 
         private void controlMenuTelefon_VazgecClick(object sender, EventArgs e)
         {
             controlMenuTelefon.KayitAc = false;
             groupTelefonBilgi.Visible = false;
+            groupAltMenu.Enabled = true;
         }
 
         private void controlMenuAdres_EkleClick(object sender, EventArgs e)
@@ -113,15 +133,21 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             groupAdresBilgi.Visible = true;
             _adresEntity = new Adres();
             _adresEntity.MusteriId = _musteriEntity.Id;
+            groupAltMenu.Enabled = false;
             AdresBinding();
 
         }
 
         private void controlMenuAdres_DuzenleClick(object sender, EventArgs e)
         {
+            if (gridAdres.GetFocusedRow()==null)
+            {
+                return;
+            }
             controlMenuAdres.KayitAc = true;
             groupAdresBilgi.Visible = true;
             _adresEntity = (Adres)gridAdres.GetFocusedRow();
+            groupAltMenu.Enabled = false;
             AdresBinding();
         }
 
@@ -138,12 +164,14 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             worker.AdresService.AddOrUpdate(_adresEntity);
             controlMenuAdres.KayitAc = false;
             groupAdresBilgi.Visible = true;
+            groupAltMenu.Enabled = true;
         }
 
         private void controlMenuAdres_VazgecClick(object sender, EventArgs e)
         {
             controlMenuAdres.KayitAc = false;
             groupAdresBilgi.Visible = false;
+            groupAltMenu.Enabled = true;
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)

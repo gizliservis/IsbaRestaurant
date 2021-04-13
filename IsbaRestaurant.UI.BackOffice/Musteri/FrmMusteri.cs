@@ -41,6 +41,10 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
 
         private void controlMenu_ButonDuzenle(object sender, EventArgs e)
         {
+            if (gridMusteri.GetFocusedRow()==null)
+            {
+                return;
+            }
             FrmMusteriIslem form = new FrmMusteriIslem((Entities.Tables.Musteri)gridMusteri.GetFocusedRow());
             form.ShowDialog();
             if (form.Kaydedildi)
@@ -56,6 +60,11 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
 
         private void controlMenu_ButonSil(object sender, EventArgs e)
         {
+            if (gridMusteri.GetFocusedRow() == null)
+            {
+                return;
+            }
+
             if (MessageBox.Show("Seçili Olan Veriyi Silmek İster misiniz ?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 gridMusteri.DeleteSelectedRows();
