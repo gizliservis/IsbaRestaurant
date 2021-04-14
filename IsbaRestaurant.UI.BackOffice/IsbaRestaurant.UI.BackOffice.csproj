@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Control.Draggable, Version=1.0.5049.269, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Control.Draggable.1.0.5049.269\lib\net35-Client\Control.Draggable.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.BonusSkins.v19.2" />
     <Reference Include="DevExpress.Data.v19.2" />
     <Reference Include="DevExpress.Printing.v19.2.Core" />
@@ -73,6 +76,12 @@
     <Compile Include="AnaMenu\FrmAnaMenu.Designer.cs">
       <DependentUpon>FrmAnaMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fotograf\FrmImageEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fotograf\FrmImageEditor.Designer.cs">
+      <DependentUpon>FrmImageEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Musteri\FrmMusteri.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="AnaMenu\FrmAnaMenu.resx">
       <DependentUpon>FrmAnaMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fotograf\FrmImageEditor.resx">
+      <DependentUpon>FrmImageEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Musteri\FrmMusteri.resx">
       <DependentUpon>FrmMusteri.cs</DependentUpon>
