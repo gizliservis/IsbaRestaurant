@@ -237,6 +237,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.btnResimEkle.Size = new System.Drawing.Size(101, 38);
             this.btnResimEkle.TabIndex = 4;
             this.btnResimEkle.Text = "Ekle";
+            this.btnResimEkle.Click += new System.EventHandler(this.btnResimEkle_Click);
             // 
             // txtUrunAciklama
             // 
@@ -249,7 +250,9 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             // 
             this.picUrunFoto.Location = new System.Drawing.Point(420, 121);
             this.picUrunFoto.Name = "picUrunFoto";
+            this.picUrunFoto.Properties.PictureStoreMode = DevExpress.XtraEditors.Controls.PictureStoreMode.ByteArray;
             this.picUrunFoto.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picUrunFoto.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
             this.picUrunFoto.Size = new System.Drawing.Size(225, 195);
             this.picUrunFoto.TabIndex = 3;
             // 

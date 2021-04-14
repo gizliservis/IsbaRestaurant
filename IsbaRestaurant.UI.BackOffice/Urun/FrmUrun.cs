@@ -1,5 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using IsbaRestaurant.Business.Workers;
+using IsbaRestaurant.Core.Extensions;
+using IsbaRestaurant.UI.BackOffice.Fotograf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -73,6 +75,19 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
         private void controlMenu_ButonKapat(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnFotografEkle_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+           Entities.Tables.Urun entity = (Entities.Tables.Urun)gridUrunler.GetFocusedRow();
+            FrmImageEditor form = new FrmImageEditor();
+            form.ShowDialog();
+            if (form.ReturnedImage!=null)
+            {
+                entity.Fotograf = form.ReturnedImage.ImageToByteArray();
+                worker.Commit();
+                gridUrunler.RefreshData();
+            }
         }
     }
 }

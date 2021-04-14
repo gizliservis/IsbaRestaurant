@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using IsbaRestaurant.Business.Workers;
 using IsbaRestaurant.Entities.Tables;
+using IsbaRestaurant.UI.BackOffice.Fotograf;
 using IsbaRestaurant.UI.BackOffice.Tanim;
 using System;
 using System.Collections.Generic;
@@ -47,7 +48,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             txtUrunAdi.DataBindings.Add("Text", _urunEntity, "Adi", false, DataSourceUpdateMode.OnPropertyChanged);
             txtUrunAciklama.DataBindings.Add("Text", _urunEntity, "Aciklama", false, DataSourceUpdateMode.OnPropertyChanged);
              picUrunFoto.DataBindings.Add("EditValue", _urunEntity, "Fotograf", false, DataSourceUpdateMode.OnPropertyChanged);
-             txtKategori.DataBindings.Add("Text", _urunEntity , "UrunGrup.Adi", false, DataSourceUpdateMode.Never);
+            txtKategori.DataBindings.Add("Text", _urunEntity.UrunGrup ?? new Entities.Tables.Tanim(), "Adi", false, DataSourceUpdateMode.Never);
 
 
         }
@@ -211,6 +212,17 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
         private void btnKapat_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnResimEkle_Click(object sender, EventArgs e)
+        {
+            FrmImageEditor form = new FrmImageEditor();
+            form.ShowDialog();
+            if (form.ReturnedImage!=null)
+            {
+                picUrunFoto.Image = form.ReturnedImage;
+            }
+            
         }
     }
 }
