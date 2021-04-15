@@ -54,11 +54,26 @@
     <Compile Include="ControlAnaMenuAlt.Designer.cs">
       <DependentUpon>ControlAnaMenuAlt.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlEkMalzemeButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlKategoriButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlKategoriUrun.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlKategoriUrun.Designer.cs">
+      <DependentUpon>ControlKategoriUrun.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlMenuKayit.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ControlMenuKayit.Designer.cs">
       <DependentUpon>ControlMenuKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPorsiyonButton.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -66,10 +81,19 @@
     <EmbeddedResource Include="ControlAnaMenuAlt.resx">
       <DependentUpon>ControlAnaMenuAlt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ControlKategoriUrun.resx">
+      <DependentUpon>ControlKategoriUrun.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControlMenuKayit.resx">
       <DependentUpon>ControlMenuKayit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IsbaRestaurant.Entities\IsbaRestaurant.Entities.csproj">
+      <Project>{A07B2FAF-643F-41E7-BA1B-FA6F833C61AD}</Project>
+      <Name>IsbaRestaurant.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
