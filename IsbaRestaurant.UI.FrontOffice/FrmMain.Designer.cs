@@ -31,9 +31,10 @@ namespace IsbaRestaurant.UI.FrontOffice
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
-            this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.btnKategoriyeDon = new DevExpress.XtraEditors.SimpleButton();
+            this.navigationMain = new DevExpress.XtraBars.Navigation.NavigationFrame();
+            this.pageMasa = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.pageAdisyonAyrinti = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.panelUrunHareketHizliSatis = new DevExpress.XtraEditors.PanelControl();
             this.navigationKategori = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.pageKategoriUrunler = new DevExpress.XtraBars.Navigation.NavigationPage();
@@ -92,6 +93,11 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.item2 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.item5 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.item6 = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.btnIndirim = new DevExpress.XtraEditors.SimpleButton();
+            this.btnBol = new DevExpress.XtraEditors.SimpleButton();
+            this.btnIade = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMiktarAzalt = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.txtUrunHareketIndirimTutar = new DevExpress.XtraEditors.CalcEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -100,12 +106,9 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.txtToplamUrunHareketTutar = new DevExpress.XtraEditors.CalcEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.panelUrunHareketMenu = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEkMalzeme = new DevExpress.XtraEditors.SimpleButton();
+            this.btnIkram = new DevExpress.XtraEditors.SimpleButton();
             this.btnFiyatDegistir = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMiktarAzalt = new DevExpress.XtraEditors.SimpleButton();
             this.btnMiktarArttir = new DevExpress.XtraEditors.SimpleButton();
             this.panelHareketSolMenu = new DevExpress.XtraEditors.PanelControl();
             this.btnSiparisKaydet = new DevExpress.XtraEditors.SimpleButton();
@@ -113,12 +116,11 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnAdisyonDetay = new DevExpress.XtraEditors.SimpleButton();
             this.btnYazdir = new DevExpress.XtraEditors.SimpleButton();
             this.btnUrunEkle = new DevExpress.XtraEditors.SimpleButton();
-            this.btnKategoriyeDon = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
-            this.navigationFrame1.SuspendLayout();
-            this.navigationPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.navigationMain)).BeginInit();
+            this.navigationMain.SuspendLayout();
+            this.pageAdisyonAyrinti.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelUrunHareketHizliSatis)).BeginInit();
             this.panelUrunHareketHizliSatis.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationKategori)).BeginInit();
@@ -159,6 +161,8 @@ namespace IsbaRestaurant.UI.FrontOffice
             ((System.ComponentModel.ISupportInitialize)(this.item2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.item5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.item6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtUrunHareketIndirimTutar.Properties)).BeginInit();
@@ -179,44 +183,54 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.panelControl1.Size = new System.Drawing.Size(1175, 49);
             this.panelControl1.TabIndex = 0;
             // 
-            // navigationFrame1
+            // btnKategoriyeDon
             // 
-            this.navigationFrame1.Controls.Add(this.navigationPage1);
-            this.navigationFrame1.Controls.Add(this.navigationPage2);
-            this.navigationFrame1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navigationFrame1.Location = new System.Drawing.Point(0, 49);
-            this.navigationFrame1.Name = "navigationFrame1";
-            this.navigationFrame1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
-            this.navigationPage1,
-            this.navigationPage2});
-            this.navigationFrame1.SelectedPage = this.navigationPage2;
-            this.navigationFrame1.Size = new System.Drawing.Size(1175, 522);
-            this.navigationFrame1.TabIndex = 1;
-            this.navigationFrame1.Text = "navigationFrame1";
+            this.btnKategoriyeDon.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnKategoriyeDon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKategoriyeDon.ImageOptions.Image")));
+            this.btnKategoriyeDon.Location = new System.Drawing.Point(1047, 2);
+            this.btnKategoriyeDon.Name = "btnKategoriyeDon";
+            this.btnKategoriyeDon.Size = new System.Drawing.Size(126, 45);
+            this.btnKategoriyeDon.TabIndex = 0;
+            this.btnKategoriyeDon.Text = "Ürünlere Dön";
+            this.btnKategoriyeDon.Visible = false;
+            this.btnKategoriyeDon.Click += new System.EventHandler(this.btnKategoriyeDon_Click);
             // 
-            // navigationPage1
+            // navigationMain
             // 
-            this.navigationPage1.Caption = "navigationPage1";
-            this.navigationPage1.Name = "navigationPage1";
-            this.navigationPage1.Size = new System.Drawing.Size(1175, 522);
+            this.navigationMain.Controls.Add(this.pageMasa);
+            this.navigationMain.Controls.Add(this.pageAdisyonAyrinti);
+            this.navigationMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.navigationMain.Location = new System.Drawing.Point(0, 49);
+            this.navigationMain.Name = "navigationMain";
+            this.navigationMain.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
+            this.pageMasa,
+            this.pageAdisyonAyrinti});
+            this.navigationMain.SelectedPage = this.pageAdisyonAyrinti;
+            this.navigationMain.Size = new System.Drawing.Size(1175, 522);
+            this.navigationMain.TabIndex = 1;
+            this.navigationMain.Text = "navigationFrame1";
             // 
-            // navigationPage2
+            // pageMasa
             // 
-            this.navigationPage2.Caption = "navigationPage2";
-            this.navigationPage2.Controls.Add(this.panelUrunHareketHizliSatis);
-            this.navigationPage2.Controls.Add(this.panelUrunHareket);
-            this.navigationPage2.Controls.Add(this.panelHareketSolMenu);
-            this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(1175, 522);
+            this.pageMasa.Name = "pageMasa";
+            this.pageMasa.Size = new System.Drawing.Size(1175, 522);
+            // 
+            // pageAdisyonAyrinti
+            // 
+            this.pageAdisyonAyrinti.Controls.Add(this.panelUrunHareketHizliSatis);
+            this.pageAdisyonAyrinti.Controls.Add(this.panelUrunHareket);
+            this.pageAdisyonAyrinti.Controls.Add(this.panelHareketSolMenu);
+            this.pageAdisyonAyrinti.Name = "pageAdisyonAyrinti";
+            this.pageAdisyonAyrinti.Size = new System.Drawing.Size(1175, 522);
             // 
             // panelUrunHareketHizliSatis
             // 
             this.panelUrunHareketHizliSatis.Controls.Add(this.navigationKategori);
             this.panelUrunHareketHizliSatis.Controls.Add(this.panelUrunGrupKeypad);
             this.panelUrunHareketHizliSatis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelUrunHareketHizliSatis.Location = new System.Drawing.Point(601, 0);
+            this.panelUrunHareketHizliSatis.Location = new System.Drawing.Point(542, 0);
             this.panelUrunHareketHizliSatis.Name = "panelUrunHareketHizliSatis";
-            this.panelUrunHareketHizliSatis.Size = new System.Drawing.Size(574, 522);
+            this.panelUrunHareketHizliSatis.Size = new System.Drawing.Size(633, 522);
             this.panelUrunHareketHizliSatis.TabIndex = 2;
             // 
             // navigationKategori
@@ -233,7 +247,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.pageUrunPorsiyon,
             this.pageEkMalzeme});
             this.navigationKategori.SelectedPage = this.pageKategoriUrunler;
-            this.navigationKategori.Size = new System.Drawing.Size(358, 518);
+            this.navigationKategori.Size = new System.Drawing.Size(417, 518);
             this.navigationKategori.TabIndex = 2;
             this.navigationKategori.Text = "navigationFrame2";
             // 
@@ -242,14 +256,14 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.pageKategoriUrunler.Caption = "pageKategoriUrunler";
             this.pageKategoriUrunler.Controls.Add(this.flowKategoriUrunleri);
             this.pageKategoriUrunler.Name = "pageKategoriUrunler";
-            this.pageKategoriUrunler.Size = new System.Drawing.Size(358, 518);
+            this.pageKategoriUrunler.Size = new System.Drawing.Size(417, 518);
             // 
             // flowKategoriUrunleri
             // 
             this.flowKategoriUrunleri.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowKategoriUrunleri.Location = new System.Drawing.Point(0, 0);
             this.flowKategoriUrunleri.Name = "flowKategoriUrunleri";
-            this.flowKategoriUrunleri.Size = new System.Drawing.Size(358, 518);
+            this.flowKategoriUrunleri.Size = new System.Drawing.Size(417, 518);
             this.flowKategoriUrunleri.TabIndex = 1;
             // 
             // pageUrunPorsiyon
@@ -257,14 +271,14 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.pageUrunPorsiyon.Caption = "pageUrunPorsiyon";
             this.pageUrunPorsiyon.Controls.Add(this.flowPorsiyon);
             this.pageUrunPorsiyon.Name = "pageUrunPorsiyon";
-            this.pageUrunPorsiyon.Size = new System.Drawing.Size(358, 518);
+            this.pageUrunPorsiyon.Size = new System.Drawing.Size(417, 518);
             // 
             // flowPorsiyon
             // 
             this.flowPorsiyon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowPorsiyon.Location = new System.Drawing.Point(0, 0);
             this.flowPorsiyon.Name = "flowPorsiyon";
-            this.flowPorsiyon.Size = new System.Drawing.Size(358, 518);
+            this.flowPorsiyon.Size = new System.Drawing.Size(417, 518);
             this.flowPorsiyon.TabIndex = 0;
             // 
             // pageEkMalzeme
@@ -273,14 +287,14 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.pageEkMalzeme.Controls.Add(this.flowEkMalzeme);
             this.pageEkMalzeme.Controls.Add(this.panelControl3);
             this.pageEkMalzeme.Name = "pageEkMalzeme";
-            this.pageEkMalzeme.Size = new System.Drawing.Size(358, 518);
+            this.pageEkMalzeme.Size = new System.Drawing.Size(417, 518);
             // 
             // flowEkMalzeme
             // 
             this.flowEkMalzeme.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowEkMalzeme.Location = new System.Drawing.Point(0, 0);
             this.flowEkMalzeme.Name = "flowEkMalzeme";
-            this.flowEkMalzeme.Size = new System.Drawing.Size(358, 454);
+            this.flowEkMalzeme.Size = new System.Drawing.Size(417, 454);
             this.flowEkMalzeme.TabIndex = 0;
             // 
             // panelControl3
@@ -290,7 +304,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl3.Location = new System.Drawing.Point(0, 454);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(358, 64);
+            this.panelControl3.Size = new System.Drawing.Size(417, 64);
             this.panelControl3.TabIndex = 1;
             // 
             // layoutControl1
@@ -303,7 +317,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(716, 75, 650, 400);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(291, 60);
+            this.layoutControl1.Size = new System.Drawing.Size(350, 60);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -314,13 +328,13 @@ namespace IsbaRestaurant.UI.FrontOffice
             0,
             0,
             0});
-            this.txtEkMalzemeTutar.Location = new System.Drawing.Point(239, 2);
+            this.txtEkMalzemeTutar.Location = new System.Drawing.Point(269, 2);
             this.txtEkMalzemeTutar.Name = "txtEkMalzemeTutar";
             this.txtEkMalzemeTutar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtEkMalzemeTutar.Properties.Appearance.Options.UseFont = true;
             this.txtEkMalzemeTutar.Properties.DisplayFormat.FormatString = "C2";
             this.txtEkMalzemeTutar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtEkMalzemeTutar.Size = new System.Drawing.Size(50, 26);
+            this.txtEkMalzemeTutar.Size = new System.Drawing.Size(79, 26);
             this.txtEkMalzemeTutar.StyleController = this.layoutControl1;
             this.txtEkMalzemeTutar.TabIndex = 2;
             // 
@@ -337,7 +351,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.txtToplamTutar.Properties.Appearance.Options.UseFont = true;
             this.txtToplamTutar.Properties.DisplayFormat.FormatString = "C2";
             this.txtToplamTutar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtToplamTutar.Size = new System.Drawing.Size(196, 26);
+            this.txtToplamTutar.Size = new System.Drawing.Size(255, 26);
             this.txtToplamTutar.StyleController = this.layoutControl1;
             this.txtToplamTutar.TabIndex = 2;
             // 
@@ -354,7 +368,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.txtPorsiyonTutar.Properties.Appearance.Options.UseFont = true;
             this.txtPorsiyonTutar.Properties.DisplayFormat.FormatString = "C2";
             this.txtPorsiyonTutar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtPorsiyonTutar.Size = new System.Drawing.Size(51, 26);
+            this.txtPorsiyonTutar.Size = new System.Drawing.Size(81, 26);
             this.txtPorsiyonTutar.StyleController = this.layoutControl1;
             this.txtPorsiyonTutar.TabIndex = 2;
             // 
@@ -368,15 +382,15 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.layoutControlItem3});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.Root.Size = new System.Drawing.Size(291, 60);
+            this.Root.Size = new System.Drawing.Size(350, 60);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtEkMalzemeTutar;
-            this.layoutControlItem1.Location = new System.Drawing.Point(146, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(176, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(145, 30);
+            this.layoutControlItem1.Size = new System.Drawing.Size(174, 30);
             this.layoutControlItem1.Text = "EkMalzeme Tutar :";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(88, 13);
             // 
@@ -386,7 +400,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 30);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(159, 30);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(291, 30);
+            this.layoutControlItem2.Size = new System.Drawing.Size(350, 30);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.Text = "Toplam Tutar :";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(88, 13);
@@ -396,7 +410,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.layoutControlItem3.Control = this.txtPorsiyonTutar;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(146, 30);
+            this.layoutControlItem3.Size = new System.Drawing.Size(176, 30);
             this.layoutControlItem3.Text = "Porsiyon Tutar :";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(88, 13);
             // 
@@ -405,7 +419,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnEkMalzemeOnay.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnEkMalzemeOnay.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEkMalzemeOnay.ImageOptions.Image")));
             this.btnEkMalzemeOnay.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnEkMalzemeOnay.Location = new System.Drawing.Point(293, 2);
+            this.btnEkMalzemeOnay.Location = new System.Drawing.Point(352, 2);
             this.btnEkMalzemeOnay.Name = "btnEkMalzemeOnay";
             this.btnEkMalzemeOnay.Size = new System.Drawing.Size(63, 60);
             this.btnEkMalzemeOnay.TabIndex = 0;
@@ -634,21 +648,22 @@ namespace IsbaRestaurant.UI.FrontOffice
             // panelUrunHareket
             // 
             this.panelUrunHareket.Controls.Add(this.gridControl1);
+            this.panelUrunHareket.Controls.Add(this.panelControl4);
             this.panelUrunHareket.Controls.Add(this.panelControl2);
             this.panelUrunHareket.Controls.Add(this.panelUrunHareketMenu);
             this.panelUrunHareket.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelUrunHareket.Location = new System.Drawing.Point(80, 0);
             this.panelUrunHareket.Name = "panelUrunHareket";
-            this.panelUrunHareket.Size = new System.Drawing.Size(521, 522);
+            this.panelUrunHareket.Size = new System.Drawing.Size(462, 522);
             this.panelUrunHareket.TabIndex = 1;
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 43);
+            this.gridControl1.Location = new System.Drawing.Point(2, 81);
             this.gridControl1.MainView = this.layoutView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(517, 404);
+            this.gridControl1.Size = new System.Drawing.Size(458, 366);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.layoutView1});
@@ -949,6 +964,70 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.item6.Text = "Toplam Tutar";
             this.item6.TextSize = new System.Drawing.Size(76, 13);
             // 
+            // panelControl4
+            // 
+            this.panelControl4.Controls.Add(this.btnIndirim);
+            this.panelControl4.Controls.Add(this.btnBol);
+            this.panelControl4.Controls.Add(this.btnIade);
+            this.panelControl4.Controls.Add(this.btnMiktarAzalt);
+            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl4.Location = new System.Drawing.Point(2, 43);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Size = new System.Drawing.Size(458, 38);
+            this.panelControl4.TabIndex = 3;
+            // 
+            // btnIndirim
+            // 
+            this.btnIndirim.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnIndirim.Appearance.Options.UseFont = true;
+            this.btnIndirim.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnIndirim.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnIndirim.Location = new System.Drawing.Point(344, 2);
+            this.btnIndirim.Name = "btnIndirim";
+            this.btnIndirim.Size = new System.Drawing.Size(114, 34);
+            this.btnIndirim.TabIndex = 6;
+            this.btnIndirim.Text = "İNDİRİM";
+            this.btnIndirim.Click += new System.EventHandler(this.btnIndirim_Click);
+            // 
+            // btnBol
+            // 
+            this.btnBol.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnBol.Appearance.Options.UseFont = true;
+            this.btnBol.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnBol.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBol.ImageOptions.Image")));
+            this.btnBol.Location = new System.Drawing.Point(230, 2);
+            this.btnBol.Name = "btnBol";
+            this.btnBol.Size = new System.Drawing.Size(114, 34);
+            this.btnBol.TabIndex = 5;
+            this.btnBol.Text = "BÖL";
+            this.btnBol.Click += new System.EventHandler(this.btnBol_Click);
+            // 
+            // btnIade
+            // 
+            this.btnIade.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnIade.Appearance.Options.UseFont = true;
+            this.btnIade.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnIade.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnIade.ImageOptions.Image")));
+            this.btnIade.Location = new System.Drawing.Point(116, 2);
+            this.btnIade.Name = "btnIade";
+            this.btnIade.Size = new System.Drawing.Size(114, 34);
+            this.btnIade.TabIndex = 3;
+            this.btnIade.Text = "İADE";
+            this.btnIade.Click += new System.EventHandler(this.btnIade_Click);
+            // 
+            // btnMiktarAzalt
+            // 
+            this.btnMiktarAzalt.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMiktarAzalt.Appearance.Options.UseFont = true;
+            this.btnMiktarAzalt.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnMiktarAzalt.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMiktarAzalt.ImageOptions.Image")));
+            this.btnMiktarAzalt.Location = new System.Drawing.Point(2, 2);
+            this.btnMiktarAzalt.Name = "btnMiktarAzalt";
+            this.btnMiktarAzalt.Size = new System.Drawing.Size(114, 34);
+            this.btnMiktarAzalt.TabIndex = 1;
+            this.btnMiktarAzalt.Text = "AZALT";
+            this.btnMiktarAzalt.Click += new System.EventHandler(this.btnMiktarAzalt_Click);
+            // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.txtUrunHareketIndirimTutar);
@@ -960,16 +1039,16 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl2.Location = new System.Drawing.Point(2, 447);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(517, 73);
+            this.panelControl2.Size = new System.Drawing.Size(458, 73);
             this.panelControl2.TabIndex = 1;
             // 
             // txtUrunHareketIndirimTutar
             // 
-            this.txtUrunHareketIndirimTutar.Location = new System.Drawing.Point(370, 6);
+            this.txtUrunHareketIndirimTutar.Location = new System.Drawing.Point(358, 4);
             this.txtUrunHareketIndirimTutar.Name = "txtUrunHareketIndirimTutar";
             this.txtUrunHareketIndirimTutar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtUrunHareketIndirimTutar.Properties.Appearance.Options.UseFont = true;
-            this.txtUrunHareketIndirimTutar.Size = new System.Drawing.Size(145, 26);
+            this.txtUrunHareketIndirimTutar.Size = new System.Drawing.Size(95, 26);
             this.txtUrunHareketIndirimTutar.TabIndex = 2;
             // 
             // labelControl1
@@ -980,7 +1059,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl1.Location = new System.Drawing.Point(250, 5);
+            this.labelControl1.Location = new System.Drawing.Point(238, 6);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(114, 26);
             this.labelControl1.TabIndex = 1;
@@ -992,7 +1071,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.txtUrunhareketOdenecekTutar.Name = "txtUrunhareketOdenecekTutar";
             this.txtUrunhareketOdenecekTutar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtUrunhareketOdenecekTutar.Properties.Appearance.Options.UseFont = true;
-            this.txtUrunhareketOdenecekTutar.Size = new System.Drawing.Size(388, 26);
+            this.txtUrunhareketOdenecekTutar.Size = new System.Drawing.Size(326, 26);
             this.txtUrunhareketOdenecekTutar.TabIndex = 2;
             // 
             // labelControl3
@@ -1015,7 +1094,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.txtToplamUrunHareketTutar.Name = "txtToplamUrunHareketTutar";
             this.txtToplamUrunHareketTutar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtToplamUrunHareketTutar.Properties.Appearance.Options.UseFont = true;
-            this.txtToplamUrunHareketTutar.Size = new System.Drawing.Size(115, 26);
+            this.txtToplamUrunHareketTutar.Size = new System.Drawing.Size(103, 26);
             this.txtToplamUrunHareketTutar.TabIndex = 2;
             // 
             // labelControl2
@@ -1034,91 +1113,66 @@ namespace IsbaRestaurant.UI.FrontOffice
             // 
             // panelUrunHareketMenu
             // 
-            this.panelUrunHareketMenu.Controls.Add(this.simpleButton7);
-            this.panelUrunHareketMenu.Controls.Add(this.simpleButton6);
-            this.panelUrunHareketMenu.Controls.Add(this.simpleButton5);
-            this.panelUrunHareketMenu.Controls.Add(this.simpleButton4);
+            this.panelUrunHareketMenu.Controls.Add(this.btnEkMalzeme);
+            this.panelUrunHareketMenu.Controls.Add(this.btnIkram);
             this.panelUrunHareketMenu.Controls.Add(this.btnFiyatDegistir);
-            this.panelUrunHareketMenu.Controls.Add(this.btnMiktarAzalt);
             this.panelUrunHareketMenu.Controls.Add(this.btnMiktarArttir);
             this.panelUrunHareketMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelUrunHareketMenu.Location = new System.Drawing.Point(2, 2);
             this.panelUrunHareketMenu.Name = "panelUrunHareketMenu";
-            this.panelUrunHareketMenu.Size = new System.Drawing.Size(517, 41);
+            this.panelUrunHareketMenu.Size = new System.Drawing.Size(458, 41);
             this.panelUrunHareketMenu.TabIndex = 0;
             // 
-            // simpleButton7
+            // btnEkMalzeme
             // 
-            this.simpleButton7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton7.ImageOptions.Image")));
-            this.simpleButton7.Location = new System.Drawing.Point(434, 2);
-            this.simpleButton7.Name = "simpleButton7";
-            this.simpleButton7.Size = new System.Drawing.Size(80, 37);
-            this.simpleButton7.TabIndex = 6;
-            this.simpleButton7.Text = "Ek\r\nMalzeme";
+            this.btnEkMalzeme.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnEkMalzeme.Appearance.Options.UseFont = true;
+            this.btnEkMalzeme.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnEkMalzeme.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEkMalzeme.ImageOptions.Image")));
+            this.btnEkMalzeme.Location = new System.Drawing.Point(344, 2);
+            this.btnEkMalzeme.Name = "btnEkMalzeme";
+            this.btnEkMalzeme.Size = new System.Drawing.Size(114, 37);
+            this.btnEkMalzeme.TabIndex = 6;
+            this.btnEkMalzeme.Text = "EK\r\nMALZEME";
+            this.btnEkMalzeme.Click += new System.EventHandler(this.btnEkMalzeme_Click);
             // 
-            // simpleButton6
+            // btnIkram
             // 
-            this.simpleButton6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
-            this.simpleButton6.Location = new System.Drawing.Point(362, 2);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(72, 37);
-            this.simpleButton6.TabIndex = 5;
-            this.simpleButton6.Text = "Böl";
-            // 
-            // simpleButton5
-            // 
-            this.simpleButton5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(290, 2);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(72, 37);
-            this.simpleButton5.TabIndex = 4;
-            this.simpleButton5.Text = "İkram";
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(218, 2);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(72, 37);
-            this.simpleButton4.TabIndex = 3;
-            this.simpleButton4.Text = "İade";
-            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+            this.btnIkram.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnIkram.Appearance.Options.UseFont = true;
+            this.btnIkram.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnIkram.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnIkram.ImageOptions.Image")));
+            this.btnIkram.Location = new System.Drawing.Point(230, 2);
+            this.btnIkram.Name = "btnIkram";
+            this.btnIkram.Size = new System.Drawing.Size(114, 37);
+            this.btnIkram.TabIndex = 4;
+            this.btnIkram.Text = "İKRAM";
+            this.btnIkram.Click += new System.EventHandler(this.btnIkram_Click);
             // 
             // btnFiyatDegistir
             // 
+            this.btnFiyatDegistir.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnFiyatDegistir.Appearance.Options.UseFont = true;
             this.btnFiyatDegistir.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnFiyatDegistir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.btnFiyatDegistir.Location = new System.Drawing.Point(146, 2);
+            this.btnFiyatDegistir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFiyatDegistir.ImageOptions.Image")));
+            this.btnFiyatDegistir.Location = new System.Drawing.Point(116, 2);
             this.btnFiyatDegistir.Name = "btnFiyatDegistir";
-            this.btnFiyatDegistir.Size = new System.Drawing.Size(72, 37);
+            this.btnFiyatDegistir.Size = new System.Drawing.Size(114, 37);
             this.btnFiyatDegistir.TabIndex = 2;
-            this.btnFiyatDegistir.Text = "Fiyat\r\nDeğiştir";
+            this.btnFiyatDegistir.Text = "FİYAT\r\nDEĞİŞTİR";
             this.btnFiyatDegistir.Click += new System.EventHandler(this.btnFiyatDegistir_Click);
-            // 
-            // btnMiktarAzalt
-            // 
-            this.btnMiktarAzalt.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnMiktarAzalt.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.btnMiktarAzalt.Location = new System.Drawing.Point(74, 2);
-            this.btnMiktarAzalt.Name = "btnMiktarAzalt";
-            this.btnMiktarAzalt.Size = new System.Drawing.Size(72, 37);
-            this.btnMiktarAzalt.TabIndex = 1;
-            this.btnMiktarAzalt.Text = "Azalt";
-            this.btnMiktarAzalt.Click += new System.EventHandler(this.btnMiktarAzalt_Click);
             // 
             // btnMiktarArttir
             // 
+            this.btnMiktarArttir.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMiktarArttir.Appearance.Options.UseFont = true;
             this.btnMiktarArttir.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnMiktarArttir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnMiktarArttir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMiktarArttir.ImageOptions.Image")));
             this.btnMiktarArttir.Location = new System.Drawing.Point(2, 2);
             this.btnMiktarArttir.Name = "btnMiktarArttir";
-            this.btnMiktarArttir.Size = new System.Drawing.Size(72, 37);
+            this.btnMiktarArttir.Size = new System.Drawing.Size(114, 37);
             this.btnMiktarArttir.TabIndex = 0;
-            this.btnMiktarArttir.Text = "Arttır";
+            this.btnMiktarArttir.Text = "ARTTIR";
             this.btnMiktarArttir.Click += new System.EventHandler(this.btnMiktarArttir_Click);
             // 
             // panelHareketSolMenu
@@ -1204,24 +1258,12 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnUrunEkle.TabIndex = 0;
             this.btnUrunEkle.Text = "Ürün Ekle";
             // 
-            // btnKategoriyeDon
-            // 
-            this.btnKategoriyeDon.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnKategoriyeDon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKategoriyeDon.ImageOptions.Image")));
-            this.btnKategoriyeDon.Location = new System.Drawing.Point(1047, 2);
-            this.btnKategoriyeDon.Name = "btnKategoriyeDon";
-            this.btnKategoriyeDon.Size = new System.Drawing.Size(126, 45);
-            this.btnKategoriyeDon.TabIndex = 0;
-            this.btnKategoriyeDon.Text = "Ürünlere Dön";
-            this.btnKategoriyeDon.Visible = false;
-            this.btnKategoriyeDon.Click += new System.EventHandler(this.btnKategoriyeDon_Click);
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 571);
-            this.Controls.Add(this.navigationFrame1);
+            this.Controls.Add(this.navigationMain);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMain";
@@ -1230,9 +1272,9 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).EndInit();
-            this.navigationFrame1.ResumeLayout(false);
-            this.navigationPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.navigationMain)).EndInit();
+            this.navigationMain.ResumeLayout(false);
+            this.pageAdisyonAyrinti.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelUrunHareketHizliSatis)).EndInit();
             this.panelUrunHareketHizliSatis.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navigationKategori)).EndInit();
@@ -1273,6 +1315,8 @@ namespace IsbaRestaurant.UI.FrontOffice
             ((System.ComponentModel.ISupportInitialize)(this.item2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.item5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.item6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtUrunHareketIndirimTutar.Properties)).EndInit();
@@ -1289,9 +1333,9 @@ namespace IsbaRestaurant.UI.FrontOffice
         #endregion
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraBars.Navigation.NavigationFrame navigationFrame1;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage1;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
+        private DevExpress.XtraBars.Navigation.NavigationFrame navigationMain;
+        private DevExpress.XtraBars.Navigation.NavigationPage pageMasa;
+        private DevExpress.XtraBars.Navigation.NavigationPage pageAdisyonAyrinti;
         private DevExpress.XtraEditors.PanelControl panelHareketSolMenu;
         private DevExpress.XtraEditors.SimpleButton btnAdisyonDetay;
         private DevExpress.XtraEditors.SimpleButton btnYazdir;
@@ -1327,10 +1371,10 @@ namespace IsbaRestaurant.UI.FrontOffice
         private DevExpress.XtraEditors.SimpleButton btnYedi;
         private DevExpress.XtraEditors.CalcEdit txtMiktar;
         private DevExpress.XtraGrid.Views.Layout.LayoutView layoutView1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton7;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton btnEkMalzeme;
+        private DevExpress.XtraEditors.SimpleButton btnBol;
+        private DevExpress.XtraEditors.SimpleButton btnIkram;
+        private DevExpress.XtraEditors.SimpleButton btnIade;
         private DevExpress.XtraEditors.SimpleButton btnFiyatDegistir;
         private DevExpress.XtraEditors.SimpleButton btnMiktarAzalt;
         private DevExpress.XtraEditors.SimpleButton btnMiktarArttir;
@@ -1372,6 +1416,8 @@ namespace IsbaRestaurant.UI.FrontOffice
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.SimpleButton btnKategoriyeDon;
+        private DevExpress.XtraEditors.PanelControl panelControl4;
+        private DevExpress.XtraEditors.SimpleButton btnIndirim;
     }
 }
 
