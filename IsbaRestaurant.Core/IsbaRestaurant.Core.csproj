@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\CloneEntity.cs" />
     <Compile Include="Extensions\ConvertTypes.cs" />
     <Compile Include="Extensions\InculudeMultiple.cs" />
     <Compile Include="Functions\ConnectionStringInfo.cs" />

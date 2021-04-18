@@ -13,19 +13,37 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using IsbaRestaurant.Entities.Tables;
+using DevExpress.XtraGrid.Views.Layout;
 
 namespace IsbaRestaurant.UI.FrontOffice
 {
     public partial class FrmMain : DevExpress.XtraEditors.XtraForm
     {
+        enum KeypadIslem
+        {
+            Yok,
+            FiyatDegistir
+
+        }
         RestaurantWorker worker = new RestaurantWorker();
         UrunHareket urunHareketEntity;
+        private KeypadIslem keypadIslem = KeypadIslem.Yok;
         public FrmMain()
         {
             InitializeComponent();
             KategoriButtonOlustur();
             gridControl1.DataSource = worker.UrunHareketService.BindingList();
-        
+
+        }
+        private void MiktarArttir(int sayi)
+        {
+            UrunHareket row = (UrunHareket)layoutView1.GetFocusedRow();
+            if (sayi<0&&row.Miktar<=1)
+            {
+                return;
+            }
+            row.Miktar +=sayi;
+            layoutView1.RefreshData();
         }
         private void KategoriButtonOlustur()
         {
@@ -76,8 +94,15 @@ namespace IsbaRestaurant.UI.FrontOffice
 
         private void UrunClick(object sender, EventArgs e)
         {
-            flowPorsiyon.Controls.Clear();
+
             ControlKategoriUrun button = (ControlKategoriUrun)sender;
+            if (!button.Porsiyonlar.Any())
+            {
+                MessageBox.Show("Bu Ürüne Atanmış Bir Porsiyon Bulunamadı");
+                return;
+            }
+            btnKategoriyeDon.Visible = true;
+            flowPorsiyon.Controls.Clear();
             urunHareketEntity = new UrunHareket();
             //Silinecek
             Adisyon entity = new Adisyon();
@@ -88,6 +113,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             urunHareketEntity.Id = Guid.NewGuid();
             urunHareketEntity.UrunId = button.Id;
             urunHareketEntity.Miktar = txtMiktar.Value;
+            urunHareketEntity.UrunHareketTip = UrunHareketTip.Satis;
             navigationKategori.SelectedPage = pageUrunPorsiyon;
             foreach (var porsiyon in button.Porsiyonlar)
             {
@@ -98,43 +124,65 @@ namespace IsbaRestaurant.UI.FrontOffice
                     Fiyat = porsiyon.Fiyat,
                     EkMalzemeCarpan = porsiyon.EkMalzemeCarpan,
                     Id = porsiyon.Id,
-                    Height=200,
-                    Width=200,
-                    Font=new Font("Tahoma",12,FontStyle.Bold),
-                    EkMalzemeler=button.EkMalzemeler
+                    Height = 200,
+                    Width = 200,
+                    Font = new Font("Tahoma", 12, FontStyle.Bold),
+                    EkMalzemeler = button.EkMalzemeler
 
 
                 };
                 porsiyonButton.Click += PorsiyonClick;
                 flowPorsiyon.Controls.Add(porsiyonButton);
             }
+            if (button.Porsiyonlar.Count() == 1)
+            {
+                ControlPorsiyonButton buttonPorsiyon = (ControlPorsiyonButton)flowPorsiyon.Controls[0];
+                buttonPorsiyon.PerformClick();
+            }
 
         }
 
         private void PorsiyonClick(object sender, EventArgs e)
         {
-            flowEkMalzeme.Controls.Clear();
+
             ControlPorsiyonButton button = (ControlPorsiyonButton)sender;
             urunHareketEntity.PorsiyonId = button.Id;
             urunHareketEntity.BirimFiyat = button.Fiyat;
+            txtPorsiyonTutar.Value = button.Fiyat;
+            if (!button.EkMalzemeler.Any())
+            {
+
+                UrunHareketEkle();
+                navigationKategori.SelectedPage = pageKategoriUrunler;
+                return;
+            }
+            txtToplamTutar.Value = txtPorsiyonTutar.Value + txtEkMalzemeTutar.Value;
+
+            flowEkMalzeme.Controls.Clear();
             foreach (var malzeme in button.EkMalzemeler)
             {
-               
+
                 ControlEkMalzemeButton MalzemeButton = new ControlEkMalzemeButton
                 {
                     Name = malzeme.Id.ToString(),
-                    Text = malzeme.EkmalzemeAdi + "\n" + malzeme.Fiyat.ToString("C2"),
+                    Text = malzeme.EkmalzemeAdi + "\n" + (malzeme.Fiyat * button.EkMalzemeCarpan).ToString("C2"),
                     Font = new Font("Tahoma", 12, FontStyle.Bold),
-                    Height =200,
-                    Width=200,
-                    Id=malzeme.Id,
-                    Fiyat=malzeme.Fiyat
+                    Height = 200,
+                    Width = 200,
+                    Id = malzeme.Id,
+                    Fiyat = malzeme.Fiyat * button.EkMalzemeCarpan
                 };
+                MalzemeButton.CheckedChanged += MalzemeCheckedChanged;
                 flowEkMalzeme.Controls.Add(MalzemeButton);
             }
 
             navigationKategori.SelectedPage = pageEkMalzeme;
 
+        }
+
+        private void MalzemeCheckedChanged(object sender, EventArgs e)
+        {
+            EkMalzemeHesapla();
         }
 
         private void btnEkMalzemeOnay_Click(object sender, EventArgs e)
@@ -152,12 +200,118 @@ namespace IsbaRestaurant.UI.FrontOffice
                     });
                 }
             }
-            worker.UrunHareketService.AddOrUpdate(urunHareketEntity);
-            worker.UrunService.Load(c => c.Id==urunHareketEntity.UrunId);
-            worker.PorsiyonService.Load(c => c.Id == urunHareketEntity.PorsiyonId);
-            worker.TanimService.Load(c => c.Id == urunHareketEntity.Porsiyon.BirimId);
-            layoutView1.RefreshData();
+            UrunHareketEkle();
             navigationKategori.SelectedPage = pageKategoriUrunler;
+            txtMiktar.Value = 1;
+        }
+        void UrunHareketEkle()
+        {
+            btnKategoriyeDon.Visible = false;
+            worker.UrunHareketService.AddOrUpdate(urunHareketEntity);
+            worker.UrunService.Load(c => c.Id == urunHareketEntity.UrunId);
+            worker.PorsiyonService.Load(c => c.Id == urunHareketEntity.PorsiyonId);
+            Guid id = urunHareketEntity.Porsiyon.BirimId;
+            worker.TanimService.Load(c => c.Id == id);
+            layoutView1.RefreshData();
+        }
+        void EkMalzemeHesapla()
+        {
+            txtEkMalzemeTutar.Value = 0;
+            foreach (ControlEkMalzemeButton button in flowEkMalzeme.Controls)
+            {
+                if (button.Checked)
+                {
+                    txtEkMalzemeTutar.Value += button.Fiyat;
+                }
+            }
+            txtToplamTutar.Value = txtPorsiyonTutar.Value + txtEkMalzemeTutar.Value;
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            UrunHareket entity = (UrunHareket)layoutView1.GetFocusedRow();
+            entity.UrunHareketTip = UrunHareketTip.Iptal;
+            layoutView1.RefreshData();
+        }
+
+        private void layoutView1_CustomCardStyle(object sender, DevExpress.XtraGrid.Views.Layout.Events.LayoutViewCardStyleEventArgs e)
+        {
+            LayoutView view = (LayoutView)sender;
+            UrunHareket row = (UrunHareket)view.GetRow(e.RowHandle);
+            if (view.FocusedRowHandle == e.RowHandle)
+            {
+                e.Appearance.BackColor = Color.DarkSeaGreen;
+                return;
+            }
+            switch (row.UrunHareketTip)
+            {
+                case UrunHareketTip.Satis:
+                    e.Appearance.BackColor = Color.PaleTurquoise;
+                    break;
+                case UrunHareketTip.Iptal:
+                    e.Appearance.BackColor = Color.Tomato;
+                    break;
+                case UrunHareketTip.Ikram:
+                    e.Appearance.BackColor = Color.MediumSpringGreen;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void KeyPadSend(object sender, EventArgs e)
+        {
+            SimpleButton button = (SimpleButton)sender;
+            txtMiktar.Focus();
+            SendKeys.Send(button.Text);
+        }
+
+        private void btnKategoriyeDon_Click(object sender, EventArgs e)
+        {
+            navigationKategori.SelectedPage = pageKategoriUrunler;
+            btnKategoriyeDon.Visible = false;
+            txtPorsiyonTutar.Value = 0;
+            txtEkMalzemeTutar.Value = 0;
+            txtMiktar.Value = 1;
+        }
+
+        private void btnMiktarArttir_Click(object sender, EventArgs e)
+        {
+            MiktarArttir(1);
+        }
+
+        private void btnMiktarAzalt_Click(object sender, EventArgs e)
+        {
+            MiktarArttir(-1);
+        }
+
+        private void btnFiyatDegistir_Click(object sender, EventArgs e)
+        {
+            if (layoutView1.GetFocusedRow()==null)
+            {
+                return;
+            }
+            keypadIslem = KeypadIslem.FiyatDegistir;
+            txtMiktar.Value = 0;
+            txtMiktar.BackColor = Color.Green;
+            txtMiktar.Properties.NullValuePrompt = "Lütfen Yeni Fiyat Giriniz";
+        }
+
+        private void btnKeypadOk_Click(object sender, EventArgs e)
+        {
+            switch (keypadIslem)
+            {
+            
+                case KeypadIslem.FiyatDegistir:
+                    UrunHareket hareketEntity = (UrunHareket)layoutView1.GetFocusedRow();
+                    hareketEntity.BirimFiyat = txtMiktar.Value;
+                    layoutView1.RefreshData();
+                    break;
+                
+            }
+            keypadIslem = KeypadIslem.Yok;
+            txtMiktar.Value = 1;
+            txtMiktar.BackColor = Color.White;
         }
     }
 }
