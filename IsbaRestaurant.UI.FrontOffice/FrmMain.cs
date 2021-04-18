@@ -40,6 +40,21 @@ namespace IsbaRestaurant.UI.FrontOffice
             gridControl1.DataSource = worker.UrunHareketService.BindingList();
 
         }
+        void MasaButtonOlustur()
+        {
+            foreach (var konum in worker.TanimService.GetList(c=>c.TanimTip==TanimTip.Konum))
+            {
+                SimpleButton button = new SimpleButton
+                {
+                    Name = konum.Id.ToString(),
+                    Text = konum.Adi,
+                    Height = 50,
+                    Width = 100
+
+                };
+                flowKonum.Controls.Add(button);
+            }
+        }
         private void MiktarArttir(int sayi)
         {
             UrunHareket row = (UrunHareket)layoutView1.GetFocusedRow();

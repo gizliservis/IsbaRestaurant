@@ -116,10 +116,13 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnAdisyonDetay = new DevExpress.XtraEditors.SimpleButton();
             this.btnYazdir = new DevExpress.XtraEditors.SimpleButton();
             this.btnUrunEkle = new DevExpress.XtraEditors.SimpleButton();
+            this.flowKonum = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationMain)).BeginInit();
             this.navigationMain.SuspendLayout();
+            this.pageMasa.SuspendLayout();
             this.pageAdisyonAyrinti.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelUrunHareketHizliSatis)).BeginInit();
             this.panelUrunHareketHizliSatis.SuspendLayout();
@@ -205,13 +208,15 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.navigationMain.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.pageMasa,
             this.pageAdisyonAyrinti});
-            this.navigationMain.SelectedPage = this.pageAdisyonAyrinti;
+            this.navigationMain.SelectedPage = this.pageMasa;
             this.navigationMain.Size = new System.Drawing.Size(1175, 522);
             this.navigationMain.TabIndex = 1;
             this.navigationMain.Text = "navigationFrame1";
             // 
             // pageMasa
             // 
+            this.pageMasa.Controls.Add(this.flowLayoutPanel1);
+            this.pageMasa.Controls.Add(this.flowKonum);
             this.pageMasa.Name = "pageMasa";
             this.pageMasa.Size = new System.Drawing.Size(1175, 522);
             // 
@@ -981,7 +986,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnIndirim.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnIndirim.Appearance.Options.UseFont = true;
             this.btnIndirim.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnIndirim.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnIndirim.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnIndirim.ImageOptions.Image")));
             this.btnIndirim.Location = new System.Drawing.Point(344, 2);
             this.btnIndirim.Name = "btnIndirim";
             this.btnIndirim.Size = new System.Drawing.Size(114, 34);
@@ -1258,6 +1263,22 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnUrunEkle.TabIndex = 0;
             this.btnUrunEkle.Text = "Ürün Ekle";
             // 
+            // flowKonum
+            // 
+            this.flowKonum.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowKonum.Location = new System.Drawing.Point(0, 0);
+            this.flowKonum.Name = "flowKonum";
+            this.flowKonum.Size = new System.Drawing.Size(1175, 90);
+            this.flowKonum.TabIndex = 0;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 90);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1175, 432);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1274,6 +1295,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navigationMain)).EndInit();
             this.navigationMain.ResumeLayout(false);
+            this.pageMasa.ResumeLayout(false);
             this.pageAdisyonAyrinti.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelUrunHareketHizliSatis)).EndInit();
             this.panelUrunHareketHizliSatis.ResumeLayout(false);
@@ -1418,6 +1440,8 @@ namespace IsbaRestaurant.UI.FrontOffice
         private DevExpress.XtraEditors.SimpleButton btnKategoriyeDon;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.SimpleButton btnIndirim;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowKonum;
     }
 }
 
