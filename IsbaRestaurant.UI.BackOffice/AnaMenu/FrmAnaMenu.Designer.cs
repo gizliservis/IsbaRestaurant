@@ -32,10 +32,11 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             this.components = new System.ComponentModel.Container();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnUrun = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMusteri = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.btnMasa = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -47,9 +48,10 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
             this.btnUrun,
-            this.barButtonItem1});
+            this.btnMusteri,
+            this.btnMasa});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 3;
+            this.ribbonControl1.MaxItemId = 4;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -62,12 +64,12 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             this.btnUrun.Name = "btnUrun";
             this.btnUrun.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUrun_ItemClick);
             // 
-            // barButtonItem1
+            // btnMusteri
             // 
-            this.barButtonItem1.Caption = "Müşteriler";
-            this.barButtonItem1.Id = 2;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            this.btnMusteri.Caption = "Müşteriler";
+            this.btnMusteri.Id = 2;
+            this.btnMusteri.Name = "btnMusteri";
+            this.btnMusteri.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMusteri_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -79,13 +81,21 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.btnUrun);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnMusteri);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnMasa);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
+            // btnMasa
+            // 
+            this.btnMasa.Caption = "Masalar";
+            this.btnMasa.Id = 3;
+            this.btnMasa.Name = "btnMasa";
+            this.btnMasa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMasa_ItemClick);
             // 
             // FrmAnaMenu
             // 
@@ -116,7 +126,8 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private DevExpress.XtraBars.BarButtonItem btnUrun;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnMusteri;
+        private DevExpress.XtraBars.BarButtonItem btnMasa;
     }
 }
 

@@ -67,6 +67,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             if (MessageBox.Show("Seçili Olan Veriyi Silmek İster misiniz ?","Uyarı",MessageBoxButtons.YesNo)==DialogResult.Yes)
             {
                 gridUrunler.DeleteSelectedRows();
+                worker.Commit();
                 listele();
             }
         
