@@ -34,6 +34,8 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnKategoriyeDon = new DevExpress.XtraEditors.SimpleButton();
             this.navigationMain = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.pageMasa = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.flowMasalar = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowKonum = new System.Windows.Forms.FlowLayoutPanel();
             this.pageAdisyonAyrinti = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.panelUrunHareketHizliSatis = new DevExpress.XtraEditors.PanelControl();
             this.navigationKategori = new DevExpress.XtraBars.Navigation.NavigationFrame();
@@ -116,8 +118,8 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnAdisyonDetay = new DevExpress.XtraEditors.SimpleButton();
             this.btnYazdir = new DevExpress.XtraEditors.SimpleButton();
             this.btnUrunEkle = new DevExpress.XtraEditors.SimpleButton();
-            this.flowKonum = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupKonumlar = new DevExpress.XtraEditors.GroupControl();
+            this.groupMasalar = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationMain)).BeginInit();
@@ -175,6 +177,10 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.panelUrunHareketMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelHareketSolMenu)).BeginInit();
             this.panelHareketSolMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupKonumlar)).BeginInit();
+            this.groupKonumlar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupMasalar)).BeginInit();
+            this.groupMasalar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -215,13 +221,30 @@ namespace IsbaRestaurant.UI.FrontOffice
             // 
             // pageMasa
             // 
-            this.pageMasa.Controls.Add(this.flowLayoutPanel1);
-            this.pageMasa.Controls.Add(this.flowKonum);
+            this.pageMasa.Controls.Add(this.groupMasalar);
+            this.pageMasa.Controls.Add(this.groupKonumlar);
             this.pageMasa.Name = "pageMasa";
             this.pageMasa.Size = new System.Drawing.Size(1175, 522);
             // 
+            // flowMasalar
+            // 
+            this.flowMasalar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowMasalar.Location = new System.Drawing.Point(2, 23);
+            this.flowMasalar.Name = "flowMasalar";
+            this.flowMasalar.Size = new System.Drawing.Size(1171, 397);
+            this.flowMasalar.TabIndex = 1;
+            // 
+            // flowKonum
+            // 
+            this.flowKonum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowKonum.Location = new System.Drawing.Point(2, 23);
+            this.flowKonum.Name = "flowKonum";
+            this.flowKonum.Size = new System.Drawing.Size(1171, 75);
+            this.flowKonum.TabIndex = 0;
+            // 
             // pageAdisyonAyrinti
             // 
+            this.pageAdisyonAyrinti.Caption = "pageAdisyonAyrinti";
             this.pageAdisyonAyrinti.Controls.Add(this.panelUrunHareketHizliSatis);
             this.pageAdisyonAyrinti.Controls.Add(this.panelUrunHareket);
             this.pageAdisyonAyrinti.Controls.Add(this.panelHareketSolMenu);
@@ -1263,21 +1286,25 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnUrunEkle.TabIndex = 0;
             this.btnUrunEkle.Text = "Ürün Ekle";
             // 
-            // flowKonum
+            // groupKonumlar
             // 
-            this.flowKonum.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowKonum.Location = new System.Drawing.Point(0, 0);
-            this.flowKonum.Name = "flowKonum";
-            this.flowKonum.Size = new System.Drawing.Size(1175, 90);
-            this.flowKonum.TabIndex = 0;
+            this.groupKonumlar.Controls.Add(this.flowKonum);
+            this.groupKonumlar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupKonumlar.Location = new System.Drawing.Point(0, 0);
+            this.groupKonumlar.Name = "groupKonumlar";
+            this.groupKonumlar.Size = new System.Drawing.Size(1175, 100);
+            this.groupKonumlar.TabIndex = 2;
+            this.groupKonumlar.Text = "Konumlar";
             // 
-            // flowLayoutPanel1
+            // groupMasalar
             // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 90);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1175, 432);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.groupMasalar.Controls.Add(this.flowMasalar);
+            this.groupMasalar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupMasalar.Location = new System.Drawing.Point(0, 100);
+            this.groupMasalar.Name = "groupMasalar";
+            this.groupMasalar.Size = new System.Drawing.Size(1175, 422);
+            this.groupMasalar.TabIndex = 3;
+            this.groupMasalar.Text = "Masalar";
             // 
             // FrmMain
             // 
@@ -1348,6 +1375,10 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.panelUrunHareketMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelHareketSolMenu)).EndInit();
             this.panelHareketSolMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupKonumlar)).EndInit();
+            this.groupKonumlar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupMasalar)).EndInit();
+            this.groupMasalar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1440,8 +1471,10 @@ namespace IsbaRestaurant.UI.FrontOffice
         private DevExpress.XtraEditors.SimpleButton btnKategoriyeDon;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.SimpleButton btnIndirim;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowMasalar;
         private System.Windows.Forms.FlowLayoutPanel flowKonum;
+        private DevExpress.XtraEditors.GroupControl groupMasalar;
+        private DevExpress.XtraEditors.GroupControl groupKonumlar;
     }
 }
 

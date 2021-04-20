@@ -38,23 +38,45 @@ namespace IsbaRestaurant.UI.FrontOffice
             InitializeComponent();
             KategoriButtonOlustur();
             gridControl1.DataSource = worker.UrunHareketService.BindingList();
+            MasaButtonOlustur();
 
         }
         void MasaButtonOlustur()
         {
             foreach (var konum in worker.TanimService.GetList(c=>c.TanimTip==TanimTip.Konum))
             {
-                SimpleButton button = new SimpleButton
+                ControlKonumButton button = new ControlKonumButton
                 {
                     Name = konum.Id.ToString(),
                     Text = konum.Adi,
-                    Height = 50,
-                    Width = 100
+                    Height = 72,
+                    Width = 130,
+                    GroupIndex=1,
+                    Masalar=worker.MasaService.GetList(c=>c.KonumId==konum.Id)
 
                 };
+                button.CheckedChanged += KonumSecim;
                 flowKonum.Controls.Add(button);
             }
         }
+
+        private void KonumSecim(object sender, EventArgs e)
+        {
+            ControlKonumButton button = (ControlKonumButton)sender;
+            flowMasalar.Controls.Clear();
+            foreach (var masa in button.Masalar)
+            {
+                SimpleButton masaButton = new SimpleButton
+                {
+                    Name = masa.Id.ToString(),
+                    Text = masa.Adi,
+                    Height = 150,
+                    Width = 150
+                };
+                flowMasalar.Controls.Add(masaButton);
+            }
+        }
+
         private void MiktarArttir(int sayi)
         {
             UrunHareket row = (UrunHareket)layoutView1.GetFocusedRow();
