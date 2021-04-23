@@ -1,4 +1,5 @@
 ﻿using IsbaRestaurant.Core.Functions;
+using IsbaRestaurant.UI.BackOffice.Garson;
 using IsbaRestaurant.UI.BackOffice.Masa;
 using IsbaRestaurant.UI.BackOffice.Musteri;
 using IsbaRestaurant.UI.BackOffice.Urun;
@@ -44,6 +45,13 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
         {
             FrmMasa form = new FrmMasa();
             form.MdiParent = this;
+            form.Show();
+        }
+
+        private void btnGarson_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FrmGarson form = new FrmGarson();
+                form.MdiParent = this;
             form.Show();
         }
     }

@@ -41,8 +41,38 @@ namespace IsbaRestaurant.UI.FrontOffice
             KategoriButtonOlustur();
             gridControl1.DataSource = worker.UrunHareketService.BindingList();
             MasaButtonOlustur();
-
+            GarsonButtonOlustur();
         }
+        void GarsonButtonOlustur()
+        {
+            foreach (var garson in worker.GarsonService.GetList(null))
+            {
+                ControlGarsonCheckButton button = new ControlGarsonCheckButton
+                {
+                    Name = garson.Id.ToString(),
+                    Text = $"{garson.Adi} {garson.Soyadi}",
+                    Height = 150,
+                    Width = 150,
+                    Font = new Font("Tahoma", 12, FontStyle.Bold),
+                    GroupIndex = 1,
+                    GarsonId = garson.Id,
+                    Adi = garson.Adi,
+                    Soyadi = garson.Soyadi
+                };
+                button.CheckedChanged += GarsonSecim;
+                flowGarson.Controls.Add(button);
+            }
+        }
+
+        private void GarsonSecim(object sender, EventArgs e)
+        {
+            ControlGarsonCheckButton button = (ControlGarsonCheckButton)sender;
+            btnGarsonSecim.Adi = button.Adi;
+            btnGarsonSecim.Soyadi = button.Soyadi;
+            btnGarsonSecim.GarsonId = button.GarsonId;
+            navigationKategori.SelectedPage = pageKategoriUrunler;
+        }
+
         void MasaButtonOlustur()
         {
             foreach (var konum in worker.TanimService.GetList(c => c.TanimTip == TanimTip.Konum))
@@ -90,23 +120,20 @@ namespace IsbaRestaurant.UI.FrontOffice
                     buttonMasa.AdisyonId = adisyon.Id;
                 }
 
-
             }
         }
 
         private void MasaSec(object sender, EventArgs e)
         {
             ControlMasaButton button = (ControlMasaButton)sender;
+            btnGarsonSecim.Visible = true;
             if (button.MasaDurum == MasaDurum.Bos)
             {
                 secilenAdisyon = new Adisyon();
                 secilenAdisyon.Id = Guid.NewGuid();
                 secilenMasa = worker.MasaService.Get(c => c.Id == button.MasaId);
                 secilenAdisyon.MasaId = button.MasaId;
-                //Değişecek
-                Garson garson = worker.GarsonService.Get(c => c.Adi == "İsmail");
-                secilenAdisyon.GarsonId = garson.Id;
-                //değişecek
+                btnGarsonSecim.Text = "Garson Seçilmedi";
                 button.AdisyonId = secilenAdisyon.Id;
                 navigationMain.SelectedPage = pageAdisyonAyrinti;
             }
@@ -117,10 +144,18 @@ namespace IsbaRestaurant.UI.FrontOffice
                 worker.EkMalzemeHareketService.Load(null);
                 secilenAdisyon = worker.AdisyonService.Get(c => c.Id == button.AdisyonId);
                 secilenMasa = worker.MasaService.Get(c => c.Id == button.MasaId);
-                //Değişecek
-                Garson garson = worker.GarsonService.Get(c => c.Adi == "İsmail");
-                secilenAdisyon.GarsonId = garson.Id;
-                //Değişecek
+                Garson garson = worker.GarsonService.Get(c => c.Id == secilenAdisyon.GarsonId);
+                if (garson != null)
+                {
+
+                    btnGarsonSecim.Adi = garson.Adi;
+                    btnGarsonSecim.Soyadi = garson.Soyadi;
+                    btnGarsonSecim.GarsonId = garson.Id;
+                }
+                else
+                {
+                    btnGarsonSecim.Text = "Garson Seçilmedi";
+                }
                 button.AdisyonId = secilenAdisyon.Id;
                 navigationMain.SelectedPage = pageAdisyonAyrinti;
                 layoutView1.RefreshData();
@@ -310,7 +345,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             UrunHareketEkle();
             navigationKategori.SelectedPage = pageKategoriUrunler;
             txtMiktar.Value = 1;
-           
+
         }
         void UrunHareketEkle()
         {
@@ -584,11 +619,21 @@ namespace IsbaRestaurant.UI.FrontOffice
 
         private void btnSiparisKaydet_Click(object sender, EventArgs e)
         {
-            if (layoutView1.RowCount==0)
+
+            if (layoutView1.RowCount == 0)
             {
+                btnGarsonSecim.Visible = false;
                 navigationMain.SelectedPage = pageMasa;
                 return;
             }
+            if (btnGarsonSecim.GarsonId == Guid.Empty)
+            {
+                MessageBox.Show("Lütfen Bir Garson Seçiniz");
+                return;
+            }
+            btnGarsonSecim.Visible = false;
+            secilenAdisyon.GarsonId = btnGarsonSecim.GarsonId;
+            btnGarsonSecim.Clear();
             worker.AdisyonService.AddOrUpdate(secilenAdisyon);
             ControlMasaButton button = (ControlMasaButton)flowMasalar.Controls.Find(secilenMasa.Id.ToString(), true)[0];
             button.MasaDurum = MasaDurum.Dolu;
@@ -598,5 +643,12 @@ namespace IsbaRestaurant.UI.FrontOffice
             gridControl1.DataSource = worker.UrunHareketService.BindingList();
             navigationMain.SelectedPage = pageMasa;
         }
+
+        private void btnGarsonSecim_Click(object sender, EventArgs e)
+        {
+            navigationKategori.SelectedPage = pageGarson;
+
+        }
+
     }
 }
