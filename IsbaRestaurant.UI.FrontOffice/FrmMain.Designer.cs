@@ -31,6 +31,7 @@ namespace IsbaRestaurant.UI.FrontOffice
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnMusteri = new IsbaRestaurant.UserControls.ControlMusteriButton();
             this.btnGarsonSecim = new IsbaRestaurant.UserControls.ControlGarsonButton();
             this.btnKategoriyeDon = new DevExpress.XtraEditors.SimpleButton();
             this.navigationMain = new DevExpress.XtraBars.Navigation.NavigationFrame();
@@ -123,6 +124,8 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnAdisyonDetay = new DevExpress.XtraEditors.SimpleButton();
             this.btnYazdir = new DevExpress.XtraEditors.SimpleButton();
             this.btnUrunEkle = new DevExpress.XtraEditors.SimpleButton();
+            this.pageMusteri = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.flowMusteri = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationMain)).BeginInit();
@@ -185,10 +188,12 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.panelUrunHareketMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelHareketSolMenu)).BeginInit();
             this.panelHareketSolMenu.SuspendLayout();
+            this.pageMusteri.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.btnMusteri);
             this.panelControl1.Controls.Add(this.btnGarsonSecim);
             this.panelControl1.Controls.Add(this.btnKategoriyeDon);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -197,12 +202,28 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.panelControl1.Size = new System.Drawing.Size(1175, 49);
             this.panelControl1.TabIndex = 0;
             // 
+            // btnMusteri
+            // 
+            this.btnMusteri.Adi = null;
+            this.btnMusteri.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMusteri.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMusteri.ImageOptions.Image")));
+            this.btnMusteri.Location = new System.Drawing.Point(615, 2);
+            this.btnMusteri.MusteriId = new System.Guid("00000000-0000-0000-0000-000000000000");
+            this.btnMusteri.MusteriTip = IsbaRestaurant.Entities.Enums.MusteriTip.Yok;
+            this.btnMusteri.Name = "btnMusteri";
+            this.btnMusteri.Size = new System.Drawing.Size(216, 45);
+            this.btnMusteri.Soyadi = null;
+            this.btnMusteri.TabIndex = 2;
+            this.btnMusteri.Text = "Müşteri Seçilmedi";
+            this.btnMusteri.Visible = false;
+            this.btnMusteri.Click += new System.EventHandler(this.btnMusteri_Click);
+            // 
             // btnGarsonSecim
             // 
             this.btnGarsonSecim.Adi = null;
             this.btnGarsonSecim.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnGarsonSecim.GarsonId = new System.Guid("00000000-0000-0000-0000-000000000000");
-            this.btnGarsonSecim.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("controlGarsonButton1.ImageOptions.Image")));
+            this.btnGarsonSecim.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGarsonSecim.ImageOptions.Image")));
             this.btnGarsonSecim.Location = new System.Drawing.Point(831, 2);
             this.btnGarsonSecim.Name = "btnGarsonSecim";
             this.btnGarsonSecim.Size = new System.Drawing.Size(216, 45);
@@ -309,6 +330,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.navigationKategori.Controls.Add(this.pageUrunPorsiyon);
             this.navigationKategori.Controls.Add(this.pageEkMalzeme);
             this.navigationKategori.Controls.Add(this.pageGarson);
+            this.navigationKategori.Controls.Add(this.pageMusteri);
             this.navigationKategori.Dock = System.Windows.Forms.DockStyle.Fill;
             this.navigationKategori.Location = new System.Drawing.Point(214, 2);
             this.navigationKategori.Name = "navigationKategori";
@@ -316,7 +338,8 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.pageKategoriUrunler,
             this.pageUrunPorsiyon,
             this.pageEkMalzeme,
-            this.pageGarson});
+            this.pageGarson,
+            this.pageMusteri});
             this.navigationKategori.SelectedPage = this.pageKategoriUrunler;
             this.navigationKategori.Size = new System.Drawing.Size(417, 518);
             this.navigationKategori.TabIndex = 2;
@@ -324,7 +347,6 @@ namespace IsbaRestaurant.UI.FrontOffice
             // 
             // pageKategoriUrunler
             // 
-            this.pageKategoriUrunler.Caption = "pageKategoriUrunler";
             this.pageKategoriUrunler.Controls.Add(this.flowKategoriUrunleri);
             this.pageKategoriUrunler.Name = "pageKategoriUrunler";
             this.pageKategoriUrunler.Size = new System.Drawing.Size(417, 518);
@@ -499,7 +521,6 @@ namespace IsbaRestaurant.UI.FrontOffice
             // 
             // pageGarson
             // 
-            this.pageGarson.Caption = "pageGarson";
             this.pageGarson.Controls.Add(this.flowGarson);
             this.pageGarson.Name = "pageGarson";
             this.pageGarson.Size = new System.Drawing.Size(417, 518);
@@ -1345,6 +1366,20 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnUrunEkle.TabIndex = 0;
             this.btnUrunEkle.Text = "Ürün Ekle";
             // 
+            // pageMusteri
+            // 
+            this.pageMusteri.Controls.Add(this.flowMusteri);
+            this.pageMusteri.Name = "pageMusteri";
+            this.pageMusteri.Size = new System.Drawing.Size(417, 518);
+            // 
+            // flowMusteri
+            // 
+            this.flowMusteri.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowMusteri.Location = new System.Drawing.Point(0, 0);
+            this.flowMusteri.Name = "flowMusteri";
+            this.flowMusteri.Size = new System.Drawing.Size(417, 518);
+            this.flowMusteri.TabIndex = 0;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1419,6 +1454,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.panelUrunHareketMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelHareketSolMenu)).EndInit();
             this.panelHareketSolMenu.ResumeLayout(false);
+            this.pageMusteri.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1518,6 +1554,9 @@ namespace IsbaRestaurant.UI.FrontOffice
         private UserControls.ControlGarsonButton btnGarsonSecim;
         private DevExpress.XtraBars.Navigation.NavigationPage pageGarson;
         private System.Windows.Forms.FlowLayoutPanel flowGarson;
+        private UserControls.ControlMusteriButton btnMusteri;
+        private DevExpress.XtraBars.Navigation.NavigationPage pageMusteri;
+        private System.Windows.Forms.FlowLayoutPanel flowMusteri;
     }
 }
 

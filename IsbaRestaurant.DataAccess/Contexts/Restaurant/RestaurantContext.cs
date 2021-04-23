@@ -63,6 +63,7 @@ namespace IsbaRestaurant.DataAccess.Contexts.Restaurant
             //Musteri ilişkileri
             modelBuilder.Entity<Telefon>().HasRequired(c => c.Musteri).WithMany(c => c.Telefonlar).HasForeignKey(c => c.MusteriId);
             modelBuilder.Entity<Adres>().HasRequired(c => c.Musteri).WithMany(c => c.Adresler).HasForeignKey(c => c.MusteriId);
+            modelBuilder.Entity<Adisyon>().HasOptional(c => c.Musteri).WithMany(c => c.Adisyonlar).HasForeignKey(c => c.MusteriId);
             //Masa ilişkileri
             modelBuilder.Entity<Masa>().HasRequired(c => c.Konum).WithOptional().Map(c => c.MapKey("KonumId"));
             modelBuilder.Entity<Adisyon>().HasOptional(c => c.Masa).WithMany().HasForeignKey(c=>c.MasaId);

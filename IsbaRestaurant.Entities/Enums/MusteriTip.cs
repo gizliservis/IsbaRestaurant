@@ -8,8 +8,9 @@ namespace IsbaRestaurant.Entities.Enums
 {
     public enum MusteriTip
     {
-        Platin,
-        Gold,
-        Silver
+        Yok=0,
+        Platin=3,
+        Gold=2,
+        Silver=1
     }
 }

@@ -11,33 +11,33 @@ namespace IsbaRestaurant.UserControls
 {
     public class ControlMusteriButton : SimpleButton
     {
-        private MusteriTip musteriTip;
-
+        public ControlMusteriButton()
+        {
+            MusteriTip = MusteriTip.Yok;
+        }
         public Guid MusteriId { get; set; }
         public string Adi { get; set; }
-        public string Soyadı { get; set; }
-        public MusteriTip MusteriTip
+        public string Soyadi { get; set; }
+        public MusteriTip MusteriTip { get; set; }
+        public void Load()
         {
-            get
+            Text = $"{Adi} {Soyadi}";
+            switch (MusteriTip)
             {
-                return musteriTip;
-            }
-            set
-            {
-                switch (value)
-                {
-                    case MusteriTip.Platin:
-                        Appearance.BackColor = Color.LightPink;
-                        break;
-                    case MusteriTip.Gold:
-                        Appearance.BackColor = Color.Gold;
-                        break;
-                    case MusteriTip.Silver:
-                        Appearance.BackColor = Color.Silver;
-                        break;
-                    default:
-                        break;
-                }
+                case MusteriTip.Yok:
+                    Appearance.BackColor = Color.Empty;
+                    break;
+                case MusteriTip.Platin:
+                    Appearance.BackColor = Color.LightPink;
+                    break;
+                case MusteriTip.Gold:
+                    Appearance.BackColor = Color.Gold;
+                    break;
+                case MusteriTip.Silver:
+                    Appearance.BackColor = Color.Silver;
+                    break;
+                default:
+                    break;
             }
         }
         public void Clear()
@@ -45,7 +45,8 @@ namespace IsbaRestaurant.UserControls
             Text = "Müşteri Secilmedi";
             MusteriId = Guid.Empty;
             Adi = null;
-            Soyadı = null;
+            Soyadi = null;
+            MusteriTip = MusteriTip.Yok;
         }
     }
 }
