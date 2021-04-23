@@ -1,4 +1,5 @@
-﻿using IsbaRestaurant.Entities.Tables.Base;
+﻿using IsbaRestaurant.Entities.Enums;
+using IsbaRestaurant.Entities.Tables.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace IsbaRestaurant.Entities.Tables
 {
   public  class Musteri:EntityBase
     {
+        public MusteriTip MusteriTip { get; set; }
         public string Adi { get; set; }
         public string Soyadi { get; set; }
         public string Sirket { get; set; }
