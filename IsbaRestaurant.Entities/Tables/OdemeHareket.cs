@@ -1,0 +1,19 @@
+﻿using IsbaRestaurant.Entities.Tables.Base;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace IsbaRestaurant.Entities.Tables
+{
+  public class OdemeHareket:EntityBase
+    {
+        public decimal Tutar { get; set; }
+        public Guid OdemeId { get; set; }
+        public virtual OdemeTuru OdemeTuru { get; set; }
+        public Guid AdisyonId { get; set; }
+        public virtual Adisyon Adisyon { get; set; }
+
+    }
+}

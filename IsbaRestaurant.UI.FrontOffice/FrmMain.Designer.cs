@@ -61,6 +61,8 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnEkMalzemeOnay = new DevExpress.XtraEditors.SimpleButton();
             this.pageGarson = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.flowGarson = new System.Windows.Forms.FlowLayoutPanel();
+            this.pageMusteri = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.flowMusteri = new System.Windows.Forms.FlowLayoutPanel();
             this.panelUrunGrupKeypad = new DevExpress.XtraEditors.PanelControl();
             this.groupKategori = new DevExpress.XtraEditors.GroupControl();
             this.flowKategori = new System.Windows.Forms.FlowLayoutPanel();
@@ -124,8 +126,6 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnAdisyonDetay = new DevExpress.XtraEditors.SimpleButton();
             this.btnYazdir = new DevExpress.XtraEditors.SimpleButton();
             this.btnUrunEkle = new DevExpress.XtraEditors.SimpleButton();
-            this.pageMusteri = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.flowMusteri = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationMain)).BeginInit();
@@ -155,6 +155,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.pageGarson.SuspendLayout();
+            this.pageMusteri.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelUrunGrupKeypad)).BeginInit();
             this.panelUrunGrupKeypad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupKategori)).BeginInit();
@@ -188,7 +189,6 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.panelUrunHareketMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelHareketSolMenu)).BeginInit();
             this.panelHareketSolMenu.SuspendLayout();
-            this.pageMusteri.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -347,6 +347,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             // 
             // pageKategoriUrunler
             // 
+            this.pageKategoriUrunler.Caption = "pageKategoriUrunler";
             this.pageKategoriUrunler.Controls.Add(this.flowKategoriUrunleri);
             this.pageKategoriUrunler.Name = "pageKategoriUrunler";
             this.pageKategoriUrunler.Size = new System.Drawing.Size(417, 518);
@@ -427,6 +428,8 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.txtEkMalzemeTutar.Properties.Appearance.Options.UseFont = true;
             this.txtEkMalzemeTutar.Properties.DisplayFormat.FormatString = "C2";
             this.txtEkMalzemeTutar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtEkMalzemeTutar.Properties.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.Never;
+            this.txtEkMalzemeTutar.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtEkMalzemeTutar.Size = new System.Drawing.Size(79, 26);
             this.txtEkMalzemeTutar.StyleController = this.layoutControl1;
             this.txtEkMalzemeTutar.TabIndex = 2;
@@ -444,6 +447,8 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.txtToplamTutar.Properties.Appearance.Options.UseFont = true;
             this.txtToplamTutar.Properties.DisplayFormat.FormatString = "C2";
             this.txtToplamTutar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtToplamTutar.Properties.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.Never;
+            this.txtToplamTutar.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtToplamTutar.Size = new System.Drawing.Size(255, 26);
             this.txtToplamTutar.StyleController = this.layoutControl1;
             this.txtToplamTutar.TabIndex = 2;
@@ -461,6 +466,8 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.txtPorsiyonTutar.Properties.Appearance.Options.UseFont = true;
             this.txtPorsiyonTutar.Properties.DisplayFormat.FormatString = "C2";
             this.txtPorsiyonTutar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtPorsiyonTutar.Properties.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.Never;
+            this.txtPorsiyonTutar.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtPorsiyonTutar.Size = new System.Drawing.Size(81, 26);
             this.txtPorsiyonTutar.StyleController = this.layoutControl1;
             this.txtPorsiyonTutar.TabIndex = 2;
@@ -521,6 +528,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             // 
             // pageGarson
             // 
+            this.pageGarson.Caption = "pageGarson";
             this.pageGarson.Controls.Add(this.flowGarson);
             this.pageGarson.Name = "pageGarson";
             this.pageGarson.Size = new System.Drawing.Size(417, 518);
@@ -532,6 +540,21 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.flowGarson.Name = "flowGarson";
             this.flowGarson.Size = new System.Drawing.Size(417, 518);
             this.flowGarson.TabIndex = 0;
+            // 
+            // pageMusteri
+            // 
+            this.pageMusteri.Caption = "pageMusteri";
+            this.pageMusteri.Controls.Add(this.flowMusteri);
+            this.pageMusteri.Name = "pageMusteri";
+            this.pageMusteri.Size = new System.Drawing.Size(417, 518);
+            // 
+            // flowMusteri
+            // 
+            this.flowMusteri.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowMusteri.Location = new System.Drawing.Point(0, 0);
+            this.flowMusteri.Name = "flowMusteri";
+            this.flowMusteri.Size = new System.Drawing.Size(417, 518);
+            this.flowMusteri.TabIndex = 0;
             // 
             // panelUrunGrupKeypad
             // 
@@ -927,7 +950,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.colBirimFiyat.Caption = "Birim Fiyatı";
             this.colBirimFiyat.DisplayFormat.FormatString = "C2";
             this.colBirimFiyat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colBirimFiyat.FieldName = "BirimFiyat";
+            this.colBirimFiyat.FieldName = "EkMalzemeliBirimFiyat";
             this.colBirimFiyat.LayoutViewField = this.layoutViewField_layoutViewColumn1_3;
             this.colBirimFiyat.Name = "colBirimFiyat";
             this.colBirimFiyat.OptionsColumn.AllowFocus = false;
@@ -1151,10 +1174,19 @@ namespace IsbaRestaurant.UI.FrontOffice
             // 
             // txtUrunHareketIndirimTutar
             // 
+            this.txtUrunHareketIndirimTutar.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.txtUrunHareketIndirimTutar.Location = new System.Drawing.Point(358, 4);
             this.txtUrunHareketIndirimTutar.Name = "txtUrunHareketIndirimTutar";
             this.txtUrunHareketIndirimTutar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtUrunHareketIndirimTutar.Properties.Appearance.Options.UseFont = true;
+            this.txtUrunHareketIndirimTutar.Properties.DisplayFormat.FormatString = "C2";
+            this.txtUrunHareketIndirimTutar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtUrunHareketIndirimTutar.Properties.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.Never;
+            this.txtUrunHareketIndirimTutar.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtUrunHareketIndirimTutar.Size = new System.Drawing.Size(95, 26);
             this.txtUrunHareketIndirimTutar.TabIndex = 2;
             // 
@@ -1174,10 +1206,19 @@ namespace IsbaRestaurant.UI.FrontOffice
             // 
             // txtUrunhareketOdenecekTutar
             // 
+            this.txtUrunhareketOdenecekTutar.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.txtUrunhareketOdenecekTutar.Location = new System.Drawing.Point(127, 37);
             this.txtUrunhareketOdenecekTutar.Name = "txtUrunhareketOdenecekTutar";
             this.txtUrunhareketOdenecekTutar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtUrunhareketOdenecekTutar.Properties.Appearance.Options.UseFont = true;
+            this.txtUrunhareketOdenecekTutar.Properties.DisplayFormat.FormatString = "C2";
+            this.txtUrunhareketOdenecekTutar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtUrunhareketOdenecekTutar.Properties.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.Never;
+            this.txtUrunhareketOdenecekTutar.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtUrunhareketOdenecekTutar.Size = new System.Drawing.Size(326, 26);
             this.txtUrunhareketOdenecekTutar.TabIndex = 2;
             // 
@@ -1197,10 +1238,19 @@ namespace IsbaRestaurant.UI.FrontOffice
             // 
             // txtToplamUrunHareketTutar
             // 
+            this.txtToplamUrunHareketTutar.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.txtToplamUrunHareketTutar.Location = new System.Drawing.Point(129, 5);
             this.txtToplamUrunHareketTutar.Name = "txtToplamUrunHareketTutar";
             this.txtToplamUrunHareketTutar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtToplamUrunHareketTutar.Properties.Appearance.Options.UseFont = true;
+            this.txtToplamUrunHareketTutar.Properties.DisplayFormat.FormatString = "C2";
+            this.txtToplamUrunHareketTutar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtToplamUrunHareketTutar.Properties.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.Never;
+            this.txtToplamUrunHareketTutar.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtToplamUrunHareketTutar.Size = new System.Drawing.Size(103, 26);
             this.txtToplamUrunHareketTutar.TabIndex = 2;
             // 
@@ -1366,20 +1416,6 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnUrunEkle.TabIndex = 0;
             this.btnUrunEkle.Text = "Ürün Ekle";
             // 
-            // pageMusteri
-            // 
-            this.pageMusteri.Controls.Add(this.flowMusteri);
-            this.pageMusteri.Name = "pageMusteri";
-            this.pageMusteri.Size = new System.Drawing.Size(417, 518);
-            // 
-            // flowMusteri
-            // 
-            this.flowMusteri.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowMusteri.Location = new System.Drawing.Point(0, 0);
-            this.flowMusteri.Name = "flowMusteri";
-            this.flowMusteri.Size = new System.Drawing.Size(417, 518);
-            this.flowMusteri.TabIndex = 0;
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1421,6 +1457,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.pageGarson.ResumeLayout(false);
+            this.pageMusteri.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelUrunGrupKeypad)).EndInit();
             this.panelUrunGrupKeypad.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupKategori)).EndInit();
@@ -1454,7 +1491,6 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.panelUrunHareketMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelHareketSolMenu)).EndInit();
             this.panelHareketSolMenu.ResumeLayout(false);
-            this.pageMusteri.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

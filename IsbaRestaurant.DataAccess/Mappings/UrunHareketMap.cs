@@ -14,8 +14,10 @@ namespace IsbaRestaurant.DataAccess.Mappings
         {
             Property(c => c.Miktar).HasPrecision(8, 3);
             Property(c => c.BirimFiyat).HasPrecision(10, 2);
+            Property(c => c.EkMalzemeFiyat).HasPrecision(10, 2);
             Property(c => c.Indirim).HasPrecision(5, 2);
             Ignore(C => C.ToplamTutar);
+            Ignore(C => C.EkMalzemeliBirimFiyat);
 
             ToTable("UrunHareketleri");
             Property(c => c.Miktar).HasColumnName("Miktar");

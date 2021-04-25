@@ -51,14 +51,14 @@ namespace IsbaRestaurant.UI.FrontOffice
                 ControlMusteriButton button = new ControlMusteriButton
                 {
                     Name = musteri.Id.ToString(),
-                    Text=$"{musteri.Adi} {musteri.Soyadi}", 
+                    Text = $"{musteri.Adi} {musteri.Soyadi}",
                     Adi = musteri.Adi,
                     Soyadi = musteri.Soyadi,
                     MusteriId = musteri.Id,
                     MusteriTip = musteri.MusteriTip,
-                    Height=150,
-                    Width=150
-                    
+                    Height = 150,
+                    Width = 150
+
                 };
                 button.Load();
                 button.Click += MusteriSec;
@@ -194,7 +194,7 @@ namespace IsbaRestaurant.UI.FrontOffice
                 {
                     btnGarsonSecim.Text = "Garson Seçilmedi";
                 }
-                if (secilenAdisyon.MusteriId!=Guid.Empty)
+                if (secilenAdisyon.MusteriId != Guid.Empty)
                 {
                     Musteri musteri = worker.MusteriService.Get(c => c.Id == secilenAdisyon.MusteriId);
                     if (musteri != null)
@@ -206,10 +206,11 @@ namespace IsbaRestaurant.UI.FrontOffice
                         btnMusteri.Load();
                     }
                 }
-             
+
                 button.AdisyonId = secilenAdisyon.Id;
                 navigationMain.SelectedPage = pageAdisyonAyrinti;
                 layoutView1.RefreshData();
+                UrunHareketToplamlariGetir();
             }
         }
 
@@ -226,6 +227,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             }
             row.Miktar += sayi;
             layoutView1.RefreshData();
+            UrunHareketToplamlariGetir();
         }
         private void KategoriButtonOlustur()
         {
@@ -392,7 +394,7 @@ namespace IsbaRestaurant.UI.FrontOffice
                 }
             }
             EkMalzemeHesapla();
-            urunHareketEntity.BirimFiyat = txtToplamTutar.Value;
+            urunHareketEntity.EkMalzemeFiyat = txtEkMalzemeTutar.Value;
             UrunHareketEkle();
             navigationKategori.SelectedPage = pageKategoriUrunler;
             txtMiktar.Value = 1;
@@ -407,6 +409,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             Guid id = urunHareketEntity.Porsiyon.BirimId;
             worker.TanimService.Load(c => c.Id == id);
             layoutView1.RefreshData();
+            UrunHareketToplamlariGetir();
         }
         void EkMalzemeHesapla()
         {
@@ -577,6 +580,7 @@ namespace IsbaRestaurant.UI.FrontOffice
 
             }
             keypadIslem = KeypadIslem.Yok;
+            UrunHareketToplamlariGetir();
             txtMiktar.Value = 1;
             txtMiktar.BackColor = Color.White;
         }
@@ -594,6 +598,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             {
                 hareketEntity.UrunHareketTip = UrunHareketTip.Iptal;
                 layoutView1.RefreshData();
+                UrunHareketToplamlariGetir();
             }
             else
             {
@@ -611,6 +616,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             {
                 hareketEntity.UrunHareketTip = UrunHareketTip.Ikram;
                 layoutView1.RefreshData();
+                UrunHareketToplamlariGetir();
             }
             else
             {
@@ -647,6 +653,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             }
             Porsiyon porsiyonEntity = worker.PorsiyonService.Get(c => c.Id == urunHareketEntity.PorsiyonId);
             IEnumerable<EkMalzeme> ekMalzemeList = worker.EkMalzemeService.GetList(c => c.UrunId == urunHareketEntity.UrunId);
+            txtPorsiyonTutar.Value = porsiyonEntity.Fiyat;
             EkMalzemeButtonOlustur(porsiyonEntity.EkMalzemeCarpan, ekMalzemeList);
             List<EkMalzemeHareket> HareketList = worker.EkMalzemeHareketService.BindingList().ToList();
             foreach (var hareket in HareketList.Where(c => c.UrunHareketId == urunHareketEntity.Id).ToList())
@@ -654,6 +661,7 @@ namespace IsbaRestaurant.UI.FrontOffice
                 ControlEkMalzemeButton button = (ControlEkMalzemeButton)flowEkMalzeme.Controls.Find(hareket.EkMalzemeId.ToString(), true)[0];
                 button.Checked = true;
             }
+            
         }
 
         private void btnIndirim_Click(object sender, EventArgs e)
@@ -687,7 +695,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             btnGarsonSecim.Visible = false;
             btnMusteri.Visible = false;
             secilenAdisyon.GarsonId = btnGarsonSecim.GarsonId;
-            if (btnMusteri.MusteriId!=Guid.Empty)
+            if (btnMusteri.MusteriId != Guid.Empty)
             {
                 secilenAdisyon.MusteriId = btnMusteri.MusteriId;
             }
@@ -712,6 +720,13 @@ namespace IsbaRestaurant.UI.FrontOffice
         private void btnMusteri_Click(object sender, EventArgs e)
         {
             navigationKategori.SelectedPage = pageMusteri;
+        }
+        private void UrunHareketToplamlariGetir()
+        {
+            AdisyonToplamDto toplamlar = worker.AdisyonService.AdisyonToplamGetir();
+            txtToplamUrunHareketTutar.Value = toplamlar.ToplamTutar;
+            txtUrunHareketIndirimTutar.Value = toplamlar.IndirimTutar;
+            txtUrunhareketOdenecekTutar.Value = toplamlar.OdenecekTutar;
         }
     }
 }

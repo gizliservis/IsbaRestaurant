@@ -11,6 +11,7 @@ namespace IsbaRestaurant.Entities.Enums
         Birim,
         UrunGrup,
         CariTİpi,
-        Konum
+        Konum,
+        OdemeTuru
     }
 }

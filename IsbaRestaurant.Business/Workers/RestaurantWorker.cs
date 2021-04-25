@@ -24,7 +24,9 @@ namespace IsbaRestaurant.Business.Workers
         public IGarsonService GarsonService { get; set; }
         public IMasaService MasaService { get; set; }
         public IUrunHareketService UrunHareketService { get; set; }
-        
+        public IOdemeTuruService OdemeTuruService { get; set; }
+        public IOdemeHareketService OdemeHareketService { get; set; }
+
 
         private bool disposedValue;
         public RestaurantWorker(string connectionString=null)
@@ -42,6 +44,8 @@ namespace IsbaRestaurant.Business.Workers
             GarsonService = new GarsonManager(_uow);
             MasaService = new MasaManager(_uow);
             UrunHareketService = new UrunHareketManager(_uow);
+            OdemeTuruService = new OdemeTuruManager(_uow);
+            OdemeHareketService = new OdemeHareketManager(_uow);
 
         }
         public bool Commit()
