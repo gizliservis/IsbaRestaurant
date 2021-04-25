@@ -39,11 +39,44 @@ namespace IsbaRestaurant.UI.FrontOffice
         {
             InitializeComponent();
             KategoriButtonOlustur();
-            gridControl1.DataSource = worker.UrunHareketService.BindingList();
+           // silinecek denendikten sonra gridControl1.DataSource = worker.UrunHareketService.BindingList();
             MasaButtonOlustur();
             GarsonButtonOlustur();
             MusteriButtonOlustur();
+            OdemeTuruButtonOlustur();
         }
+        void OdemeTuruButtonOlustur()
+        {
+            foreach (var odemeTuru in worker.OdemeTuruService.GetList(null))
+            {
+                ControlOdemeTuruButton button = new ControlOdemeTuruButton
+                {
+                    Name = odemeTuru.Id.ToString(),
+                    Text = odemeTuru.Adi,
+                    OdemeTuruId = odemeTuru.Id,
+                    Height = 50,
+                    Width = 100,
+                    Font=new Font("Tahoma",8,FontStyle.Bold),
+                    Appearance = { TextOptions = {WordWrap=DevExpress.Utils.WordWrap.Wrap}}
+                };
+                button.Click += OdemeButtonClick;
+                flowOdemeTurleri.Controls.Add(button);
+            }
+        }
+
+        private void OdemeButtonClick(object sender, EventArgs e)
+        {
+            ControlOdemeTuruButton button = (ControlOdemeTuruButton)sender;
+            worker.OdemeTuruService.Load(c => c.Id == button.OdemeTuruId);
+            worker.OdemeHareketService.AddOrUpdate(new OdemeHareket
+            {
+                AdisyonId = secilenAdisyon.Id,
+                OdemeTuruId = button.OdemeTuruId,
+                Tutar = txtUrunhareketOdenecekTutar.Value
+            });
+            
+        }
+
         void MusteriButtonOlustur()
         {
             foreach (var musteri in worker.MusteriService.GetList(null))
@@ -162,6 +195,8 @@ namespace IsbaRestaurant.UI.FrontOffice
             ControlMasaButton button = (ControlMasaButton)sender;
             btnGarsonSecim.Visible = true;
             btnMusteri.Visible = true;
+            gridControl1.DataSource = worker.UrunHareketService.BindingList();
+            gridControlOdeme.DataSource = worker.OdemeHareketService.BindingList();
             if (button.MasaDurum == MasaDurum.Bos)
             {
                 secilenAdisyon = new Adisyon();
@@ -179,6 +214,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             {
                 worker.UrunHareketService.Load(c => c.AdisyonId == button.AdisyonId, c => c.Urun, c => c.Porsiyon, c => c.Porsiyon.Birim, c => c.EkMalzemeHareketleri);
                 worker.AdisyonService.Load(c => c.Id == button.AdisyonId);
+                worker.OdemeHareketService.Load(c => c.AdisyonId == button.AdisyonId,c=>c.OdemeTuru);
                 worker.EkMalzemeHareketService.Load(null);
                 secilenAdisyon = worker.AdisyonService.Get(c => c.Id == button.AdisyonId);
                 secilenMasa = worker.MasaService.Get(c => c.Id == button.MasaId);
@@ -661,7 +697,7 @@ namespace IsbaRestaurant.UI.FrontOffice
                 ControlEkMalzemeButton button = (ControlEkMalzemeButton)flowEkMalzeme.Controls.Find(hareket.EkMalzemeId.ToString(), true)[0];
                 button.Checked = true;
             }
-            
+
         }
 
         private void btnIndirim_Click(object sender, EventArgs e)
@@ -708,6 +744,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             worker.Commit();
             worker = new RestaurantWorker();
             gridControl1.DataSource = worker.UrunHareketService.BindingList();
+            gridControlOdeme.DataSource = worker.OdemeHareketService.BindingList();
             navigationMain.SelectedPage = pageMasa;
         }
 
@@ -727,6 +764,11 @@ namespace IsbaRestaurant.UI.FrontOffice
             txtToplamUrunHareketTutar.Value = toplamlar.ToplamTutar;
             txtUrunHareketIndirimTutar.Value = toplamlar.IndirimTutar;
             txtUrunhareketOdenecekTutar.Value = toplamlar.OdenecekTutar;
+        }
+
+        private void btnOdemeEkle_Click(object sender, EventArgs e)
+        {
+            navigationKategori.SelectedPage = pageOdemeEkrani;
         }
     }
 }

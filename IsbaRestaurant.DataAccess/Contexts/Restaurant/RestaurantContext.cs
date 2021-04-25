@@ -78,7 +78,7 @@ namespace IsbaRestaurant.DataAccess.Contexts.Restaurant
             modelBuilder.Entity<EkMalzemeHareket>().HasRequired(c => c.UrunHareket).WithMany(c => c.EkMalzemeHareketleri).HasForeignKey(c => c.UrunHareketId);
             modelBuilder.Entity<EkMalzemeHareket>().HasRequired(c => c.EkMalzeme).WithMany().HasForeignKey(c => c.EkMalzemeId);
             //Odeme İlişkileri
-            modelBuilder.Entity<OdemeHareket>().HasRequired(c => c.OdemeTuru).WithMany(c => c.OdemeHareketleri).HasForeignKey(c => c.OdemeId);
+            modelBuilder.Entity<OdemeHareket>().HasRequired(c => c.OdemeTuru).WithMany(c => c.OdemeHareketleri).HasForeignKey(c => c.OdemeTuruId);
             modelBuilder.Entity<OdemeHareket>().HasRequired(c => c.Adisyon).WithMany(c => c.OdemeHareketleri).HasForeignKey(c => c.AdisyonId);
             modelBuilder.Entity<OdemeTuru>().HasRequired(c => c.OdemeTur).WithMany().HasForeignKey(c => c.OdemeTurId);
 

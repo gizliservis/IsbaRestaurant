@@ -30,6 +30,7 @@ namespace IsbaRestaurant.UI.FrontOffice
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnMusteri = new IsbaRestaurant.UserControls.ControlMusteriButton();
             this.btnGarsonSecim = new IsbaRestaurant.UserControls.ControlGarsonButton();
@@ -63,6 +64,11 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.flowGarson = new System.Windows.Forms.FlowLayoutPanel();
             this.pageMusteri = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.flowMusteri = new System.Windows.Forms.FlowLayoutPanel();
+            this.pageOdemeEkrani = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.gridControlOdeme = new DevExpress.XtraGrid.GridControl();
+            this.gridOdeme = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.flowOdemeTurleri = new System.Windows.Forms.FlowLayoutPanel();
             this.panelUrunGrupKeypad = new DevExpress.XtraEditors.PanelControl();
             this.groupKategori = new DevExpress.XtraEditors.GroupControl();
             this.flowKategori = new System.Windows.Forms.FlowLayoutPanel();
@@ -125,7 +131,9 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnSiparisIptal = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdisyonDetay = new DevExpress.XtraEditors.SimpleButton();
             this.btnYazdir = new DevExpress.XtraEditors.SimpleButton();
-            this.btnUrunEkle = new DevExpress.XtraEditors.SimpleButton();
+            this.btnOdemeEkle = new DevExpress.XtraEditors.SimpleButton();
+            this.colOdemeTuruAdi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTutar = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationMain)).BeginInit();
@@ -156,6 +164,10 @@ namespace IsbaRestaurant.UI.FrontOffice
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.pageGarson.SuspendLayout();
             this.pageMusteri.SuspendLayout();
+            this.pageOdemeEkrani.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlOdeme)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridOdeme)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelUrunGrupKeypad)).BeginInit();
             this.panelUrunGrupKeypad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupKategori)).BeginInit();
@@ -331,6 +343,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.navigationKategori.Controls.Add(this.pageEkMalzeme);
             this.navigationKategori.Controls.Add(this.pageGarson);
             this.navigationKategori.Controls.Add(this.pageMusteri);
+            this.navigationKategori.Controls.Add(this.pageOdemeEkrani);
             this.navigationKategori.Dock = System.Windows.Forms.DockStyle.Fill;
             this.navigationKategori.Location = new System.Drawing.Point(214, 2);
             this.navigationKategori.Name = "navigationKategori";
@@ -339,7 +352,8 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.pageUrunPorsiyon,
             this.pageEkMalzeme,
             this.pageGarson,
-            this.pageMusteri});
+            this.pageMusteri,
+            this.pageOdemeEkrani});
             this.navigationKategori.SelectedPage = this.pageKategoriUrunler;
             this.navigationKategori.Size = new System.Drawing.Size(417, 518);
             this.navigationKategori.TabIndex = 2;
@@ -555,6 +569,54 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.flowMusteri.Name = "flowMusteri";
             this.flowMusteri.Size = new System.Drawing.Size(417, 518);
             this.flowMusteri.TabIndex = 0;
+            // 
+            // pageOdemeEkrani
+            // 
+            this.pageOdemeEkrani.Caption = "pageOdemeEkrani";
+            this.pageOdemeEkrani.Controls.Add(this.gridControlOdeme);
+            this.pageOdemeEkrani.Controls.Add(this.panelControl5);
+            this.pageOdemeEkrani.Controls.Add(this.flowOdemeTurleri);
+            this.pageOdemeEkrani.Name = "pageOdemeEkrani";
+            this.pageOdemeEkrani.Size = new System.Drawing.Size(417, 518);
+            // 
+            // gridControlOdeme
+            // 
+            this.gridControlOdeme.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.RelationName = "Level1";
+            this.gridControlOdeme.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.gridControlOdeme.Location = new System.Drawing.Point(0, 77);
+            this.gridControlOdeme.MainView = this.gridOdeme;
+            this.gridControlOdeme.Name = "gridControlOdeme";
+            this.gridControlOdeme.Size = new System.Drawing.Size(417, 351);
+            this.gridControlOdeme.TabIndex = 1;
+            this.gridControlOdeme.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridOdeme});
+            // 
+            // gridOdeme
+            // 
+            this.gridOdeme.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colOdemeTuruAdi,
+            this.colTutar});
+            this.gridOdeme.GridControl = this.gridControlOdeme;
+            this.gridOdeme.Name = "gridOdeme";
+            this.gridOdeme.RowHeight = 50;
+            // 
+            // panelControl5
+            // 
+            this.panelControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl5.Location = new System.Drawing.Point(0, 428);
+            this.panelControl5.Name = "panelControl5";
+            this.panelControl5.Size = new System.Drawing.Size(417, 90);
+            this.panelControl5.TabIndex = 2;
+            // 
+            // flowOdemeTurleri
+            // 
+            this.flowOdemeTurleri.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowOdemeTurleri.Location = new System.Drawing.Point(0, 0);
+            this.flowOdemeTurleri.Name = "flowOdemeTurleri";
+            this.flowOdemeTurleri.Size = new System.Drawing.Size(417, 77);
+            this.flowOdemeTurleri.TabIndex = 0;
             // 
             // panelUrunGrupKeypad
             // 
@@ -1338,7 +1400,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.panelHareketSolMenu.Controls.Add(this.btnSiparisIptal);
             this.panelHareketSolMenu.Controls.Add(this.btnAdisyonDetay);
             this.panelHareketSolMenu.Controls.Add(this.btnYazdir);
-            this.panelHareketSolMenu.Controls.Add(this.btnUrunEkle);
+            this.panelHareketSolMenu.Controls.Add(this.btnOdemeEkle);
             this.panelHareketSolMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelHareketSolMenu.Location = new System.Drawing.Point(0, 0);
             this.panelHareketSolMenu.Name = "panelHareketSolMenu";
@@ -1402,19 +1464,42 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnYazdir.TabIndex = 1;
             this.btnYazdir.Text = "Yazdır";
             // 
-            // btnUrunEkle
+            // btnOdemeEkle
             // 
-            this.btnUrunEkle.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUrunEkle.Appearance.Options.UseFont = true;
-            this.btnUrunEkle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUrunEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUrunEkle.ImageOptions.Image")));
-            this.btnUrunEkle.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnUrunEkle.Location = new System.Drawing.Point(2, 2);
-            this.btnUrunEkle.Name = "btnUrunEkle";
-            this.btnUrunEkle.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnUrunEkle.Size = new System.Drawing.Size(76, 90);
-            this.btnUrunEkle.TabIndex = 0;
-            this.btnUrunEkle.Text = "Ürün Ekle";
+            this.btnOdemeEkle.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnOdemeEkle.Appearance.Options.UseFont = true;
+            this.btnOdemeEkle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOdemeEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOdemeEkle.ImageOptions.Image")));
+            this.btnOdemeEkle.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnOdemeEkle.Location = new System.Drawing.Point(2, 2);
+            this.btnOdemeEkle.Name = "btnOdemeEkle";
+            this.btnOdemeEkle.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnOdemeEkle.Size = new System.Drawing.Size(76, 90);
+            this.btnOdemeEkle.TabIndex = 0;
+            this.btnOdemeEkle.Text = "Ödeme Ekle";
+            this.btnOdemeEkle.Click += new System.EventHandler(this.btnOdemeEkle_Click);
+            // 
+            // colOdemeTuruAdi
+            // 
+            this.colOdemeTuruAdi.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.colOdemeTuruAdi.AppearanceCell.Options.UseFont = true;
+            this.colOdemeTuruAdi.Caption = "Ödeme Türü";
+            this.colOdemeTuruAdi.FieldName = "OdemeTuru.Adi";
+            this.colOdemeTuruAdi.Name = "colOdemeTuruAdi";
+            this.colOdemeTuruAdi.Visible = true;
+            this.colOdemeTuruAdi.VisibleIndex = 0;
+            // 
+            // colTutar
+            // 
+            this.colTutar.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.colTutar.AppearanceCell.Options.UseFont = true;
+            this.colTutar.Caption = "Tutar";
+            this.colTutar.DisplayFormat.FormatString = "C2";
+            this.colTutar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colTutar.FieldName = "Tutar";
+            this.colTutar.Name = "colTutar";
+            this.colTutar.Visible = true;
+            this.colTutar.VisibleIndex = 1;
             // 
             // FrmMain
             // 
@@ -1458,6 +1543,10 @@ namespace IsbaRestaurant.UI.FrontOffice
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.pageGarson.ResumeLayout(false);
             this.pageMusteri.ResumeLayout(false);
+            this.pageOdemeEkrani.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlOdeme)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridOdeme)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelUrunGrupKeypad)).EndInit();
             this.panelUrunGrupKeypad.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupKategori)).EndInit();
@@ -1504,7 +1593,7 @@ namespace IsbaRestaurant.UI.FrontOffice
         private DevExpress.XtraEditors.PanelControl panelHareketSolMenu;
         private DevExpress.XtraEditors.SimpleButton btnAdisyonDetay;
         private DevExpress.XtraEditors.SimpleButton btnYazdir;
-        private DevExpress.XtraEditors.SimpleButton btnUrunEkle;
+        private DevExpress.XtraEditors.SimpleButton btnOdemeEkle;
         private DevExpress.XtraEditors.SimpleButton btnSiparisKaydet;
         private DevExpress.XtraEditors.SimpleButton btnSiparisIptal;
         private DevExpress.XtraEditors.PanelControl panelUrunHareket;
@@ -1593,6 +1682,13 @@ namespace IsbaRestaurant.UI.FrontOffice
         private UserControls.ControlMusteriButton btnMusteri;
         private DevExpress.XtraBars.Navigation.NavigationPage pageMusteri;
         private System.Windows.Forms.FlowLayoutPanel flowMusteri;
+        private DevExpress.XtraBars.Navigation.NavigationPage pageOdemeEkrani;
+        private DevExpress.XtraGrid.GridControl gridControlOdeme;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridOdeme;
+        private DevExpress.XtraEditors.PanelControl panelControl5;
+        private System.Windows.Forms.FlowLayoutPanel flowOdemeTurleri;
+        private DevExpress.XtraGrid.Columns.GridColumn colOdemeTuruAdi;
+        private DevExpress.XtraGrid.Columns.GridColumn colTutar;
     }
 }
 
