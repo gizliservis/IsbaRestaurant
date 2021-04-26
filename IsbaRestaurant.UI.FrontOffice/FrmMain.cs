@@ -56,8 +56,8 @@ namespace IsbaRestaurant.UI.FrontOffice
                     OdemeTuruId = odemeTuru.Id,
                     Height = 50,
                     Width = 100,
-                    Font=new Font("Tahoma",8,FontStyle.Bold),
-                    Appearance = { TextOptions = {WordWrap=DevExpress.Utils.WordWrap.Wrap}}
+                    Font = new Font("Tahoma", 8, FontStyle.Bold),
+                    Appearance = { TextOptions = { WordWrap = DevExpress.Utils.WordWrap.Wrap } }
                 };
                 button.Click += OdemeButtonClick;
                 flowOdemeTurleri.Controls.Add(button);
@@ -67,7 +67,11 @@ namespace IsbaRestaurant.UI.FrontOffice
         private void OdemeButtonClick(object sender, EventArgs e)
         {
             ControlOdemeTuruButton button = (ControlOdemeTuruButton)sender;
-            if (txtKalanTutar.Value==0)
+            if (txtKalanTutar.Value == 0)
+            {
+                return;
+            }
+            if (txtOdemeTutari.Value<=0)
             {
                 return;
             }
@@ -80,6 +84,11 @@ namespace IsbaRestaurant.UI.FrontOffice
             });
             UrunHareketToplamlariGetir();
             txtOdemeTutari.Value = 0;
+            if (txtKalanTutar.Value<0)
+            {
+                lblMesaj.Visible = true;
+               lblMesaj.Text=$"Müşteriye Ödenicek Para Üstü{Math.Abs(txtKalanTutar.Value).ToString("C2")}'dir";
+            }
         }
 
         void MusteriButtonOlustur()
@@ -203,6 +212,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             btnMusteri.Visible = true;
             gridControl1.DataSource = worker.UrunHareketService.BindingList();
             gridControlOdeme.DataSource = worker.OdemeHareketService.BindingList();
+            navigationKategori.SelectedPage = pageKategoriUrunler;
             if (button.MasaDurum == MasaDurum.Bos)
             {
                 secilenAdisyon = new Adisyon();
@@ -212,6 +222,7 @@ namespace IsbaRestaurant.UI.FrontOffice
                 btnGarsonSecim.Text = "Garson Seçilmedi";
                 button.AdisyonId = secilenAdisyon.Id;
                 btnMusteri.Load();
+                ToplamlarıSifirla();
                 btnMusteri.Clear();
 
                 navigationMain.SelectedPage = pageAdisyonAyrinti;
@@ -220,7 +231,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             {
                 worker.UrunHareketService.Load(c => c.AdisyonId == button.AdisyonId, c => c.Urun, c => c.Porsiyon, c => c.Porsiyon.Birim, c => c.EkMalzemeHareketleri);
                 worker.AdisyonService.Load(c => c.Id == button.AdisyonId);
-                worker.OdemeHareketService.Load(c => c.AdisyonId == button.AdisyonId,c=>c.OdemeTuru);
+                worker.OdemeHareketService.Load(c => c.AdisyonId == button.AdisyonId, c => c.OdemeTuru);
                 worker.EkMalzemeHareketService.Load(null);
                 secilenAdisyon = worker.AdisyonService.Get(c => c.Id == button.AdisyonId);
                 secilenMasa = worker.MasaService.Get(c => c.Id == button.MasaId);
@@ -246,6 +257,7 @@ namespace IsbaRestaurant.UI.FrontOffice
                         btnMusteri.Soyadi = musteri.Soyadi;
                         btnMusteri.MusteriTip = musteri.MusteriTip;
                         btnMusteri.Load();
+
                     }
                 }
 
@@ -254,6 +266,15 @@ namespace IsbaRestaurant.UI.FrontOffice
                 layoutView1.RefreshData();
                 UrunHareketToplamlariGetir();
             }
+        }
+        void ToplamlarıSifirla()
+        {
+            txtKalanTutar.Value = 0;
+            txtOdemeTutari.Value = 0;
+            txtOdenenTutar.Value = 0;
+            txtToplamUrunHareketTutar.Value = 0;
+            txtUrunHareketIndirimTutar.Value = 0;
+            txtUrunhareketOdenecekTutar.Value = 0;
         }
 
         private void MiktarArttir(int sayi)
@@ -438,14 +459,14 @@ namespace IsbaRestaurant.UI.FrontOffice
                     worker.EkMalzemeHareketService.EntityStateChange(c => c.UrunHareketId == urunHareketEntity.Id && c.EkMalzemeId == button.Id, EntityState.Deleted);
                 }
             }
-     
+
             navigationKategori.SelectedPage = pageKategoriUrunler;
             txtMiktar.Value = 1;
 
         }
         void UrunHareketEkle()
         {
-            if (!worker.AdisyonService.Exist(c=>c.Id==secilenAdisyon.Id))
+            if (!worker.AdisyonService.Exist(c => c.Id == secilenAdisyon.Id))
             {
                 worker.AdisyonService.AddOrUpdate(secilenAdisyon);
                 worker.Commit();
@@ -509,7 +530,7 @@ namespace IsbaRestaurant.UI.FrontOffice
         private void KeyPadSend(object sender, EventArgs e)
         {
             SimpleButton button = (SimpleButton)sender;
-            if (navigationKategori.SelectedPage==pageOdemeEkrani)
+            if (navigationKategori.SelectedPage == pageOdemeEkrani)
             {
                 txtOdemeTutari.Focus();
                 SendKeys.Send(button.Text);
@@ -764,12 +785,25 @@ namespace IsbaRestaurant.UI.FrontOffice
             btnMusteri.Clear();
             worker.AdisyonService.AddOrUpdate(secilenAdisyon);
             ControlMasaButton button = (ControlMasaButton)flowMasalar.Controls.Find(secilenMasa.Id.ToString(), true)[0];
-            button.MasaDurum = MasaDurum.Dolu;
-            secilenAdisyon.AdisyonAcik = true;
+            if (txtKalanTutar.Value <= 0)
+            {
+                button.MasaDurum = MasaDurum.Bos;
+                secilenAdisyon.AdisyonAcik = false;
+                btnSiparisKaydet.Text = "Değişiklikleri\nKaydet";
+                btnSiparisKaydet.ImageOptions.ImageIndex = 0;
+
+            }
+            else
+            {
+                button.MasaDurum = MasaDurum.Dolu;
+                secilenAdisyon.AdisyonAcik = true;
+            }
+
             worker.Commit();
             worker = new RestaurantWorker();
             gridControl1.DataSource = worker.UrunHareketService.BindingList();
             gridControlOdeme.DataSource = worker.OdemeHareketService.BindingList();
+            lblMesaj.Visible = false; 
             navigationMain.SelectedPage = pageMasa;
         }
 
@@ -791,6 +825,16 @@ namespace IsbaRestaurant.UI.FrontOffice
             txtUrunhareketOdenecekTutar.Value = toplamlar.OdenecekTutar;
             txtOdenenTutar.Value = toplamlar.OdenenTutar;
             txtKalanTutar.Value = toplamlar.KalanTutar;
+            if (toplamlar.KalanTutar <= 0)
+            {
+                btnSiparisKaydet.ImageOptions.ImageIndex = 1;
+                btnSiparisKaydet.Text = "Masayı\nKapat";
+            }
+            else
+            {
+                btnSiparisKaydet.ImageOptions.ImageIndex = 0;
+                btnSiparisKaydet.Text = "Değişiklikleri\nKaydet";
+            }
         }
 
         private void btnOdemeEkle_Click(object sender, EventArgs e)
@@ -805,7 +849,7 @@ namespace IsbaRestaurant.UI.FrontOffice
 
         private void btnOdemeYarim_Click(object sender, EventArgs e)
         {
-            txtOdemeTutari.Value = txtKalanTutar.Value/2;
+            txtOdemeTutari.Value = txtKalanTutar.Value / 2;
         }
 
         private void btnOdemeCeyrek_Click(object sender, EventArgs e)
@@ -828,11 +872,11 @@ namespace IsbaRestaurant.UI.FrontOffice
 
         private void btnKeypadBack_Click(object sender, EventArgs e)
         {
-            if (navigationKategori.SelectedPage==pageOdemeEkrani)
+            if (navigationKategori.SelectedPage == pageOdemeEkrani)
             {
                 txtOdemeTutari.Focus();
                 SendKeys.Send("{BACKSPACE}");
-                 
+
             }
             else
             {

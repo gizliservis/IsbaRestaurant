@@ -31,6 +31,7 @@ namespace IsbaRestaurant.UI.FrontOffice
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
@@ -174,6 +175,8 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnAdisyonDetay = new DevExpress.XtraEditors.SimpleButton();
             this.btnYazdir = new DevExpress.XtraEditors.SimpleButton();
             this.btnOdemeEkle = new DevExpress.XtraEditors.SimpleButton();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.lblMesaj = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationMain)).BeginInit();
@@ -270,6 +273,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.lblMesaj);
             this.panelControl1.Controls.Add(this.btnMusteri);
             this.panelControl1.Controls.Add(this.btnGarsonSecim);
             this.panelControl1.Controls.Add(this.btnKategoriyeDon);
@@ -988,7 +992,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.txtOdemeTutari.Properties.DisplayFormat.FormatString = "C2";
             this.txtOdemeTutari.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtOdemeTutari.Properties.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.Never;
-            this.txtOdemeTutari.Size = new System.Drawing.Size(317, 26);
+            this.txtOdemeTutari.Size = new System.Drawing.Size(334, 26);
             this.txtOdemeTutari.StyleController = this.layoutControl3;
             this.txtOdemeTutari.TabIndex = 2;
             // 
@@ -1001,7 +1005,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.layoutControlItem6});
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.layoutControlGroup2.Size = new System.Drawing.Size(400, 44);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(417, 44);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // emptySpaceItem1
@@ -1009,7 +1013,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 30);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(396, 10);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(413, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem6
@@ -1017,7 +1021,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.layoutControlItem6.Control = this.txtOdemeTutari;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(396, 30);
+            this.layoutControlItem6.Size = new System.Drawing.Size(413, 30);
             this.layoutControlItem6.Text = "Ödeme Tutarı :";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(72, 13);
             // 
@@ -1049,7 +1053,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             0,
             0,
             0});
-            this.txtKalanTutar.Location = new System.Drawing.Point(277, 12);
+            this.txtKalanTutar.Location = new System.Drawing.Point(285, 12);
             this.txtKalanTutar.Name = "txtKalanTutar";
             this.txtKalanTutar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtKalanTutar.Properties.Appearance.Options.UseFont = true;
@@ -1057,7 +1061,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.txtKalanTutar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtKalanTutar.Properties.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.Never;
             this.txtKalanTutar.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.txtKalanTutar.Size = new System.Drawing.Size(107, 26);
+            this.txtKalanTutar.Size = new System.Drawing.Size(116, 26);
             this.txtKalanTutar.StyleController = this.layoutControl2;
             this.txtKalanTutar.TabIndex = 2;
             // 
@@ -1076,7 +1080,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.txtOdenenTutar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtOdenenTutar.Properties.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.Never;
             this.txtOdenenTutar.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.txtOdenenTutar.Size = new System.Drawing.Size(107, 26);
+            this.txtOdenenTutar.Size = new System.Drawing.Size(115, 26);
             this.txtOdenenTutar.StyleController = this.layoutControl2;
             this.txtOdenenTutar.TabIndex = 2;
             // 
@@ -1100,7 +1104,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             rowDefinition3.SizeType = System.Windows.Forms.SizeType.Percent;
             this.layoutControlGroup1.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
             rowDefinition3});
-            this.layoutControlGroup1.Size = new System.Drawing.Size(396, 50);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(413, 50);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem4
@@ -1110,7 +1114,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.layoutControlItem4.Control = this.txtOdenenTutar;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(188, 30);
+            this.layoutControlItem4.Size = new System.Drawing.Size(196, 30);
             this.layoutControlItem4.Text = "Ödenen Tutar :";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(74, 13);
             // 
@@ -1119,10 +1123,10 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.layoutControlItem5.AppearanceItemCaption.Options.UseTextOptions = true;
             this.layoutControlItem5.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.layoutControlItem5.Control = this.txtKalanTutar;
-            this.layoutControlItem5.Location = new System.Drawing.Point(188, 0);
+            this.layoutControlItem5.Location = new System.Drawing.Point(196, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem5.Size = new System.Drawing.Size(188, 30);
+            this.layoutControlItem5.Size = new System.Drawing.Size(197, 30);
             this.layoutControlItem5.Text = "Kalan Tutar :";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(74, 13);
             // 
@@ -1929,7 +1933,8 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnSiparisKaydet.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSiparisKaydet.Appearance.Options.UseFont = true;
             this.btnSiparisKaydet.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnSiparisKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSiparisKaydet.ImageOptions.Image")));
+            this.btnSiparisKaydet.ImageOptions.ImageIndex = 0;
+            this.btnSiparisKaydet.ImageOptions.ImageList = this.ımageList1;
             this.btnSiparisKaydet.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnSiparisKaydet.Location = new System.Drawing.Point(2, 430);
             this.btnSiparisKaydet.Name = "btnSiparisKaydet";
@@ -1995,6 +2000,26 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnOdemeEkle.TabIndex = 0;
             this.btnOdemeEkle.Text = "Ödeme Ekle";
             this.btnOdemeEkle.Click += new System.EventHandler(this.btnOdemeEkle_Click);
+            // 
+            // ımageList1
+            // 
+            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ımageList1.Images.SetKeyName(0, "floppy_disk.png");
+            this.ımageList1.Images.SetKeyName(1, "folder_out.png");
+            // 
+            // lblMesaj
+            // 
+            this.lblMesaj.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMesaj.Appearance.Options.UseFont = true;
+            this.lblMesaj.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblMesaj.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblMesaj.Location = new System.Drawing.Point(2, 2);
+            this.lblMesaj.Name = "lblMesaj";
+            this.lblMesaj.Size = new System.Drawing.Size(538, 45);
+            this.lblMesaj.TabIndex = 3;
+            this.lblMesaj.Text = "labelControl4";
+            this.lblMesaj.Visible = false;
             // 
             // FrmMain
             // 
@@ -2239,6 +2264,8 @@ namespace IsbaRestaurant.UI.FrontOffice
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
+        private System.Windows.Forms.ImageList ımageList1;
+        private DevExpress.XtraEditors.LabelControl lblMesaj;
     }
 }
 
