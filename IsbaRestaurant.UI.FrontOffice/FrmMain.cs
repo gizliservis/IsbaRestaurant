@@ -27,7 +27,8 @@ namespace IsbaRestaurant.UI.FrontOffice
             Iade,
             Ikram,
             Bol,
-            Indirim
+            Indirim,
+            OdemeBol
 
         }
         RestaurantWorker worker = new RestaurantWorker();
@@ -39,7 +40,6 @@ namespace IsbaRestaurant.UI.FrontOffice
         {
             InitializeComponent();
             KategoriButtonOlustur();
-           // silinecek denendikten sonra gridControl1.DataSource = worker.UrunHareketService.BindingList();
             MasaButtonOlustur();
             GarsonButtonOlustur();
             MusteriButtonOlustur();
@@ -67,14 +67,19 @@ namespace IsbaRestaurant.UI.FrontOffice
         private void OdemeButtonClick(object sender, EventArgs e)
         {
             ControlOdemeTuruButton button = (ControlOdemeTuruButton)sender;
+            if (txtKalanTutar.Value==0)
+            {
+                return;
+            }
             worker.OdemeTuruService.Load(c => c.Id == button.OdemeTuruId);
             worker.OdemeHareketService.AddOrUpdate(new OdemeHareket
             {
                 AdisyonId = secilenAdisyon.Id,
                 OdemeTuruId = button.OdemeTuruId,
-                Tutar = txtUrunhareketOdenecekTutar.Value
+                Tutar = txtOdemeTutari.Value
             });
-            
+            UrunHareketToplamlariGetir();
+            txtOdemeTutari.Value = 0;
         }
 
         void MusteriButtonOlustur()
@@ -137,6 +142,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             btnGarsonSecim.Adi = button.Adi;
             btnGarsonSecim.Soyadi = button.Soyadi;
             btnGarsonSecim.GarsonId = button.GarsonId;
+            secilenAdisyon.GarsonId = button.GarsonId;
             navigationKategori.SelectedPage = pageKategoriUrunler;
         }
 
@@ -407,6 +413,9 @@ namespace IsbaRestaurant.UI.FrontOffice
 
         private void btnEkMalzemeOnay_Click(object sender, EventArgs e)
         {
+            EkMalzemeHesapla();
+            urunHareketEntity.EkMalzemeFiyat = txtEkMalzemeTutar.Value;
+            UrunHareketEkle();
             foreach (ControlEkMalzemeButton button in flowEkMalzeme.Controls)
             {
                 if (button.Checked)
@@ -429,15 +438,19 @@ namespace IsbaRestaurant.UI.FrontOffice
                     worker.EkMalzemeHareketService.EntityStateChange(c => c.UrunHareketId == urunHareketEntity.Id && c.EkMalzemeId == button.Id, EntityState.Deleted);
                 }
             }
-            EkMalzemeHesapla();
-            urunHareketEntity.EkMalzemeFiyat = txtEkMalzemeTutar.Value;
-            UrunHareketEkle();
+     
             navigationKategori.SelectedPage = pageKategoriUrunler;
             txtMiktar.Value = 1;
 
         }
         void UrunHareketEkle()
         {
+            if (!worker.AdisyonService.Exist(c=>c.Id==secilenAdisyon.Id))
+            {
+                worker.AdisyonService.AddOrUpdate(secilenAdisyon);
+                worker.Commit();
+            }
+
             btnKategoriyeDon.Visible = false;
             worker.UrunHareketService.AddOrUpdate(urunHareketEntity);
             worker.UrunService.Load(c => c.Id == urunHareketEntity.UrunId);
@@ -496,8 +509,17 @@ namespace IsbaRestaurant.UI.FrontOffice
         private void KeyPadSend(object sender, EventArgs e)
         {
             SimpleButton button = (SimpleButton)sender;
-            txtMiktar.Focus();
-            SendKeys.Send(button.Text);
+            if (navigationKategori.SelectedPage==pageOdemeEkrani)
+            {
+                txtOdemeTutari.Focus();
+                SendKeys.Send(button.Text);
+            }
+            else
+            {
+                txtMiktar.Focus();
+                SendKeys.Send(button.Text);
+            }
+
         }
 
         private void btnKategoriyeDon_Click(object sender, EventArgs e)
@@ -612,6 +634,9 @@ namespace IsbaRestaurant.UI.FrontOffice
                     }
                     hareketEntity.Indirim = txtMiktar.Value;
                     layoutView1.RefreshData();
+                    break;
+                case KeypadIslem.OdemeBol:
+                    txtOdemeTutari.Value = txtKalanTutar.Value / txtOdemeTutari.Value;
                     break;
 
             }
@@ -764,11 +789,56 @@ namespace IsbaRestaurant.UI.FrontOffice
             txtToplamUrunHareketTutar.Value = toplamlar.ToplamTutar;
             txtUrunHareketIndirimTutar.Value = toplamlar.IndirimTutar;
             txtUrunhareketOdenecekTutar.Value = toplamlar.OdenecekTutar;
+            txtOdenenTutar.Value = toplamlar.OdenenTutar;
+            txtKalanTutar.Value = toplamlar.KalanTutar;
         }
 
         private void btnOdemeEkle_Click(object sender, EventArgs e)
         {
             navigationKategori.SelectedPage = pageOdemeEkrani;
+        }
+
+        private void btnOdemeTumu_Click(object sender, EventArgs e)
+        {
+            txtOdemeTutari.Value = txtKalanTutar.Value;
+        }
+
+        private void btnOdemeYarim_Click(object sender, EventArgs e)
+        {
+            txtOdemeTutari.Value = txtKalanTutar.Value/2;
+        }
+
+        private void btnOdemeCeyrek_Click(object sender, EventArgs e)
+        {
+            txtOdemeTutari.Value = txtKalanTutar.Value / 4;
+        }
+
+        private void btnOdemeN_Click(object sender, EventArgs e)
+        {
+            keypadIslem = KeypadIslem.OdemeBol;
+            txtMiktar.Value = 0;
+            txtMiktar.Properties.NullValuePrompt = "Lütfen Bölünecek Oranı Girin";
+        }
+
+        private void ParaClick(object sender, EventArgs e)
+        {
+            ControlParaButton button = (ControlParaButton)sender;
+            txtOdemeTutari.Value += button.Deger;
+        }
+
+        private void btnKeypadBack_Click(object sender, EventArgs e)
+        {
+            if (navigationKategori.SelectedPage==pageOdemeEkrani)
+            {
+                txtOdemeTutari.Focus();
+                SendKeys.Send("{BACKSPACE}");
+                 
+            }
+            else
+            {
+                txtMiktar.Focus();
+                SendKeys.Send("{BACKSPACE}");
+            }
         }
     }
 }

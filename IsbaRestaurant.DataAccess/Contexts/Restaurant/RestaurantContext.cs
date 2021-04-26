@@ -71,7 +71,7 @@ namespace IsbaRestaurant.DataAccess.Contexts.Restaurant
             modelBuilder.Entity<Masa>().HasRequired(c => c.Konum).WithOptional().Map(c => c.MapKey("KonumId"));
             modelBuilder.Entity<Adisyon>().HasOptional(c => c.Masa).WithMany().HasForeignKey(c => c.MasaId);
             //modelBuilder.Entity<Masa>().HasRequired(c => c.Adisyon).WithMany().HasForeignKey(c=>c.AdisyonId);
-            modelBuilder.Entity<Adisyon>().HasRequired(c => c.Garson).WithMany().HasForeignKey(c => c.GarsonId);
+            modelBuilder.Entity<Adisyon>().HasOptional(c => c.Garson).WithMany().HasForeignKey(c => c.GarsonId);
             modelBuilder.Entity<UrunHareket>().HasRequired(c => c.Urun).WithMany(c => c.UrunHareketleri).HasForeignKey(c => c.UrunId);
             modelBuilder.Entity<UrunHareket>().HasRequired(c => c.Adisyon).WithMany().HasForeignKey(c => c.AdisyonId);
             modelBuilder.Entity<UrunHareket>().HasRequired(c => c.Adisyon).WithMany(c => c.UrunHareketleri).HasForeignKey(c => c.AdisyonId);

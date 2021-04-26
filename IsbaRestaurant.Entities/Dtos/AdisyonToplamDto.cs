@@ -17,6 +17,14 @@ namespace IsbaRestaurant.Entities.Dtos
                 return ToplamTutar - IndirimTutar;
             }
         }
+        public decimal OdenenTutar { get; set; }
+        public decimal KalanTutar
+        {
+            get
+            {
+                return OdenecekTutar - OdenenTutar;
+            }
+        }
 
     }
 }

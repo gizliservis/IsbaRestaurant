@@ -90,6 +90,9 @@
     <Compile Include="ControlOdemeTuruButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ControlParaButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ControlPorsiyonButton.cs">
       <SubType>Component</SubType>
     </Compile>
