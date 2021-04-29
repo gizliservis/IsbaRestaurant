@@ -29,6 +29,7 @@ namespace IsbaRestaurant.UI.BackOffice.Garson
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGarson));
             this.gridControlGarson = new DevExpress.XtraGrid.GridControl();
             this.gridGarson = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colAdi = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,10 +47,10 @@ namespace IsbaRestaurant.UI.BackOffice.Garson
             // gridControlGarson
             // 
             this.gridControlGarson.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlGarson.Location = new System.Drawing.Point(0, 46);
+            this.gridControlGarson.Location = new System.Drawing.Point(0, 47);
             this.gridControlGarson.MainView = this.gridGarson;
             this.gridControlGarson.Name = "gridControlGarson";
-            this.gridControlGarson.Size = new System.Drawing.Size(960, 375);
+            this.gridControlGarson.Size = new System.Drawing.Size(960, 374);
             this.gridControlGarson.TabIndex = 7;
             this.gridControlGarson.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridGarson});
@@ -68,6 +69,7 @@ namespace IsbaRestaurant.UI.BackOffice.Garson
             this.colAdi.Caption = "Adı";
             this.colAdi.FieldName = "Adi";
             this.colAdi.Name = "colAdi";
+            this.colAdi.OptionsColumn.AllowEdit = false;
             this.colAdi.Visible = true;
             this.colAdi.VisibleIndex = 0;
             // 
@@ -76,6 +78,7 @@ namespace IsbaRestaurant.UI.BackOffice.Garson
             this.colSoyadi.Caption = "Soyadı";
             this.colSoyadi.FieldName = "Soyadi";
             this.colSoyadi.Name = "colSoyadi";
+            this.colSoyadi.OptionsColumn.AllowEdit = false;
             this.colSoyadi.Visible = true;
             this.colSoyadi.VisibleIndex = 1;
             // 
@@ -84,6 +87,7 @@ namespace IsbaRestaurant.UI.BackOffice.Garson
             this.colAciklama.Caption = "Açıklama";
             this.colAciklama.FieldName = "Aciklama";
             this.colAciklama.Name = "colAciklama";
+            this.colAciklama.OptionsColumn.AllowEdit = false;
             this.colAciklama.Visible = true;
             this.colAciklama.VisibleIndex = 2;
             // 
@@ -118,9 +122,11 @@ namespace IsbaRestaurant.UI.BackOffice.Garson
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.labelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl1.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.labelControl1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("labelControl1.ImageOptions.Image")));
             this.labelControl1.Location = new System.Drawing.Point(0, 0);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(960, 46);
+            this.labelControl1.Size = new System.Drawing.Size(960, 47);
             this.labelControl1.TabIndex = 5;
             this.labelControl1.Text = "Garsonlar";
             // 
@@ -132,8 +138,9 @@ namespace IsbaRestaurant.UI.BackOffice.Garson
             this.Controls.Add(this.gridControlGarson);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.labelControl1);
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("FrmGarson.IconOptions.Image")));
             this.Name = "FrmGarson";
-            this.Text = "FrmGarson";
+            this.Text = "Garsonlar";
             ((System.ComponentModel.ISupportInitialize)(this.gridControlGarson)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridGarson)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

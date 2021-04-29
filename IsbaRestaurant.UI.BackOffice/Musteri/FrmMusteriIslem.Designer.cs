@@ -137,7 +137,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnKaydet.Size = new System.Drawing.Size(90, 55);
-            this.btnKaydet.TabIndex = 1;
+            this.btnKaydet.TabIndex = 0;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
@@ -149,7 +149,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.btnKapat.Name = "btnKapat";
             this.btnKapat.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnKapat.Size = new System.Drawing.Size(90, 55);
-            this.btnKapat.TabIndex = 0;
+            this.btnKapat.TabIndex = 1;
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
@@ -516,6 +516,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.colAdresTip.Caption = "Adres Tipi";
             this.colAdresTip.FieldName = "AdresTip";
             this.colAdresTip.Name = "colAdresTip";
+            this.colAdresTip.OptionsColumn.AllowEdit = false;
             this.colAdresTip.Visible = true;
             this.colAdresTip.VisibleIndex = 0;
             // 
@@ -524,6 +525,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.colIl.Caption = "İl";
             this.colIl.FieldName = "Il";
             this.colIl.Name = "colIl";
+            this.colIl.OptionsColumn.AllowEdit = false;
             this.colIl.Visible = true;
             this.colIl.VisibleIndex = 1;
             // 
@@ -532,6 +534,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.colIlce.Caption = "İlçe";
             this.colIlce.FieldName = "Ilce";
             this.colIlce.Name = "colIlce";
+            this.colIlce.OptionsColumn.AllowEdit = false;
             this.colIlce.Visible = true;
             this.colIlce.VisibleIndex = 2;
             // 
@@ -540,6 +543,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.colAdres.Caption = "Adresi";
             this.colAdres.FieldName = "Adresi";
             this.colAdres.Name = "colAdres";
+            this.colAdres.OptionsColumn.AllowEdit = false;
             this.colAdres.Visible = true;
             this.colAdres.VisibleIndex = 3;
             // 
@@ -606,14 +610,14 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.txtAdres.Location = new System.Drawing.Point(109, 77);
             this.txtAdres.Name = "txtAdres";
             this.txtAdres.Size = new System.Drawing.Size(537, 58);
-            this.txtAdres.TabIndex = 4;
+            this.txtAdres.TabIndex = 2;
             // 
             // txtIlce
             // 
             this.txtIlce.Location = new System.Drawing.Point(434, 51);
             this.txtIlce.Name = "txtIlce";
             this.txtIlce.Size = new System.Drawing.Size(212, 20);
-            this.txtIlce.TabIndex = 3;
+            this.txtIlce.TabIndex = 4;
             // 
             // txtSemt
             // 
@@ -627,7 +631,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.txtIl.Location = new System.Drawing.Point(434, 26);
             this.txtIl.Name = "txtIl";
             this.txtIl.Size = new System.Drawing.Size(212, 20);
-            this.txtIl.TabIndex = 2;
+            this.txtIl.TabIndex = 3;
             // 
             // labelControl8
             // 

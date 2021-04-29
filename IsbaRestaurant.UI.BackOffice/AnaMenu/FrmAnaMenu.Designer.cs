@@ -30,15 +30,28 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAnaMenu));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnUrun = new DevExpress.XtraBars.BarButtonItem();
             this.btnMusteri = new DevExpress.XtraBars.BarButtonItem();
             this.btnMasa = new DevExpress.XtraBars.BarButtonItem();
             this.btnGarson = new DevExpress.XtraBars.BarButtonItem();
+            this.btnOdemeTur = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.btnOdemeTur = new DevExpress.XtraBars.BarButtonItem();
+            this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
+            this.skinPaletteDropDownButtonItem2 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
+            this.skinRibbonGalleryBarItem2 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -53,9 +66,19 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             this.btnMusteri,
             this.btnMasa,
             this.btnGarson,
-            this.btnOdemeTur});
+            this.btnOdemeTur,
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.barButtonItem4,
+            this.skinRibbonGalleryBarItem1,
+            this.skinPaletteDropDownButtonItem1,
+            this.skinDropDownButtonItem1,
+            this.skinPaletteDropDownButtonItem2,
+            this.skinPaletteRibbonGalleryBarItem1,
+            this.skinRibbonGalleryBarItem2});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 6;
+            this.ribbonControl1.MaxItemId = 16;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -65,6 +88,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             // 
             this.btnUrun.Caption = "Ürünler";
             this.btnUrun.Id = 1;
+            this.btnUrun.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUrun.ImageOptions.LargeImage")));
             this.btnUrun.Name = "btnUrun";
             this.btnUrun.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUrun_ItemClick);
             // 
@@ -72,6 +96,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             // 
             this.btnMusteri.Caption = "Müşteriler";
             this.btnMusteri.Id = 2;
+            this.btnMusteri.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnMusteri.ImageOptions.LargeImage")));
             this.btnMusteri.Name = "btnMusteri";
             this.btnMusteri.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMusteri_ItemClick);
             // 
@@ -79,6 +104,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             // 
             this.btnMasa.Caption = "Masalar";
             this.btnMasa.Id = 3;
+            this.btnMasa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnMasa.ImageOptions.LargeImage")));
             this.btnMasa.Name = "btnMasa";
             this.btnMasa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMasa_ItemClick);
             // 
@@ -86,15 +112,60 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             // 
             this.btnGarson.Caption = "Garsonlar";
             this.btnGarson.Id = 4;
+            this.btnGarson.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGarson.ImageOptions.LargeImage")));
             this.btnGarson.Name = "btnGarson";
             this.btnGarson.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGarson_ItemClick);
+            // 
+            // btnOdemeTur
+            // 
+            this.btnOdemeTur.Caption = "Ödeme Türleri";
+            this.btnOdemeTur.Id = 5;
+            this.btnOdemeTur.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOdemeTur.ImageOptions.LargeImage")));
+            this.btnOdemeTur.Name = "btnOdemeTur";
+            this.btnOdemeTur.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOdemeTur_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Ürün Hareketleri";
+            this.barButtonItem1.Id = 6;
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Adisyon Hareketleri";
+            this.barButtonItem2.Id = 7;
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Ödeme Hareketleri";
+            this.barButtonItem3.Id = 8;
+            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Hakkımızda";
+            this.barButtonItem4.Id = 9;
+            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // skinRibbonGalleryBarItem1
+            // 
+            this.skinRibbonGalleryBarItem1.Caption = "skinRibbonGalleryBarItem1";
+            this.skinRibbonGalleryBarItem1.Id = 10;
+            this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
             // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup3});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "ribbonPage1";
+            this.ribbonPage1.Text = "Restaurant";
             // 
             // ribbonPageGroup1
             // 
@@ -104,18 +175,53 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             this.ribbonPageGroup1.ItemLinks.Add(this.btnGarson);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnOdemeTur);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Kayıtlar";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Hareketler";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup3.ItemLinks.Add(this.skinRibbonGalleryBarItem2);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Diğer";
             // 
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // btnOdemeTur
+            // skinPaletteDropDownButtonItem1
             // 
-            this.btnOdemeTur.Caption = "Ödeme Türleri";
-            this.btnOdemeTur.Id = 5;
-            this.btnOdemeTur.Name = "btnOdemeTur";
-            this.btnOdemeTur.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOdemeTur_ItemClick);
+            this.skinPaletteDropDownButtonItem1.Id = 11;
+            this.skinPaletteDropDownButtonItem1.Name = "skinPaletteDropDownButtonItem1";
+            // 
+            // skinDropDownButtonItem1
+            // 
+            this.skinDropDownButtonItem1.Id = 12;
+            this.skinDropDownButtonItem1.Name = "skinDropDownButtonItem1";
+            // 
+            // skinPaletteDropDownButtonItem2
+            // 
+            this.skinPaletteDropDownButtonItem2.Id = 13;
+            this.skinPaletteDropDownButtonItem2.Name = "skinPaletteDropDownButtonItem2";
+            // 
+            // skinPaletteRibbonGalleryBarItem1
+            // 
+            this.skinPaletteRibbonGalleryBarItem1.Caption = "skinPaletteRibbonGalleryBarItem1";
+            this.skinPaletteRibbonGalleryBarItem1.Id = 14;
+            this.skinPaletteRibbonGalleryBarItem1.Name = "skinPaletteRibbonGalleryBarItem1";
+            // 
+            // skinRibbonGalleryBarItem2
+            // 
+            this.skinRibbonGalleryBarItem2.Caption = "skinRibbonGalleryBarItem2";
+            this.skinRibbonGalleryBarItem2.Id = 15;
+            this.skinRibbonGalleryBarItem2.Name = "skinRibbonGalleryBarItem2";
             // 
             // FrmAnaMenu
             // 
@@ -150,6 +256,18 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
         private DevExpress.XtraBars.BarButtonItem btnMasa;
         private DevExpress.XtraBars.BarButtonItem btnGarson;
         private DevExpress.XtraBars.BarButtonItem btnOdemeTur;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem1;
+        private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem1;
+        private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem2;
+        private DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem skinPaletteRibbonGalleryBarItem1;
+        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem2;
     }
 }
 

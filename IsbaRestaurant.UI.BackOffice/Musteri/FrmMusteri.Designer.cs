@@ -29,6 +29,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMusteri));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.controlMenu = new IsbaRestaurant.UserControls.ControlAnaMenuAlt();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -75,6 +76,8 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.labelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl1.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.labelControl1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("labelControl1.ImageOptions.Image")));
             this.labelControl1.Location = new System.Drawing.Point(0, 0);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(960, 46);
@@ -107,6 +110,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.colAdi.Caption = "Adı";
             this.colAdi.FieldName = "Adi";
             this.colAdi.Name = "colAdi";
+            this.colAdi.OptionsColumn.AllowEdit = false;
             this.colAdi.Visible = true;
             this.colAdi.VisibleIndex = 1;
             // 
@@ -115,6 +119,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.colSoyadi.Caption = "Soyadı";
             this.colSoyadi.FieldName = "Soyadi";
             this.colSoyadi.Name = "colSoyadi";
+            this.colSoyadi.OptionsColumn.AllowEdit = false;
             this.colSoyadi.Visible = true;
             this.colSoyadi.VisibleIndex = 2;
             // 
@@ -123,6 +128,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.colSirket.Caption = "Şirket Adı";
             this.colSirket.FieldName = "Sirket";
             this.colSirket.Name = "colSirket";
+            this.colSirket.OptionsColumn.AllowEdit = false;
             this.colSirket.Visible = true;
             this.colSirket.VisibleIndex = 3;
             // 
@@ -131,6 +137,7 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.colKartNo.Caption = "Kart No";
             this.colKartNo.FieldName = "KartNo";
             this.colKartNo.Name = "colKartNo";
+            this.colKartNo.OptionsColumn.AllowEdit = false;
             this.colKartNo.Visible = true;
             this.colKartNo.VisibleIndex = 0;
             // 
@@ -142,8 +149,9 @@ namespace IsbaRestaurant.UI.BackOffice.Musteri
             this.Controls.Add(this.gridControlMusteri);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.labelControl1);
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("FrmMusteri.IconOptions.Image")));
             this.Name = "FrmMusteri";
-            this.Text = "FrmMusteri";
+            this.Text = "Müşteriler";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMusteri)).EndInit();

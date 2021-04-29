@@ -29,15 +29,16 @@ namespace IsbaRestaurant.UI.BackOffice.Masa
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMasa));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.controlMenu = new IsbaRestaurant.UserControls.ControlAnaMenuAlt();
             this.gridControlMasa = new DevExpress.XtraGrid.GridControl();
             this.gridMasa = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.colMasaAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKonum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKapasite = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMasa)).BeginInit();
@@ -89,24 +90,12 @@ namespace IsbaRestaurant.UI.BackOffice.Masa
             this.gridMasa.GridControl = this.gridControlMasa;
             this.gridMasa.Name = "gridMasa";
             // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.labelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl1.Location = new System.Drawing.Point(0, 0);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(960, 46);
-            this.labelControl1.TabIndex = 5;
-            this.labelControl1.Text = "Masalar";
-            // 
             // colMasaAdi
             // 
             this.colMasaAdi.Caption = "Masa Adı";
             this.colMasaAdi.FieldName = "Adi";
             this.colMasaAdi.Name = "colMasaAdi";
+            this.colMasaAdi.OptionsColumn.AllowEdit = false;
             this.colMasaAdi.Visible = true;
             this.colMasaAdi.VisibleIndex = 0;
             this.colMasaAdi.Width = 240;
@@ -116,6 +105,7 @@ namespace IsbaRestaurant.UI.BackOffice.Masa
             this.colKonum.Caption = "Konumu";
             this.colKonum.FieldName = "Konum.Adi";
             this.colKonum.Name = "colKonum";
+            this.colKonum.OptionsColumn.AllowEdit = false;
             this.colKonum.Visible = true;
             this.colKonum.VisibleIndex = 1;
             this.colKonum.Width = 230;
@@ -125,6 +115,7 @@ namespace IsbaRestaurant.UI.BackOffice.Masa
             this.colKapasite.Caption = "Kapasite";
             this.colKapasite.FieldName = "Kapasite";
             this.colKapasite.Name = "colKapasite";
+            this.colKapasite.OptionsColumn.AllowEdit = false;
             this.colKapasite.Visible = true;
             this.colKapasite.VisibleIndex = 2;
             this.colKapasite.Width = 88;
@@ -134,9 +125,25 @@ namespace IsbaRestaurant.UI.BackOffice.Masa
             this.colAciklama.Caption = "Açıklama";
             this.colAciklama.FieldName = "Aciklama";
             this.colAciklama.Name = "colAciklama";
+            this.colAciklama.OptionsColumn.AllowEdit = false;
             this.colAciklama.Visible = true;
             this.colAciklama.VisibleIndex = 3;
             this.colAciklama.Width = 377;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.labelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl1.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.labelControl1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("labelControl1.ImageOptions.Image")));
+            this.labelControl1.Location = new System.Drawing.Point(0, 0);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(960, 46);
+            this.labelControl1.TabIndex = 5;
+            this.labelControl1.Text = "Masalar";
             // 
             // FrmMasa
             // 
@@ -146,8 +153,9 @@ namespace IsbaRestaurant.UI.BackOffice.Masa
             this.Controls.Add(this.gridControlMasa);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.labelControl1);
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("FrmMasa.IconOptions.Image")));
             this.Name = "FrmMasa";
-            this.Text = "FrmMasa";
+            this.Text = "Masalar";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMasa)).EndInit();

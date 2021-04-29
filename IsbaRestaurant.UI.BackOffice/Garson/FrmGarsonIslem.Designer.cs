@@ -38,16 +38,16 @@ namespace IsbaRestaurant.UI.BackOffice.Garson
             this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txtSoyadi = new DevExpress.XtraEditors.TextEdit();
             this.txtAdi = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtSoyadi = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupAltMenu)).BeginInit();
             this.groupAltMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoyadi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAdi.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupAltMenu
@@ -148,6 +148,14 @@ namespace IsbaRestaurant.UI.BackOffice.Garson
             this.labelControl3.TabIndex = 2;
             this.labelControl3.Text = "Soyadı :";
             // 
+            // txtSoyadi
+            // 
+            this.txtSoyadi.EditValue = "";
+            this.txtSoyadi.Location = new System.Drawing.Point(110, 64);
+            this.txtSoyadi.Name = "txtSoyadi";
+            this.txtSoyadi.Size = new System.Drawing.Size(422, 20);
+            this.txtSoyadi.TabIndex = 1;
+            // 
             // txtAdi
             // 
             this.txtAdi.EditValue = "";
@@ -168,14 +176,6 @@ namespace IsbaRestaurant.UI.BackOffice.Garson
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Adı :";
             // 
-            // txtSoyadi
-            // 
-            this.txtSoyadi.EditValue = "";
-            this.txtSoyadi.Location = new System.Drawing.Point(110, 64);
-            this.txtSoyadi.Name = "txtSoyadi";
-            this.txtSoyadi.Size = new System.Drawing.Size(422, 20);
-            this.txtSoyadi.TabIndex = 1;
-            // 
             // FrmGarsonIslem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,8 +191,8 @@ namespace IsbaRestaurant.UI.BackOffice.Garson
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAdi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoyadi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAdi.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

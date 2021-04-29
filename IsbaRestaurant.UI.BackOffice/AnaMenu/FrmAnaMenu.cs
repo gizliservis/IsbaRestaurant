@@ -20,6 +20,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
         public FrmAnaMenu()
         {
             InitializeComponent();
+            DevExpress.LookAndFeel.UserLookAndFeel.Default.SkinName = "Dark Side";
             if (!ConnectionStringInfo.Check())
             {
                 FrmSetupConnection form = new FrmSetupConnection();

@@ -369,6 +369,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.colPorsiyonAdi.Caption = "Adı";
             this.colPorsiyonAdi.FieldName = "Adi";
             this.colPorsiyonAdi.Name = "colPorsiyonAdi";
+            this.colPorsiyonAdi.OptionsColumn.AllowEdit = false;
             this.colPorsiyonAdi.Visible = true;
             this.colPorsiyonAdi.VisibleIndex = 0;
             // 
@@ -377,6 +378,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.colPorsiyonFiyat.Caption = "Fiyatı";
             this.colPorsiyonFiyat.FieldName = "Fiyat";
             this.colPorsiyonFiyat.Name = "colPorsiyonFiyat";
+            this.colPorsiyonFiyat.OptionsColumn.AllowEdit = false;
             this.colPorsiyonFiyat.Visible = true;
             this.colPorsiyonFiyat.VisibleIndex = 2;
             // 
@@ -385,6 +387,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.colPorsiyonCarpan.Caption = "Çarpan";
             this.colPorsiyonCarpan.FieldName = "EkMalzemeCarpan";
             this.colPorsiyonCarpan.Name = "colPorsiyonCarpan";
+            this.colPorsiyonCarpan.OptionsColumn.AllowEdit = false;
             this.colPorsiyonCarpan.Visible = true;
             this.colPorsiyonCarpan.VisibleIndex = 3;
             // 
@@ -393,6 +396,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.colPorsiyonBirim.Caption = "Birimi";
             this.colPorsiyonBirim.FieldName = "Birim.Adi";
             this.colPorsiyonBirim.Name = "colPorsiyonBirim";
+            this.colPorsiyonBirim.OptionsColumn.AllowEdit = false;
             this.colPorsiyonBirim.Visible = true;
             this.colPorsiyonBirim.VisibleIndex = 1;
             // 
@@ -470,7 +474,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.txtAciklama.Location = new System.Drawing.Point(108, 114);
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Size = new System.Drawing.Size(537, 42);
-            this.txtAciklama.TabIndex = 4;
+            this.txtAciklama.TabIndex = 3;
             // 
             // txtEkMalzemeCarpan
             // 
@@ -480,7 +484,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.txtEkMalzemeCarpan.Properties.Appearance.Options.UseFont = true;
             this.txtEkMalzemeCarpan.Properties.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.Never;
             this.txtEkMalzemeCarpan.Size = new System.Drawing.Size(190, 30);
-            this.txtEkMalzemeCarpan.TabIndex = 3;
+            this.txtEkMalzemeCarpan.TabIndex = 4;
             // 
             // txtPorsiyonFiyat
             // 
@@ -509,7 +513,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.txtPorsiyonAdi.Location = new System.Drawing.Point(108, 26);
             this.txtPorsiyonAdi.Name = "txtPorsiyonAdi";
             this.txtPorsiyonAdi.Size = new System.Drawing.Size(538, 20);
-            this.txtPorsiyonAdi.TabIndex = 0;
+            this.txtPorsiyonAdi.TabIndex = 5;
             // 
             // labelControl9
             // 
@@ -583,6 +587,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.colMalzemeAdi.Caption = "Adı";
             this.colMalzemeAdi.FieldName = "EkmalzemeAdi";
             this.colMalzemeAdi.Name = "colMalzemeAdi";
+            this.colMalzemeAdi.OptionsColumn.AllowEdit = false;
             this.colMalzemeAdi.Visible = true;
             this.colMalzemeAdi.VisibleIndex = 0;
             // 
@@ -591,6 +596,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.colMalzemeFiyat.Caption = "Fiyatı";
             this.colMalzemeFiyat.FieldName = "Fiyat";
             this.colMalzemeFiyat.Name = "colMalzemeFiyat";
+            this.colMalzemeFiyat.OptionsColumn.AllowEdit = false;
             this.colMalzemeFiyat.Visible = true;
             this.colMalzemeFiyat.VisibleIndex = 1;
             // 
@@ -599,6 +605,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.colMalzemeAciklama.Caption = "Açiklama";
             this.colMalzemeAciklama.FieldName = "Aciklama";
             this.colMalzemeAciklama.Name = "colMalzemeAciklama";
+            this.colMalzemeAciklama.OptionsColumn.AllowEdit = false;
             this.colMalzemeAciklama.Visible = true;
             this.colMalzemeAciklama.VisibleIndex = 2;
             // 
@@ -649,7 +656,7 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.txtEkMalzemeAciklama.Location = new System.Drawing.Point(109, 87);
             this.txtEkMalzemeAciklama.Name = "txtEkMalzemeAciklama";
             this.txtEkMalzemeAciklama.Size = new System.Drawing.Size(537, 48);
-            this.txtEkMalzemeAciklama.TabIndex = 2;
+            this.txtEkMalzemeAciklama.TabIndex = 4;
             // 
             // txtEkMalzemeFiyat
             // 
@@ -659,14 +666,14 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.txtEkMalzemeFiyat.Properties.Appearance.Options.UseFont = true;
             this.txtEkMalzemeFiyat.Properties.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.Never;
             this.txtEkMalzemeFiyat.Size = new System.Drawing.Size(537, 30);
-            this.txtEkMalzemeFiyat.TabIndex = 1;
+            this.txtEkMalzemeFiyat.TabIndex = 3;
             // 
             // txtEkmalzemeAdi
             // 
             this.txtEkmalzemeAdi.Location = new System.Drawing.Point(108, 26);
             this.txtEkmalzemeAdi.Name = "txtEkmalzemeAdi";
             this.txtEkmalzemeAdi.Size = new System.Drawing.Size(538, 20);
-            this.txtEkmalzemeAdi.TabIndex = 0;
+            this.txtEkmalzemeAdi.TabIndex = 2;
             // 
             // labelControl11
             // 

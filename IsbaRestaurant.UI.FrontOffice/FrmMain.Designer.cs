@@ -43,6 +43,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             DevExpress.XtraLayout.ColumnDefinition columnDefinition5 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.lblMesaj = new DevExpress.XtraEditors.LabelControl();
             this.btnMusteri = new IsbaRestaurant.UserControls.ControlMusteriButton();
             this.btnGarsonSecim = new IsbaRestaurant.UserControls.ControlGarsonButton();
             this.btnKategoriyeDon = new DevExpress.XtraEditors.SimpleButton();
@@ -171,12 +172,11 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnMiktarArttir = new DevExpress.XtraEditors.SimpleButton();
             this.panelHareketSolMenu = new DevExpress.XtraEditors.PanelControl();
             this.btnSiparisKaydet = new DevExpress.XtraEditors.SimpleButton();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnSiparisIptal = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdisyonDetay = new DevExpress.XtraEditors.SimpleButton();
             this.btnYazdir = new DevExpress.XtraEditors.SimpleButton();
             this.btnOdemeEkle = new DevExpress.XtraEditors.SimpleButton();
-            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.lblMesaj = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationMain)).BeginInit();
@@ -282,6 +282,19 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1175, 49);
             this.panelControl1.TabIndex = 0;
+            // 
+            // lblMesaj
+            // 
+            this.lblMesaj.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMesaj.Appearance.Options.UseFont = true;
+            this.lblMesaj.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblMesaj.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblMesaj.Location = new System.Drawing.Point(2, 2);
+            this.lblMesaj.Name = "lblMesaj";
+            this.lblMesaj.Size = new System.Drawing.Size(538, 45);
+            this.lblMesaj.TabIndex = 3;
+            this.lblMesaj.Text = "labelControl4";
+            this.lblMesaj.Visible = false;
             // 
             // btnMusteri
             // 
@@ -1210,6 +1223,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnKeypadDel.Name = "btnKeypadDel";
             this.btnKeypadDel.Size = new System.Drawing.Size(45, 45);
             this.btnKeypadDel.TabIndex = 3;
+            this.btnKeypadDel.Click += new System.EventHandler(this.btnKeypadDel_Click);
             // 
             // btnKeypadBack
             // 
@@ -1944,6 +1958,13 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnSiparisKaydet.Text = "Değişiklikleri\r\nKaydet";
             this.btnSiparisKaydet.Click += new System.EventHandler(this.btnSiparisKaydet_Click);
             // 
+            // ımageList1
+            // 
+            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ımageList1.Images.SetKeyName(0, "floppy_disk.png");
+            this.ımageList1.Images.SetKeyName(1, "folder_out.png");
+            // 
             // btnSiparisIptal
             // 
             this.btnSiparisIptal.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -1957,6 +1978,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnSiparisIptal.Size = new System.Drawing.Size(76, 90);
             this.btnSiparisIptal.TabIndex = 3;
             this.btnSiparisIptal.Text = "Sipariş İptal";
+            this.btnSiparisIptal.Click += new System.EventHandler(this.btnSiparisIptal_Click);
             // 
             // btnAdisyonDetay
             // 
@@ -2000,26 +2022,6 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnOdemeEkle.TabIndex = 0;
             this.btnOdemeEkle.Text = "Ödeme Ekle";
             this.btnOdemeEkle.Click += new System.EventHandler(this.btnOdemeEkle_Click);
-            // 
-            // ımageList1
-            // 
-            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
-            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.ımageList1.Images.SetKeyName(0, "floppy_disk.png");
-            this.ımageList1.Images.SetKeyName(1, "folder_out.png");
-            // 
-            // lblMesaj
-            // 
-            this.lblMesaj.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblMesaj.Appearance.Options.UseFont = true;
-            this.lblMesaj.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblMesaj.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblMesaj.Location = new System.Drawing.Point(2, 2);
-            this.lblMesaj.Name = "lblMesaj";
-            this.lblMesaj.Size = new System.Drawing.Size(538, 45);
-            this.lblMesaj.TabIndex = 3;
-            this.lblMesaj.Text = "labelControl4";
-            this.lblMesaj.Visible = false;
             // 
             // FrmMain
             // 

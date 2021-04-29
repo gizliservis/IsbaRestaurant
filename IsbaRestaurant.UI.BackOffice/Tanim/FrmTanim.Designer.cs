@@ -29,12 +29,13 @@ namespace IsbaRestaurant.UI.BackOffice.Tanim
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTanim));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupTanimBilgi = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
             this.txtTanim = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.controlMenu = new IsbaRestaurant.UserControls.ControlMenuKayit();
             this.gridControlTanim = new DevExpress.XtraGrid.GridControl();
@@ -43,8 +44,8 @@ namespace IsbaRestaurant.UI.BackOffice.Tanim
             this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupTanimBilgi)).BeginInit();
             this.groupTanimBilgi.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTanim.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanim.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTanim)).BeginInit();
@@ -58,11 +59,13 @@ namespace IsbaRestaurant.UI.BackOffice.Tanim
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.labelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl1.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.labelControl1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("labelControl1.ImageOptions.Image")));
             this.labelControl1.Location = new System.Drawing.Point(0, 0);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(601, 46);
+            this.labelControl1.Size = new System.Drawing.Size(601, 53);
             this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Ürünler";
+            this.labelControl1.Text = "Tanım İşlemleri";
             // 
             // groupTanimBilgi
             // 
@@ -71,24 +74,19 @@ namespace IsbaRestaurant.UI.BackOffice.Tanim
             this.groupTanimBilgi.Controls.Add(this.labelControl2);
             this.groupTanimBilgi.Controls.Add(this.labelControl6);
             this.groupTanimBilgi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupTanimBilgi.Location = new System.Drawing.Point(0, 46);
+            this.groupTanimBilgi.Location = new System.Drawing.Point(0, 53);
             this.groupTanimBilgi.Name = "groupTanimBilgi";
             this.groupTanimBilgi.Size = new System.Drawing.Size(601, 136);
             this.groupTanimBilgi.TabIndex = 2;
             this.groupTanimBilgi.Text = "Tanim İşlemleri";
             this.groupTanimBilgi.Visible = false;
             // 
-            // labelControl6
+            // txtAciklama
             // 
-            this.labelControl6.Appearance.Options.UseTextOptions = true;
-            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.labelControl6.Location = new System.Drawing.Point(5, 28);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(100, 20);
-            this.labelControl6.TabIndex = 3;
-            this.labelControl6.Text = "Tanım :";
+            this.txtAciklama.Location = new System.Drawing.Point(112, 54);
+            this.txtAciklama.Name = "txtAciklama";
+            this.txtAciklama.Size = new System.Drawing.Size(484, 74);
+            this.txtAciklama.TabIndex = 5;
             // 
             // txtTanim
             // 
@@ -109,18 +107,23 @@ namespace IsbaRestaurant.UI.BackOffice.Tanim
             this.labelControl2.TabIndex = 3;
             this.labelControl2.Text = "Açıklama :";
             // 
-            // txtAciklama
+            // labelControl6
             // 
-            this.txtAciklama.Location = new System.Drawing.Point(112, 54);
-            this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(484, 74);
-            this.txtAciklama.TabIndex = 5;
+            this.labelControl6.Appearance.Options.UseTextOptions = true;
+            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.labelControl6.Location = new System.Drawing.Point(5, 28);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(100, 20);
+            this.labelControl6.TabIndex = 3;
+            this.labelControl6.Text = "Tanım :";
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.controlMenu);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl2.Location = new System.Drawing.Point(0, 182);
+            this.groupControl2.Location = new System.Drawing.Point(0, 189);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(601, 92);
             this.groupControl2.TabIndex = 3;
@@ -147,10 +150,10 @@ namespace IsbaRestaurant.UI.BackOffice.Tanim
             // gridControlTanim
             // 
             this.gridControlTanim.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlTanim.Location = new System.Drawing.Point(0, 274);
+            this.gridControlTanim.Location = new System.Drawing.Point(0, 281);
             this.gridControlTanim.MainView = this.gridTanim;
             this.gridControlTanim.Name = "gridControlTanim";
-            this.gridControlTanim.Size = new System.Drawing.Size(601, 240);
+            this.gridControlTanim.Size = new System.Drawing.Size(601, 233);
             this.gridControlTanim.TabIndex = 4;
             this.gridControlTanim.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridTanim});
@@ -193,6 +196,7 @@ namespace IsbaRestaurant.UI.BackOffice.Tanim
             this.Controls.Add(this.groupTanimBilgi);
             this.Controls.Add(this.labelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("FrmTanim.IconOptions.Image")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmTanim";
@@ -200,8 +204,8 @@ namespace IsbaRestaurant.UI.BackOffice.Tanim
             this.Text = "Tanım";
             ((System.ComponentModel.ISupportInitialize)(this.groupTanimBilgi)).EndInit();
             this.groupTanimBilgi.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtTanim.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanim.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTanim)).EndInit();
