@@ -28,16 +28,18 @@ namespace IsbaRestaurant.Business.Managers
 
             }).FirstOrDefault();
         }
-        public List<AdisyonHareketDto> AdisyonHareketGetir(DateTime Tarih)
+        public List<AdisyonHareketDto> AdisyonHareketGetir(DateTime Tarih1,DateTime tarih2)
         {
-            return _uow.AdisyonDal.Select(c => DbFunctions.TruncateTime(c.EklenmeTarihi) == Tarih.Date, c => new AdisyonHareketDto
+            return _uow.AdisyonDal.Select(c => DbFunctions.TruncateTime(c.EklenmeTarihi) >= Tarih1.Date && DbFunctions.TruncateTime(c.EklenmeTarihi)<=tarih2.Date, c => new AdisyonHareketDto
             {
+                AdisyonId=c.Id,
                 AdisyonDurum = c.AdisyonDurum,
                 Tutar = c.Tutar,
                 Indirim = c.Indirim,
                 GarsonAdi = c.Garson.Adi + " " + c.Garson.Soyadi,
                 MasaAdi = c.Masa.Adi,
-                MusteriAdi = c.Musteri.Adi + " " + c.Musteri.Soyadi
+                MusteriAdi = c.Musteri.Adi + " " + c.Musteri.Soyadi,
+                Tarih=c.EklenmeTarihi
             }, c => c.Masa, c => c.Garson, c => c.Musteri).ToList();
         }
     }

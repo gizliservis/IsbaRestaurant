@@ -37,7 +37,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             this.btnMasa = new DevExpress.XtraBars.BarButtonItem();
             this.btnGarson = new DevExpress.XtraBars.BarButtonItem();
             this.btnOdemeTur = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnUrunHareketleri = new DevExpress.XtraBars.BarButtonItem();
             this.btnAdisyonHareket = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
@@ -67,7 +67,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             this.btnMasa,
             this.btnGarson,
             this.btnOdemeTur,
-            this.barButtonItem1,
+            this.btnUrunHareketleri,
             this.btnAdisyonHareket,
             this.barButtonItem3,
             this.barButtonItem4,
@@ -124,18 +124,19 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             this.btnOdemeTur.Name = "btnOdemeTur";
             this.btnOdemeTur.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOdemeTur_ItemClick);
             // 
-            // barButtonItem1
+            // btnUrunHareketleri
             // 
-            this.barButtonItem1.Caption = "Ürün Hareketleri";
-            this.barButtonItem1.Id = 6;
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.btnUrunHareketleri.Caption = "Ürün Hareketleri";
+            this.btnUrunHareketleri.Id = 6;
+            this.btnUrunHareketleri.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnUrunHareketleri.Name = "btnUrunHareketleri";
+            this.btnUrunHareketleri.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUrunHareketleri_ItemClick);
             // 
             // btnAdisyonHareket
             // 
             this.btnAdisyonHareket.Caption = "Adisyon Hareketleri";
             this.btnAdisyonHareket.Id = 7;
-            this.btnAdisyonHareket.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnAdisyonHareket.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAdisyonHareket.ImageOptions.LargeImage")));
             this.btnAdisyonHareket.Name = "btnAdisyonHareket";
             this.btnAdisyonHareket.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAdisyonHareket_ItemClick);
             // 
@@ -207,7 +208,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnUrunHareketleri);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnAdisyonHareket);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
@@ -257,7 +258,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
         private DevExpress.XtraBars.BarButtonItem btnMasa;
         private DevExpress.XtraBars.BarButtonItem btnGarson;
         private DevExpress.XtraBars.BarButtonItem btnOdemeTur;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnUrunHareketleri;
         private DevExpress.XtraBars.BarButtonItem btnAdisyonHareket;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;

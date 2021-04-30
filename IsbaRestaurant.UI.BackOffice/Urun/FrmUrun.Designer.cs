@@ -175,7 +175,6 @@ namespace IsbaRestaurant.UI.BackOffice.Urun
             this.colFotografEkle.MaxWidth = 80;
             this.colFotografEkle.MinWidth = 80;
             this.colFotografEkle.Name = "colFotografEkle";
-            this.colFotografEkle.OptionsColumn.AllowEdit = false;
             this.colFotografEkle.Visible = true;
             this.colFotografEkle.VisibleIndex = 4;
             this.colFotografEkle.Width = 80;

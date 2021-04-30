@@ -1,5 +1,7 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using IsbaRestaurant.Business.Workers;
+using IsbaRestaurant.Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,15 +21,63 @@ namespace IsbaRestaurant.UI.BackOffice.Adisyon
         {
             InitializeComponent();
             dateGunSecim.DateTime = DateTime.Now;
-            listele(DateTime.Now);
+            dateGunsecim2.DateTime = DateTime.Now;
+            listele(DateTime.Now,DateTime.Now);
         }
-        void listele(DateTime tarih)
+        void listele(DateTime tarih1,DateTime tarih2)
         {
-            gridControlAdisyonHareket.DataSource = worker.AdisyonService.AdisyonHareketGetir(tarih);
+            gridControlAdisyonHareket.DataSource = worker.AdisyonService.AdisyonHareketGetir(tarih1,tarih2);
         }
         private void dateGunSecim_SelectionChanged(object sender, EventArgs e)
         {
-            listele(dateGunSecim.DateTime);
+            if (dateGunSecim.DateTime>dateGunsecim2.DateTime)
+            {
+                dateGunsecim2.DateTime = dateGunSecim.DateTime;
+            }
+            listele(dateGunSecim.DateTime,dateGunsecim2.DateTime);
+        }
+
+        private void dateGunsecim2_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dateGunSecim.DateTime > dateGunsecim2.DateTime)
+            {
+                dateGunSecim.DateTime = dateGunsecim2.DateTime;
+            }
+            listele(dateGunSecim.DateTime, dateGunsecim2.DateTime);
+        }
+
+        private void gridAdisyonHareket_MasterRowGetRelationCount(object sender, DevExpress.XtraGrid.Views.Grid.MasterRowGetRelationCountEventArgs e)
+        {
+            e.RelationCount = 2;
+        }
+
+        private void gridAdisyonHareket_MasterRowGetRelationName(object sender, DevExpress.XtraGrid.Views.Grid.MasterRowGetRelationNameEventArgs e)
+        {
+            switch (e.RelationIndex)
+            {
+                case 0:
+                    e.RelationName = "Ürün Hareketleri";
+                    break;
+                case 1:
+                    e.RelationName = "Ödeme Hareketleri";
+                    break;
+            }
+      
+        }
+
+        private void gridAdisyonHareket_MasterRowGetChildList(object sender, DevExpress.XtraGrid.Views.Grid.MasterRowGetChildListEventArgs e)
+        { GridView view = (GridView)sender;
+            AdisyonHareketDto entity = (AdisyonHareketDto)view.GetRow(e.RowHandle);
+            switch (e.RelationIndex)
+            {
+                case 0:
+                    e.ChildList = worker.UrunHareketService.GetList(c => c.AdisyonId == entity.AdisyonId, c => c.Urun, c => c.Porsiyon, c => c.Porsiyon.Birim).ToList();
+                    break;
+                case 1:
+                    e.ChildList = worker.OdemeHareketService.GetList(c => c.AdisyonId == entity.AdisyonId, c => c.OdemeTuru, c => c.OdemeTuru.OdemeTur).ToList();
+                    break;
+            }
+           
         }
     }
 }
