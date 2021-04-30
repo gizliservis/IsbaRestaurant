@@ -38,20 +38,20 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             this.btnGarson = new DevExpress.XtraBars.BarButtonItem();
             this.btnOdemeTur = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAdisyonHareket = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
             this.skinPaletteDropDownButtonItem2 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
             this.skinRibbonGalleryBarItem2 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +68,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             this.btnGarson,
             this.btnOdemeTur,
             this.barButtonItem1,
-            this.barButtonItem2,
+            this.btnAdisyonHareket,
             this.barButtonItem3,
             this.barButtonItem4,
             this.skinRibbonGalleryBarItem1,
@@ -131,12 +131,13 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
             this.barButtonItem1.Name = "barButtonItem1";
             // 
-            // barButtonItem2
+            // btnAdisyonHareket
             // 
-            this.barButtonItem2.Caption = "Adisyon Hareketleri";
-            this.barButtonItem2.Id = 7;
-            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.btnAdisyonHareket.Caption = "Adisyon Hareketleri";
+            this.btnAdisyonHareket.Id = 7;
+            this.btnAdisyonHareket.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnAdisyonHareket.Name = "btnAdisyonHareket";
+            this.btnAdisyonHareket.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAdisyonHareket_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -157,44 +158,6 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             this.skinRibbonGalleryBarItem1.Caption = "skinRibbonGalleryBarItem1";
             this.skinRibbonGalleryBarItem1.Id = 10;
             this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
-            // 
-            // ribbonPage1
-            // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup2,
-            this.ribbonPageGroup3});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Restaurant";
-            // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnUrun);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnMusteri);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnMasa);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnGarson);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnOdemeTur);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "Kayıtlar";
-            // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Hareketler";
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem4);
-            this.ribbonPageGroup3.ItemLinks.Add(this.skinRibbonGalleryBarItem2);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Diğer";
-            // 
-            // xtraTabbedMdiManager1
-            // 
-            this.xtraTabbedMdiManager1.MdiParent = this;
             // 
             // skinPaletteDropDownButtonItem1
             // 
@@ -222,6 +185,44 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             this.skinRibbonGalleryBarItem2.Caption = "skinRibbonGalleryBarItem2";
             this.skinRibbonGalleryBarItem2.Id = 15;
             this.skinRibbonGalleryBarItem2.Name = "skinRibbonGalleryBarItem2";
+            // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup3});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "Restaurant";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnUrun);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnMusteri);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnMasa);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnGarson);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnOdemeTur);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Kayıtlar";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnAdisyonHareket);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Hareketler";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup3.ItemLinks.Add(this.skinRibbonGalleryBarItem2);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Diğer";
+            // 
+            // xtraTabbedMdiManager1
+            // 
+            this.xtraTabbedMdiManager1.MdiParent = this;
             // 
             // FrmAnaMenu
             // 
@@ -257,7 +258,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
         private DevExpress.XtraBars.BarButtonItem btnGarson;
         private DevExpress.XtraBars.BarButtonItem btnOdemeTur;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem btnAdisyonHareket;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;

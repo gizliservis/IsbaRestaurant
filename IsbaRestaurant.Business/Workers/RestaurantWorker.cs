@@ -2,10 +2,6 @@
 using IsbaRestaurant.Business.Services;
 using IsbaRestaurant.DataAccess.UnitOfWork;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IsbaRestaurant.Business.Workers
 {
@@ -17,7 +13,7 @@ namespace IsbaRestaurant.Business.Workers
         public IPorsiyonService PorsiyonService { get; set; }
         public IEkMalzemeService EkMalzemeService { get; set; }
         public IMusteriService MusteriService { get; set; }
-        public ITelefonService TelefonService{ get; set; }
+        public ITelefonService TelefonService { get; set; }
         public IAdresService AdresService { get; set; }
         public IAdisyonService AdisyonService { get; set; }
         public IEkMalzemeHareketService EkMalzemeHareketService { get; set; }
@@ -29,9 +25,9 @@ namespace IsbaRestaurant.Business.Workers
 
 
         private bool disposedValue;
-        public RestaurantWorker(string connectionString=null)
+        public RestaurantWorker(string connectionString = null)
         {
-            _uow =new RestaurantUnitOfWork(connectionString);
+            _uow = new RestaurantUnitOfWork(connectionString);
             UrunService = new UrunManager(_uow);
             TanimService = new TanimManager(_uow);
             PorsiyonService = new PorsiyonManager(_uow);

@@ -73,6 +73,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adisyon\FrmAdisyonHareket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adisyon\FrmAdisyonHareket.Designer.cs">
+      <DependentUpon>FrmAdisyonHareket.cs</DependentUpon>
+    </Compile>
     <Compile Include="AnaMenu\FrmAnaMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     <Compile Include="Urun\FrmUrunIslem.Designer.cs">
       <DependentUpon>FrmUrunIslem.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Adisyon\FrmAdisyonHareket.resx">
+      <DependentUpon>FrmAdisyonHareket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AnaMenu\FrmAnaMenu.resx">
       <DependentUpon>FrmAnaMenu.cs</DependentUpon>
     </EmbeddedResource>

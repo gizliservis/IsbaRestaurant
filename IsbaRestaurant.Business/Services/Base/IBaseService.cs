@@ -5,12 +5,10 @@ using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IsbaRestaurant.Business.Services.Base
 {
-    public  interface IBaseService<TEntity>:IDisposable where TEntity : class,IEntity,new()
+    public interface IBaseService<TEntity> : IDisposable where TEntity : class, IEntity, new()
     {
         void Add(TEntity entity);
         void Add(IEnumerable<TEntity> entities);

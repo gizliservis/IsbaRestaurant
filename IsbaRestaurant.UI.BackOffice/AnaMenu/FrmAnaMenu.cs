@@ -1,4 +1,5 @@
 ﻿using IsbaRestaurant.Core.Functions;
+using IsbaRestaurant.UI.BackOffice.Adisyon;
 using IsbaRestaurant.UI.BackOffice.Garson;
 using IsbaRestaurant.UI.BackOffice.Masa;
 using IsbaRestaurant.UI.BackOffice.Musteri;
@@ -60,6 +61,13 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
         private void btnOdemeTur_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FrmOdemeTuru form = new FrmOdemeTuru();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void btnAdisyonHareket_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FrmAdisyonHareket form = new FrmAdisyonHareket();
             form.MdiParent = this;
             form.Show();
         }

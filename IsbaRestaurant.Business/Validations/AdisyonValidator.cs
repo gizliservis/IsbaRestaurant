@@ -1,14 +1,9 @@
 ﻿using FluentValidation;
 using IsbaRestaurant.Entities.Tables;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IsbaRestaurant.Business.Validations
 {
-   public  class AdisyonValidator:AbstractValidator<Adisyon>
+    public class AdisyonValidator : AbstractValidator<Adisyon>
     {
         public AdisyonValidator()
         {

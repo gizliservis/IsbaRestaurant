@@ -1,14 +1,9 @@
-﻿using System;
-using FluentValidation;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation;
 using IsbaRestaurant.Entities.Tables;
 
 namespace IsbaRestaurant.Business.Validations
 {
-    public class PorsiyonValidator:AbstractValidator<Porsiyon>
+    public class PorsiyonValidator : AbstractValidator<Porsiyon>
     {
         public PorsiyonValidator()
         {

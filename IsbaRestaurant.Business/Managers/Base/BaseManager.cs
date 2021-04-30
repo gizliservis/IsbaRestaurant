@@ -7,14 +7,12 @@ using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IsbaRestaurant.Business.Managers.Base
 {
     public class BaseManager<TEntity> : IBaseService<TEntity> where TEntity : class, IEntity, new()
     {
-       private IUnitOfWork _uow;
+        private IUnitOfWork _uow;
         private bool disposedValue;
         public BaseManager(IUnitOfWork uow)
         {
@@ -63,7 +61,7 @@ namespace IsbaRestaurant.Business.Managers.Base
 
         public virtual bool Exist(Expression<Func<TEntity, bool>> filter)
         {
-           return _uow.Dal<TEntity>().Exist(filter);
+            return _uow.Dal<TEntity>().Exist(filter);
         }
 
         public virtual TEntity Get(Expression<Func<TEntity, bool>> filter, params Expression<Func<TEntity, object>>[] includes)
