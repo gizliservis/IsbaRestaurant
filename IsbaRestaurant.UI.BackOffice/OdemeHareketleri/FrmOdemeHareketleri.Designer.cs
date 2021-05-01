@@ -61,10 +61,10 @@ namespace IsbaRestaurant.UI.BackOffice.OdemeHareketleri
             // gridControlOdemeHareket
             // 
             this.gridControlOdemeHareket.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlOdemeHareket.Location = new System.Drawing.Point(0, 91);
+            this.gridControlOdemeHareket.Location = new System.Drawing.Point(0, 101);
             this.gridControlOdemeHareket.MainView = this.gridOdemeHareketleri;
             this.gridControlOdemeHareket.Name = "gridControlOdemeHareket";
-            this.gridControlOdemeHareket.Size = new System.Drawing.Size(960, 330);
+            this.gridControlOdemeHareket.Size = new System.Drawing.Size(960, 320);
             this.gridControlOdemeHareket.TabIndex = 14;
             this.gridControlOdemeHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridOdemeHareketleri});
@@ -189,7 +189,7 @@ namespace IsbaRestaurant.UI.BackOffice.OdemeHareketleri
             this.panelControl1.Controls.Add(this.dateGunsecim2);
             this.panelControl1.Controls.Add(this.dateGunSecim);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 46);
+            this.panelControl1.Location = new System.Drawing.Point(0, 56);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(960, 45);
             this.panelControl1.TabIndex = 15;
@@ -220,7 +220,7 @@ namespace IsbaRestaurant.UI.BackOffice.OdemeHareketleri
             this.labelControl1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("labelControl1.ImageOptions.Image")));
             this.labelControl1.Location = new System.Drawing.Point(0, 0);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(960, 46);
+            this.labelControl1.Size = new System.Drawing.Size(960, 56);
             this.labelControl1.TabIndex = 12;
             this.labelControl1.Text = "Adisyon Hareketleri";
             // 
@@ -252,8 +252,9 @@ namespace IsbaRestaurant.UI.BackOffice.OdemeHareketleri
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.groupControl1);
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("FrmOdemeHareketleri.IconOptions.Image")));
             this.Name = "FrmOdemeHareketleri";
-            this.Text = "FrmOdemeHareketleri";
+            this.Text = "Ödeme Hareketleri";
             ((System.ComponentModel.ISupportInitialize)(this.gridControlOdemeHareket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridOdemeHareketleri)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateGunSecim.Properties.CalendarTimeProperties)).EndInit();

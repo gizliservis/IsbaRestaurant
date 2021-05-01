@@ -52,6 +52,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.btnKazancGrafikleri = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -76,9 +77,10 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             this.skinDropDownButtonItem1,
             this.skinPaletteDropDownButtonItem2,
             this.skinPaletteRibbonGalleryBarItem1,
-            this.skinRibbonGalleryBarItem2});
+            this.skinRibbonGalleryBarItem2,
+            this.btnKazancGrafikleri});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 16;
+            this.ribbonControl1.MaxItemId = 17;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -144,7 +146,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             // 
             this.btnOdemeHareketleri.Caption = "Ödeme Hareketleri";
             this.btnOdemeHareketleri.Id = 8;
-            this.btnOdemeHareketleri.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.btnOdemeHareketleri.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOdemeHareketleri.ImageOptions.LargeImage")));
             this.btnOdemeHareketleri.Name = "btnOdemeHareketleri";
             this.btnOdemeHareketleri.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOdemeHareketleri_ItemClick);
             // 
@@ -212,6 +214,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             this.ribbonPageGroup2.ItemLinks.Add(this.btnUrunHareketleri);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnAdisyonHareket);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnOdemeHareketleri);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnKazancGrafikleri);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Hareketler";
             // 
@@ -225,6 +228,14 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
+            // btnKazancGrafikleri
+            // 
+            this.btnKazancGrafikleri.Caption = "Kazanc Grafikleri";
+            this.btnKazancGrafikleri.Id = 16;
+            this.btnKazancGrafikleri.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnKazancGrafikleri.ImageOptions.LargeImage")));
+            this.btnKazancGrafikleri.Name = "btnKazancGrafikleri";
+            this.btnKazancGrafikleri.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKazancGrafikleri_ItemClick);
             // 
             // FrmAnaMenu
             // 
@@ -271,6 +282,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
         private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem2;
         private DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem skinPaletteRibbonGalleryBarItem1;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem2;
+        private DevExpress.XtraBars.BarButtonItem btnKazancGrafikleri;
     }
 }
 

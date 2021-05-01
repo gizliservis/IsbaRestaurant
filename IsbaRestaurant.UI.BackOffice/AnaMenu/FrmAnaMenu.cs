@@ -29,6 +29,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
                 FrmSetupConnection form = new FrmSetupConnection();
                 form.ShowDialog();
             }
+     
 
         }
 
@@ -86,6 +87,12 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             FrmOdemeHareketleri form = new FrmOdemeHareketleri();
             form.MdiParent = this;
             form.Show();
+        }
+
+        private void btnKazancGrafikleri_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FrmAnamenuBilgi frm = new FrmAnamenuBilgi();
+            frm.ShowDialog();
         }
     }
 }

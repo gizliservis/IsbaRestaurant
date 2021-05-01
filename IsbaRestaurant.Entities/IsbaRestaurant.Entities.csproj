@@ -43,8 +43,14 @@
   <ItemGroup>
     <Compile Include="Dtos\AdisyonHareketDto.cs" />
     <Compile Include="Dtos\AdisyonToplamDto.cs" />
+    <Compile Include="Dtos\AylikKazancDto.cs" />
+    <Compile Include="Dtos\EnCokSatanUrunlerDto.cs" />
+    <Compile Include="Dtos\HaftalikKazancDto.cs" />
     <Compile Include="Dtos\KategoriDto.cs" />
+    <Compile Include="Dtos\YillikKazancDto.cs" />
     <Compile Include="Enums\AdisyonDurum.cs" />
+    <Compile Include="Enums\Aylar.cs" />
+    <Compile Include="Enums\HaftanınGunleri.cs" />
     <Compile Include="Enums\MasaDurum.cs" />
     <Compile Include="Enums\MusteriTip.cs" />
     <Compile Include="Enums\TanimTip.cs" />

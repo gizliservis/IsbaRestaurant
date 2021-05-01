@@ -1,6 +1,7 @@
 ﻿using IsbaRestaurant.Business.Managers.Base;
 using IsbaRestaurant.Business.Services;
 using IsbaRestaurant.DataAccess.UnitOfWork;
+using IsbaRestaurant.Entities.Dtos;
 using IsbaRestaurant.Entities.Tables;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,15 @@ namespace IsbaRestaurant.Business.Managers
         {
             _uow = (RestaurantUnitOfWork)uow;
 
+        }
+
+        public List<EnCokSatanUrunlerDto> EnCokSatanUrunleriGetir()
+        {
+            return _uow.UrunDal.Select(null, c => new EnCokSatanUrunlerDto
+            {
+                UrunAdi = c.Adi,
+                AdetToplam = c.UrunHareketleri.Where(f => f.UrunHareketTip == Entities.Enums.UrunHareketTip.Satis).Sum(f =>(decimal?) f.Miktar)??0
+            }, c => c.UrunHareketleri).OrderBy(c=>c.AdetToplam).Take(10).ToList();
         }
 
         public IEnumerable<UrunHareket> UrunHareketListesiGetir(DateTime baslangicTarihi, DateTime bitisTarihi)
