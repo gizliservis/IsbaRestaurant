@@ -39,7 +39,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             this.btnOdemeTur = new DevExpress.XtraBars.BarButtonItem();
             this.btnUrunHareketleri = new DevExpress.XtraBars.BarButtonItem();
             this.btnAdisyonHareket = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnOdemeHareketleri = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
@@ -69,7 +69,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             this.btnOdemeTur,
             this.btnUrunHareketleri,
             this.btnAdisyonHareket,
-            this.barButtonItem3,
+            this.btnOdemeHareketleri,
             this.barButtonItem4,
             this.skinRibbonGalleryBarItem1,
             this.skinPaletteDropDownButtonItem1,
@@ -128,7 +128,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             // 
             this.btnUrunHareketleri.Caption = "Ürün Hareketleri";
             this.btnUrunHareketleri.Id = 6;
-            this.btnUrunHareketleri.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnUrunHareketleri.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUrunHareketleri.ImageOptions.LargeImage")));
             this.btnUrunHareketleri.Name = "btnUrunHareketleri";
             this.btnUrunHareketleri.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUrunHareketleri_ItemClick);
             // 
@@ -140,12 +140,13 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             this.btnAdisyonHareket.Name = "btnAdisyonHareket";
             this.btnAdisyonHareket.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAdisyonHareket_ItemClick);
             // 
-            // barButtonItem3
+            // btnOdemeHareketleri
             // 
-            this.barButtonItem3.Caption = "Ödeme Hareketleri";
-            this.barButtonItem3.Id = 8;
-            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.btnOdemeHareketleri.Caption = "Ödeme Hareketleri";
+            this.btnOdemeHareketleri.Id = 8;
+            this.btnOdemeHareketleri.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.btnOdemeHareketleri.Name = "btnOdemeHareketleri";
+            this.btnOdemeHareketleri.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOdemeHareketleri_ItemClick);
             // 
             // barButtonItem4
             // 
@@ -210,7 +211,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btnUrunHareketleri);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnAdisyonHareket);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnOdemeHareketleri);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Hareketler";
             // 
@@ -260,7 +261,7 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
         private DevExpress.XtraBars.BarButtonItem btnOdemeTur;
         private DevExpress.XtraBars.BarButtonItem btnUrunHareketleri;
         private DevExpress.XtraBars.BarButtonItem btnAdisyonHareket;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem btnOdemeHareketleri;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
