@@ -604,10 +604,9 @@ namespace IsbaRestaurant.UI.FrontOffice
                         yeniEntity.Miktar = txtMiktar.Value;
                         worker.UrunHareketService.AddOrUpdate(yeniEntity);
                         hareketEntity.Miktar -= txtMiktar.Value;
-
-
                     }
                     layoutView1.RefreshData();
+
                     break;
                 case KeypadIslem.Ikram:
                     if (hareketEntity.Miktar == txtMiktar.Value)
@@ -644,6 +643,7 @@ namespace IsbaRestaurant.UI.FrontOffice
                         yeniEntity.Id = Guid.NewGuid();
                         yeniEntity.Miktar = txtMiktar.Value;
                         worker.UrunHareketService.AddOrUpdate(yeniEntity);
+                        
                         hareketEntity.Miktar -= txtMiktar.Value;
                     }
                     layoutView1.RefreshData();
@@ -665,7 +665,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             }
             keypadIslem = KeypadIslem.Yok;
             UrunHareketToplamlariGetir();
-            txtMiktar.Value = 1;
+            //txtMiktar.Value = 1;
             txtMiktar.BackColor = Color.White;
         }
 
