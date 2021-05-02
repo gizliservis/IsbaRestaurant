@@ -622,10 +622,11 @@ namespace IsbaRestaurant.UI.FrontOffice
                     {
                         UrunHareket yeniEntity = hareketEntity.Clone();
                         yeniEntity.Id = Guid.NewGuid();
-                        yeniEntity.UrunHareketTip = UrunHareketTip.Ikram;
+                        yeniEntity.UrunHareketTip = UrunHareketTip.Ikram;              
                         yeniEntity.Miktar = txtMiktar.Value;
                         worker.UrunHareketService.AddOrUpdate(yeniEntity);
                         hareketEntity.Miktar -= txtMiktar.Value;
+
                     }
 
                     layoutView1.RefreshData();

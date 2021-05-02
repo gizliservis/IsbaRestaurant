@@ -47,6 +47,9 @@
     <Compile Include="Dtos\EnCokSatanUrunlerDto.cs" />
     <Compile Include="Dtos\HaftalikKazancDto.cs" />
     <Compile Include="Dtos\KategoriDto.cs" />
+    <Compile Include="Dtos\Mutfak\MutfakAdisyonHareketDto.cs" />
+    <Compile Include="Dtos\Mutfak\MutfakEkMalzemeDto.cs" />
+    <Compile Include="Dtos\Mutfak\MutfakUrunHareketDto.cs" />
     <Compile Include="Dtos\YillikKazancDto.cs" />
     <Compile Include="Enums\AdisyonDurum.cs" />
     <Compile Include="Enums\Aylar.cs" />
