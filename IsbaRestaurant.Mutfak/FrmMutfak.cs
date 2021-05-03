@@ -20,7 +20,12 @@ namespace IsbaRestaurant.Mutfak
         public FrmMutfak()
         {
             InitializeComponent();
-            gridControlAdisyonHareket.DataSource = worker.AdisyonService.MutfakAdisyonHareketGetir();
+           
+        }
+        void AdisyonListele()
+        {
+         Guid[] adisyonListe= worker.UrunHareketService.Select(c => c.SiparisDurum == Entities.Enums.SiparisDurum.Hazirlaniyor, c => c.AdisyonId).Distinct().ToArray();
+            gridControlAdisyonHareket.DataSource = worker.AdisyonService.MutfakAdisyonHareketGetir(adisyonListe);
         }
 
         private void gridAdisyonHareket_MasterRowGetRelationCount(object sender, DevExpress.XtraGrid.Views.Grid.MasterRowGetRelationCountEventArgs e)

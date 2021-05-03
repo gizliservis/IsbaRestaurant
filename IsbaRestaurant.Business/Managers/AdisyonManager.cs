@@ -44,9 +44,9 @@ namespace IsbaRestaurant.Business.Managers
             }, c => c.Masa, c => c.Garson, c => c.Musteri).ToList();
         }
 
-        public List<MutfakAdisyonHareketDto> MutfakAdisyonHareketGetir()
+        public List<MutfakAdisyonHareketDto> MutfakAdisyonHareketGetir(Guid[] adisyonListe)
         {
-            return _uow.AdisyonDal.Select(null, c => new MutfakAdisyonHareketDto
+            return _uow.AdisyonDal.Select(c=>adisyonListe.Contains(c.Id), c => new MutfakAdisyonHareketDto
             {
                 AdisyonId = c.Id,
                 AdisyonDurum = c.AdisyonDurum,

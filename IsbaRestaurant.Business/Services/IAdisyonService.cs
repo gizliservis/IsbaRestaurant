@@ -10,8 +10,8 @@ namespace IsbaRestaurant.Business.Services
     public interface IAdisyonService : IBaseService<Adisyon>
     {
         AdisyonToplamDto AdisyonToplamGetir();
-        List<AdisyonHareketDto> AdisyonHareketGetir(DateTime tarih1,DateTime tarih2);
-        List<MutfakAdisyonHareketDto> MutfakAdisyonHareketGetir();
+        List<AdisyonHareketDto> AdisyonHareketGetir(DateTime tarih1, DateTime tarih2);
+        List<MutfakAdisyonHareketDto> MutfakAdisyonHareketGetir(Guid[] adisyonListe);
         List<MutfakUrunHareketDto> MutfakUrunHareketGetir(Guid adisyonId);
         List<MutfakEkMalzemeDto> MutfakEkMalzemeHareketGetir(Guid urunHareketId);
 
