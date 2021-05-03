@@ -59,7 +59,7 @@ namespace IsbaRestaurant.Business.Managers
 
         public List<MutfakUrunHareketDto> MutfakUrunHareketGetir(Guid adisyonId)
         {
-            return _uow.UrunHareketDal.Select(c => c.AdisyonId == adisyonId, c => new MutfakUrunHareketDto
+            var result= _uow.UrunHareketDal.Select(c => c.AdisyonId == adisyonId, c => new MutfakUrunHareketDto
             {
                 Id = c.Id,
                 AdisyonId = c.AdisyonId,
@@ -67,8 +67,21 @@ namespace IsbaRestaurant.Business.Managers
                 Porsiyon = c.Porsiyon.Adi,
                 Miktar = c.Miktar,
                 UrunAdi = c.Urun.Adi,
-                UrunHareketTip = c.UrunHareketTip
+                SiparisDurum=c.SiparisDurum,
+                EkMalzeme = ""
             }, c => c.Porsiyon, c => c.Porsiyon.Birim, c => c.Urun).ToList();
+            return result.Select(c => new MutfakUrunHareketDto
+            {
+                Id = c.Id,
+                AdisyonId = c.AdisyonId,
+                Birim = c.Birim,
+                Porsiyon = c.Porsiyon,
+                Miktar = c.Miktar,
+                UrunAdi = c.UrunAdi,
+                SiparisDurum = c.SiparisDurum,
+                EkMalzeme = string.Join(" , ", _uow.EkMalzemeHareketDal.Select(f => f.UrunHareketId == c.Id, f => f.EkMalzeme.EkmalzemeAdi, f => f.EkMalzeme).ToList())
+            }).ToList();
+                
         }
 
         public List<MutfakEkMalzemeDto> MutfakEkMalzemeHareketGetir(Guid urunHareketId)

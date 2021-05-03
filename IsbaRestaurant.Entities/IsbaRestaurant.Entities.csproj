@@ -56,6 +56,7 @@
     <Compile Include="Enums\HaftanınGunleri.cs" />
     <Compile Include="Enums\MasaDurum.cs" />
     <Compile Include="Enums\MusteriTip.cs" />
+    <Compile Include="Enums\SiparisDurum.cs" />
     <Compile Include="Enums\TanimTip.cs" />
     <Compile Include="Enums\TelefonAdresTip.cs" />
     <Compile Include="Interfaces\IEntity.cs" />

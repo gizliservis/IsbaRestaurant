@@ -1,6 +1,8 @@
-﻿using DevExpress.XtraGrid.Views.Grid;
+﻿using DevExpress.Utils.Extensions;
+using DevExpress.XtraGrid.Views.Grid;
 using IsbaRestaurant.Business.Workers;
 using IsbaRestaurant.Entities.Dtos.Mutfak;
+using IsbaRestaurant.Entities.Tables;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,21 +41,31 @@ namespace IsbaRestaurant.Mutfak
          
         }
 
-        private void gridUrunHareketleri_MasterRowGetRelationCount(object sender, DevExpress.XtraGrid.Views.Grid.MasterRowGetRelationCountEventArgs e)
+        private void repoUrunHareketServisHazir_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            e.RelationCount = 1;
+            GridView view = (GridView)gridControlAdisyonHareket.FocusedView;
+            MutfakUrunHareketDto entity = (MutfakUrunHareketDto)view.GetFocusedRow();
+            UrunHareket urunHareketEntity = worker.UrunHareketService.Get(c => c.Id == entity.Id);
+            urunHareketEntity.SiparisDurum = Entities.Enums.SiparisDurum.ServiseHazir;
+            worker.UrunHareketService.Update(urunHareketEntity);
+            worker.Commit();
+            gridAdisyonHareket.CollapseMasterRow(gridAdisyonHareket.FocusedRowHandle);
+            gridAdisyonHareket.ExpandMasterRow(gridAdisyonHareket.FocusedRowHandle);
         }
 
-        private void gridUrunHareketleri_MasterRowGetRelationName(object sender, DevExpress.XtraGrid.Views.Grid.MasterRowGetRelationNameEventArgs e)
+        private void repoAdisyonServiseHazir_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            e.RelationName = "Ek Malzeme";
+            MutfakAdisyonHareketDto entity = (MutfakAdisyonHareketDto)gridAdisyonHareket.GetFocusedRow();
+           // worker.UrunHareketService.Load(c => c.AdisyonId == entity.AdisyonId);
+            worker.UrunHareketService.Select(c=>c.AdisyonId==entity.AdisyonId,c=>c).ForEach(c => c.SiparisDurum = Entities.Enums.SiparisDurum.ServiseHazir);
+            worker.Commit();
+            gridAdisyonHareket.CollapseMasterRow(gridAdisyonHareket.FocusedRowHandle);
+            gridAdisyonHareket.ExpandMasterRow(gridAdisyonHareket.FocusedRowHandle);
         }
 
-        private void gridUrunHareketleri_MasterRowGetChildList(object sender, DevExpress.XtraGrid.Views.Grid.MasterRowGetChildListEventArgs e)
+        private void gridAdisyonHareket_RowClick(object sender, RowClickEventArgs e)
         {
-            GridView view = (GridView)sender;
-            MutfakUrunHareketDto entity = (MutfakUrunHareketDto)view.GetRow(e.RowHandle);
-            e.ChildList = worker.AdisyonService.MutfakEkMalzemeHareketGetir(entity.Id);
+            gridAdisyonHareket.ExpandMasterRow(e.RowHandle);
         }
     }
 }
