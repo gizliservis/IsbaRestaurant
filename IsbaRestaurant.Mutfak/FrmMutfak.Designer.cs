@@ -29,18 +29,18 @@ namespace IsbaRestaurant.Mutfak
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMutfak));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridUrunHareketleri = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colHareketTip = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUrunAdi = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,11 +59,15 @@ namespace IsbaRestaurant.Mutfak
             this.colGarson = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAdisyonServiseHazir = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repoAdisyonServiseHazir = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridUrunHareketleri)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoUrunHareketServisHazir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlAdisyonHareket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAdisyonHareket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoAdisyonServiseHazir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridUrunHareketleri
@@ -146,9 +150,9 @@ namespace IsbaRestaurant.Mutfak
             // repoUrunHareketServisHazir
             // 
             this.repoUrunHareketServisHazir.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.repoUrunHareketServisHazir.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repoUrunHareketServisHazir.Name = "repoUrunHareketServisHazir";
             this.repoUrunHareketServisHazir.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repoUrunHareketServisHazir.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repoUrunHareketServisHazir_ButtonClick);
@@ -166,17 +170,17 @@ namespace IsbaRestaurant.Mutfak
             // gridControlAdisyonHareket
             // 
             this.gridControlAdisyonHareket.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.LevelTemplate = this.gridUrunHareketleri;
-            gridLevelNode2.RelationName = "Ürün Hareketleri";
+            gridLevelNode1.LevelTemplate = this.gridUrunHareketleri;
+            gridLevelNode1.RelationName = "Ürün Hareketleri";
             this.gridControlAdisyonHareket.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
-            this.gridControlAdisyonHareket.Location = new System.Drawing.Point(0, 0);
+            gridLevelNode1});
+            this.gridControlAdisyonHareket.Location = new System.Drawing.Point(0, 39);
             this.gridControlAdisyonHareket.MainView = this.gridAdisyonHareket;
             this.gridControlAdisyonHareket.Name = "gridControlAdisyonHareket";
             this.gridControlAdisyonHareket.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repoUrunHareketServisHazir,
             this.repoAdisyonServiseHazir});
-            this.gridControlAdisyonHareket.Size = new System.Drawing.Size(960, 520);
+            this.gridControlAdisyonHareket.Size = new System.Drawing.Size(960, 481);
             this.gridControlAdisyonHareket.TabIndex = 11;
             this.gridControlAdisyonHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridAdisyonHareket,
@@ -268,12 +272,33 @@ namespace IsbaRestaurant.Mutfak
             // 
             this.repoAdisyonServiseHazir.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.repoAdisyonServiseHazir.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.repoAdisyonServiseHazir.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repoAdisyonServiseHazir.Name = "repoAdisyonServiseHazir";
             this.repoAdisyonServiseHazir.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repoAdisyonServiseHazir.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repoAdisyonServiseHazir_ButtonClick);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.btnKapat);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(960, 39);
+            this.panelControl1.TabIndex = 12;
+            // 
+            // btnKapat
+            // 
+            this.btnKapat.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnKapat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKapat.ImageOptions.Image")));
+            this.btnKapat.Location = new System.Drawing.Point(887, 2);
+            this.btnKapat.Name = "btnKapat";
+            this.btnKapat.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnKapat.Size = new System.Drawing.Size(71, 35);
+            this.btnKapat.TabIndex = 0;
+            this.btnKapat.Text = "Kapat";
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // FrmMutfak
             // 
@@ -281,6 +306,7 @@ namespace IsbaRestaurant.Mutfak
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(960, 520);
             this.Controls.Add(this.gridControlAdisyonHareket);
+            this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMutfak";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -291,6 +317,8 @@ namespace IsbaRestaurant.Mutfak
             ((System.ComponentModel.ISupportInitialize)(this.gridControlAdisyonHareket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAdisyonHareket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoAdisyonServiseHazir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -315,6 +343,8 @@ namespace IsbaRestaurant.Mutfak
         private DevExpress.XtraGrid.Columns.GridColumn colAdisyonServiseHazir;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repoAdisyonServiseHazir;
         private DevExpress.XtraGrid.Columns.GridColumn colEkMalzeme;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.SimpleButton btnKapat;
     }
 }
 

@@ -1,6 +1,7 @@
 ﻿using DevExpress.Utils.Extensions;
 using DevExpress.XtraGrid.Views.Grid;
 using IsbaRestaurant.Business.Workers;
+using IsbaRestaurant.Core.Functions;
 using IsbaRestaurant.Entities.Dtos.Mutfak;
 using IsbaRestaurant.Entities.Tables;
 using System;
@@ -9,19 +10,36 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Windows.Forms;
+using TableDependency.SqlClient;
+using TableDependency.SqlClient.Base.EventArgs;
+using TableDependency.SqlClient.Where;
 
 namespace IsbaRestaurant.Mutfak
 {
     public partial class FrmMutfak : DevExpress.XtraEditors.XtraForm
     {
+        private Expression<Func<UrunHareket, bool>> filter;
+        SqlTableDependency<UrunHareket> urunHareketDependency;
         RestaurantWorker worker = new RestaurantWorker();
         public FrmMutfak()
         {
             InitializeComponent();
-           
+            filter = c => c.SiparisDurum == Entities.Enums.SiparisDurum.Hazirlaniyor;
+         urunHareketDependency=new SqlTableDependency<UrunHareket>(ConnectionStringInfo.Get(), "UrunHareketleri", filter: 
+       new SqlTableDependencyFilter<UrunHareket>(filter));
+            urunHareketDependency.OnChanged += Changed;
+            urunHareketDependency.Start();
+            AdisyonListele();
         }
+
+        private void Changed(object sender, RecordChangedEventArgs<UrunHareket> e)
+        {
+            AdisyonListele();
+        }
+
         void AdisyonListele()
         {
          Guid[] adisyonListe= worker.UrunHareketService.Select(c => c.SiparisDurum == Entities.Enums.SiparisDurum.Hazirlaniyor, c => c.AdisyonId).Distinct().ToArray();
@@ -71,6 +89,11 @@ namespace IsbaRestaurant.Mutfak
         private void gridAdisyonHareket_RowClick(object sender, RowClickEventArgs e)
         {
             gridAdisyonHareket.ExpandMasterRow(e.RowHandle);
+        }
+
+        private void btnKapat_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
