@@ -23,8 +23,8 @@ namespace IsbaRestaurant.Business.Managers
         {
             return _uow.AdisyonDal.BindingList().Select(c => new AdisyonToplamDto
             {
-                ToplamTutar = c.UrunHareketleri.Where(f => f.UrunHareketTip == Entities.Enums.UrunHareketTip.Satis).Sum(f => f.ToplamTutar),
-                IndirimTutar = c.UrunHareketleri.Where(f => f.UrunHareketTip == Entities.Enums.UrunHareketTip.Satis).Sum(f => f.ToplamTutar / 100 * f.Indirim),
+                ToplamTutar = c.UrunHareketleri == null ? 0 : c.UrunHareketleri.Where(f => f.UrunHareketTip == Entities.Enums.UrunHareketTip.Satis).Sum(f => f.ToplamTutar),
+                IndirimTutar = c.UrunHareketleri == null ? 0 : c.UrunHareketleri.Where(f => f.UrunHareketTip == Entities.Enums.UrunHareketTip.Satis).Sum(f => f.ToplamTutar / 100 * f.Indirim),
                 OdenenTutar = c.OdemeHareketleri == null ? 0 : c.OdemeHareketleri.Sum(f => f.Tutar)
 
             }).FirstOrDefault();

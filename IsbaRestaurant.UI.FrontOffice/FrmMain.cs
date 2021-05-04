@@ -666,7 +666,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             }
             keypadIslem = KeypadIslem.Yok;
             UrunHareketToplamlariGetir();
-            //txtMiktar.Value = 1;
+            txtMiktar.Value = 1;
             txtMiktar.BackColor = Color.White;
         }
 

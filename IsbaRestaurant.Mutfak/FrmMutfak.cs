@@ -2,6 +2,7 @@
 using DevExpress.XtraGrid.Views.Grid;
 using IsbaRestaurant.Business.Workers;
 using IsbaRestaurant.Core.Functions;
+using IsbaRestaurant.Core.Monitors;
 using IsbaRestaurant.Entities.Dtos.Mutfak;
 using IsbaRestaurant.Entities.Tables;
 using System;
@@ -21,29 +22,44 @@ namespace IsbaRestaurant.Mutfak
 {
     public partial class FrmMutfak : DevExpress.XtraEditors.XtraForm
     {
-        private Expression<Func<UrunHareket, bool>> filter;
-        SqlTableDependency<UrunHareket> urunHareketDependency;
+   
+        Guid adisyonId = Guid.Empty;
         RestaurantWorker worker = new RestaurantWorker();
+        SqlMonitor<UrunHareket> urunHareketMonitor = new SqlMonitor<UrunHareket>("UrunHareketleri", c => c.SiparisDurum == Entities.Enums.SiparisDurum.Hazirlaniyor);
         public FrmMutfak()
         {
             InitializeComponent();
-            filter = c => c.SiparisDurum == Entities.Enums.SiparisDurum.Hazirlaniyor;
-         urunHareketDependency=new SqlTableDependency<UrunHareket>(ConnectionStringInfo.Get(), "UrunHareketleri", filter: 
-       new SqlTableDependencyFilter<UrunHareket>(filter));
-            urunHareketDependency.OnChanged += Changed;
-            urunHareketDependency.Start();
             AdisyonListele();
+            urunHareketMonitor.OnChange += UrunHareketChanged;
         }
-
-        private void Changed(object sender, RecordChangedEventArgs<UrunHareket> e)
+        private int GetRowHandle()
         {
-            AdisyonListele();
+            if (adisyonId == Guid.Empty) return 0;
+            for (int i = 0; i < gridAdisyonHareket.RowCount; i++)
+            {
+                if ((Guid)gridAdisyonHareket.GetRowCellValue(i,colAdisyonId)==adisyonId)
+                {
+                return i;
+                }
+
+            }
+            return 0;
+            
+        }
+        private void UrunHareketChanged()
+        {
+            Invoke((MethodInvoker)delegate { AdisyonListele(); });  
         }
 
         void AdisyonListele()
         {
-         Guid[] adisyonListe= worker.UrunHareketService.Select(c => c.SiparisDurum == Entities.Enums.SiparisDurum.Hazirlaniyor, c => c.AdisyonId).Distinct().ToArray();
+            Guid[] adisyonListe= worker.UrunHareketService.Select(c => c.SiparisDurum == Entities.Enums.SiparisDurum.Hazirlaniyor, c => c.AdisyonId).Distinct().ToArray();
             gridControlAdisyonHareket.DataSource = worker.AdisyonService.MutfakAdisyonHareketGetir(adisyonListe);
+            int rowHandle = GetRowHandle();
+            gridAdisyonHareket.ExpandMasterRow(rowHandle);
+            gridAdisyonHareket.OptionsSelection.MultiSelectMode = GridMultiSelectMode.RowSelect;
+            gridUrunHareketleri.SelectRow(rowHandle);
+            gridAdisyonHareket.SelectRow(rowHandle);
         }
 
         private void gridAdisyonHareket_MasterRowGetRelationCount(object sender, DevExpress.XtraGrid.Views.Grid.MasterRowGetRelationCountEventArgs e)
@@ -72,6 +88,7 @@ namespace IsbaRestaurant.Mutfak
             urunHareketEntity.SiparisDurum = Entities.Enums.SiparisDurum.ServiseHazir;
             worker.UrunHareketService.Update(urunHareketEntity);
             worker.Commit();
+            AdisyonListele();
             gridAdisyonHareket.CollapseMasterRow(gridAdisyonHareket.FocusedRowHandle);
             gridAdisyonHareket.ExpandMasterRow(gridAdisyonHareket.FocusedRowHandle);
         }
@@ -79,15 +96,16 @@ namespace IsbaRestaurant.Mutfak
         private void repoAdisyonServiseHazir_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             MutfakAdisyonHareketDto entity = (MutfakAdisyonHareketDto)gridAdisyonHareket.GetFocusedRow();
-           // worker.UrunHareketService.Load(c => c.AdisyonId == entity.AdisyonId);
             worker.UrunHareketService.Select(c=>c.AdisyonId==entity.AdisyonId,c=>c).ForEach(c => c.SiparisDurum = Entities.Enums.SiparisDurum.ServiseHazir);
             worker.Commit();
+            AdisyonListele();
             gridAdisyonHareket.CollapseMasterRow(gridAdisyonHareket.FocusedRowHandle);
             gridAdisyonHareket.ExpandMasterRow(gridAdisyonHareket.FocusedRowHandle);
         }
 
         private void gridAdisyonHareket_RowClick(object sender, RowClickEventArgs e)
         {
+            adisyonId =(Guid)gridAdisyonHareket.GetRowCellValue(e.RowHandle, colAdisyonId);
             gridAdisyonHareket.ExpandMasterRow(e.RowHandle);
         }
 
@@ -95,5 +113,7 @@ namespace IsbaRestaurant.Mutfak
         {
             Close();
         }
+
+      
     }
 }

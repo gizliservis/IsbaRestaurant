@@ -61,6 +61,7 @@ namespace IsbaRestaurant.Mutfak
             this.repoAdisyonServiseHazir = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
+            this.colAdisyonId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridUrunHareketleri)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoUrunHareketServisHazir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlAdisyonHareket)).BeginInit();
@@ -196,7 +197,8 @@ namespace IsbaRestaurant.Mutfak
             this.colMusteri,
             this.colMasaAdi,
             this.colGarson,
-            this.colAdisyonServiseHazir});
+            this.colAdisyonServiseHazir,
+            this.colAdisyonId});
             this.gridAdisyonHareket.GridControl = this.gridControlAdisyonHareket;
             this.gridAdisyonHareket.Name = "gridAdisyonHareket";
             this.gridAdisyonHareket.OptionsDetail.AllowOnlyOneMasterRowExpanded = true;
@@ -300,6 +302,12 @@ namespace IsbaRestaurant.Mutfak
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
+            // colAdisyonId
+            // 
+            this.colAdisyonId.Caption = "Id";
+            this.colAdisyonId.FieldName = "AdisyonId";
+            this.colAdisyonId.Name = "colAdisyonId";
+            // 
             // FrmMutfak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,7 +319,6 @@ namespace IsbaRestaurant.Mutfak
             this.Name = "FrmMutfak";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gridUrunHareketleri)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoUrunHareketServisHazir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlAdisyonHareket)).EndInit();
@@ -345,6 +352,7 @@ namespace IsbaRestaurant.Mutfak
         private DevExpress.XtraGrid.Columns.GridColumn colEkMalzeme;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SimpleButton btnKapat;
+        private DevExpress.XtraGrid.Columns.GridColumn colAdisyonId;
     }
 }
 
