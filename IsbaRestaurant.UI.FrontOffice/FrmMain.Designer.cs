@@ -34,14 +34,14 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition4 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition5 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition11 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition12 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition13 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition7 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition8 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition14 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition15 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition9 = new DevExpress.XtraLayout.RowDefinition();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.lblMesaj = new DevExpress.XtraEditors.LabelControl();
             this.btnMusteri = new IsbaRestaurant.UserControls.ControlMusteriButton();
@@ -177,6 +177,13 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnAdisyonDetay = new DevExpress.XtraEditors.SimpleButton();
             this.btnYazdir = new DevExpress.XtraEditors.SimpleButton();
             this.btnOdemeEkle = new DevExpress.XtraEditors.SimpleButton();
+            this.pageUrunNotlari = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
+            this.txtUrunnotu = new DevExpress.XtraEditors.MemoEdit();
+            this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
+            this.btnUrunNotonayla = new DevExpress.XtraEditors.SimpleButton();
+            this.flowUrunNotlari = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnNotlar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationMain)).BeginInit();
@@ -269,6 +276,12 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.panelUrunHareketMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelHareketSolMenu)).BeginInit();
             this.panelHareketSolMenu.SuspendLayout();
+            this.pageUrunNotlari.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
+            this.panelControl7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUrunnotu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).BeginInit();
+            this.panelControl8.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -426,6 +439,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.navigationKategori.Controls.Add(this.pageGarson);
             this.navigationKategori.Controls.Add(this.pageMusteri);
             this.navigationKategori.Controls.Add(this.pageOdemeEkrani);
+            this.navigationKategori.Controls.Add(this.pageUrunNotlari);
             this.navigationKategori.Dock = System.Windows.Forms.DockStyle.Fill;
             this.navigationKategori.Location = new System.Drawing.Point(214, 2);
             this.navigationKategori.Name = "navigationKategori";
@@ -435,7 +449,8 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.pageEkMalzeme,
             this.pageGarson,
             this.pageMusteri,
-            this.pageOdemeEkrani});
+            this.pageOdemeEkrani,
+            this.pageUrunNotlari});
             this.navigationKategori.SelectedPage = this.pageKategoriUrunler;
             this.navigationKategori.Size = new System.Drawing.Size(417, 518);
             this.navigationKategori.TabIndex = 2;
@@ -443,7 +458,6 @@ namespace IsbaRestaurant.UI.FrontOffice
             // 
             // pageKategoriUrunler
             // 
-            this.pageKategoriUrunler.Caption = "pageKategoriUrunler";
             this.pageKategoriUrunler.Controls.Add(this.flowKategoriUrunleri);
             this.pageKategoriUrunler.Name = "pageKategoriUrunler";
             this.pageKategoriUrunler.Size = new System.Drawing.Size(417, 518);
@@ -654,7 +668,6 @@ namespace IsbaRestaurant.UI.FrontOffice
             // 
             // pageOdemeEkrani
             // 
-            this.pageOdemeEkrani.Caption = "pageOdemeEkrani";
             this.pageOdemeEkrani.Controls.Add(this.gridControlOdeme);
             this.pageOdemeEkrani.Controls.Add(this.panelControl6);
             this.pageOdemeEkrani.Controls.Add(this.layoutControl4);
@@ -886,23 +899,23 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.layoutControlItem12});
             this.layoutControlGroup3.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition1.Width = 33.333333333333329D;
-            columnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition2.Width = 33.333333333333329D;
-            columnDefinition3.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition3.Width = 33.333333333333329D;
+            columnDefinition11.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition11.Width = 33.333333333333329D;
+            columnDefinition12.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition12.Width = 33.333333333333329D;
+            columnDefinition13.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition13.Width = 33.333333333333329D;
             this.layoutControlGroup3.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition1,
-            columnDefinition2,
-            columnDefinition3});
-            rowDefinition1.Height = 50D;
-            rowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition2.Height = 50D;
-            rowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition11,
+            columnDefinition12,
+            columnDefinition13});
+            rowDefinition7.Height = 50D;
+            rowDefinition7.SizeType = System.Windows.Forms.SizeType.Percent;
+            rowDefinition8.Height = 50D;
+            rowDefinition8.SizeType = System.Windows.Forms.SizeType.Percent;
             this.layoutControlGroup3.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition1,
-            rowDefinition2});
+            rowDefinition7,
+            rowDefinition8});
             this.layoutControlGroup3.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.layoutControlGroup3.Size = new System.Drawing.Size(417, 86);
             this.layoutControlGroup3.TextVisible = false;
@@ -1106,17 +1119,17 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.layoutControlItem5});
             this.layoutControlGroup1.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            columnDefinition4.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition4.Width = 50D;
-            columnDefinition5.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition5.Width = 50D;
+            columnDefinition14.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition14.Width = 50D;
+            columnDefinition15.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition15.Width = 50D;
             this.layoutControlGroup1.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition4,
-            columnDefinition5});
-            rowDefinition3.Height = 100D;
-            rowDefinition3.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition14,
+            columnDefinition15});
+            rowDefinition9.Height = 100D;
+            rowDefinition9.SizeType = System.Windows.Forms.SizeType.Percent;
             this.layoutControlGroup1.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition3});
+            rowDefinition9});
             this.layoutControlGroup1.Size = new System.Drawing.Size(413, 50);
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -1693,6 +1706,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             // 
             // panelControl4
             // 
+            this.panelControl4.Controls.Add(this.btnNotlar);
             this.panelControl4.Controls.Add(this.btnIndirim);
             this.panelControl4.Controls.Add(this.btnBol);
             this.panelControl4.Controls.Add(this.btnIade);
@@ -1709,9 +1723,9 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnIndirim.Appearance.Options.UseFont = true;
             this.btnIndirim.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnIndirim.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnIndirim.ImageOptions.Image")));
-            this.btnIndirim.Location = new System.Drawing.Point(344, 2);
+            this.btnIndirim.Location = new System.Drawing.Point(272, 2);
             this.btnIndirim.Name = "btnIndirim";
-            this.btnIndirim.Size = new System.Drawing.Size(114, 34);
+            this.btnIndirim.Size = new System.Drawing.Size(90, 34);
             this.btnIndirim.TabIndex = 6;
             this.btnIndirim.Text = "İNDİRİM";
             this.btnIndirim.Click += new System.EventHandler(this.btnIndirim_Click);
@@ -1722,9 +1736,9 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnBol.Appearance.Options.UseFont = true;
             this.btnBol.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnBol.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBol.ImageOptions.Image")));
-            this.btnBol.Location = new System.Drawing.Point(230, 2);
+            this.btnBol.Location = new System.Drawing.Point(182, 2);
             this.btnBol.Name = "btnBol";
-            this.btnBol.Size = new System.Drawing.Size(114, 34);
+            this.btnBol.Size = new System.Drawing.Size(90, 34);
             this.btnBol.TabIndex = 5;
             this.btnBol.Text = "BÖL";
             this.btnBol.Click += new System.EventHandler(this.btnBol_Click);
@@ -1735,9 +1749,9 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnIade.Appearance.Options.UseFont = true;
             this.btnIade.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnIade.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnIade.ImageOptions.Image")));
-            this.btnIade.Location = new System.Drawing.Point(116, 2);
+            this.btnIade.Location = new System.Drawing.Point(92, 2);
             this.btnIade.Name = "btnIade";
-            this.btnIade.Size = new System.Drawing.Size(114, 34);
+            this.btnIade.Size = new System.Drawing.Size(90, 34);
             this.btnIade.TabIndex = 3;
             this.btnIade.Text = "İADE";
             this.btnIade.Click += new System.EventHandler(this.btnIade_Click);
@@ -1750,7 +1764,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnMiktarAzalt.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMiktarAzalt.ImageOptions.Image")));
             this.btnMiktarAzalt.Location = new System.Drawing.Point(2, 2);
             this.btnMiktarAzalt.Name = "btnMiktarAzalt";
-            this.btnMiktarAzalt.Size = new System.Drawing.Size(114, 34);
+            this.btnMiktarAzalt.Size = new System.Drawing.Size(90, 34);
             this.btnMiktarAzalt.TabIndex = 1;
             this.btnMiktarAzalt.Text = "AZALT";
             this.btnMiktarAzalt.Click += new System.EventHandler(this.btnMiktarAzalt_Click);
@@ -2023,6 +2037,73 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.btnOdemeEkle.Text = "Ödeme Ekle";
             this.btnOdemeEkle.Click += new System.EventHandler(this.btnOdemeEkle_Click);
             // 
+            // pageUrunNotlari
+            // 
+            this.pageUrunNotlari.Controls.Add(this.panelControl8);
+            this.pageUrunNotlari.Controls.Add(this.panelControl7);
+            this.pageUrunNotlari.Name = "pageUrunNotlari";
+            this.pageUrunNotlari.Size = new System.Drawing.Size(417, 518);
+            // 
+            // panelControl7
+            // 
+            this.panelControl7.Controls.Add(this.txtUrunnotu);
+            this.panelControl7.Controls.Add(this.btnUrunNotonayla);
+            this.panelControl7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl7.Location = new System.Drawing.Point(0, 0);
+            this.panelControl7.Name = "panelControl7";
+            this.panelControl7.Size = new System.Drawing.Size(417, 100);
+            this.panelControl7.TabIndex = 0;
+            // 
+            // txtUrunnotu
+            // 
+            this.txtUrunnotu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtUrunnotu.Location = new System.Drawing.Point(2, 2);
+            this.txtUrunnotu.Name = "txtUrunnotu";
+            this.txtUrunnotu.Size = new System.Drawing.Size(354, 96);
+            this.txtUrunnotu.TabIndex = 0;
+            // 
+            // panelControl8
+            // 
+            this.panelControl8.Controls.Add(this.flowUrunNotlari);
+            this.panelControl8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl8.Location = new System.Drawing.Point(0, 100);
+            this.panelControl8.Name = "panelControl8";
+            this.panelControl8.Size = new System.Drawing.Size(417, 418);
+            this.panelControl8.TabIndex = 1;
+            // 
+            // btnUrunNotonayla
+            // 
+            this.btnUrunNotonayla.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnUrunNotonayla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUrunNotonayla.ImageOptions.Image")));
+            this.btnUrunNotonayla.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnUrunNotonayla.Location = new System.Drawing.Point(356, 2);
+            this.btnUrunNotonayla.Name = "btnUrunNotonayla";
+            this.btnUrunNotonayla.Size = new System.Drawing.Size(59, 96);
+            this.btnUrunNotonayla.TabIndex = 3;
+            this.btnUrunNotonayla.Text = "Onayla";
+            this.btnUrunNotonayla.Click += new System.EventHandler(this.btnUrunNotonayla_Click);
+            // 
+            // flowUrunNotlari
+            // 
+            this.flowUrunNotlari.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowUrunNotlari.Location = new System.Drawing.Point(2, 2);
+            this.flowUrunNotlari.Name = "flowUrunNotlari";
+            this.flowUrunNotlari.Size = new System.Drawing.Size(413, 414);
+            this.flowUrunNotlari.TabIndex = 0;
+            // 
+            // btnNotlar
+            // 
+            this.btnNotlar.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnNotlar.Appearance.Options.UseFont = true;
+            this.btnNotlar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnNotlar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnNotlar.Location = new System.Drawing.Point(362, 2);
+            this.btnNotlar.Name = "btnNotlar";
+            this.btnNotlar.Size = new System.Drawing.Size(96, 34);
+            this.btnNotlar.TabIndex = 7;
+            this.btnNotlar.Text = "Ürün Notu";
+            this.btnNotlar.Click += new System.EventHandler(this.btnNotlar_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2033,7 +2114,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Main";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -2127,6 +2208,12 @@ namespace IsbaRestaurant.UI.FrontOffice
             this.panelUrunHareketMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelHareketSolMenu)).EndInit();
             this.panelHareketSolMenu.ResumeLayout(false);
+            this.pageUrunNotlari.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
+            this.panelControl7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtUrunnotu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).EndInit();
+            this.panelControl8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2268,6 +2355,13 @@ namespace IsbaRestaurant.UI.FrontOffice
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private System.Windows.Forms.ImageList ımageList1;
         private DevExpress.XtraEditors.LabelControl lblMesaj;
+        private DevExpress.XtraBars.Navigation.NavigationPage pageUrunNotlari;
+        private DevExpress.XtraEditors.PanelControl panelControl8;
+        private System.Windows.Forms.FlowLayoutPanel flowUrunNotlari;
+        private DevExpress.XtraEditors.PanelControl panelControl7;
+        private DevExpress.XtraEditors.MemoEdit txtUrunnotu;
+        private DevExpress.XtraEditors.SimpleButton btnUrunNotonayla;
+        private DevExpress.XtraEditors.SimpleButton btnNotlar;
     }
 }
 

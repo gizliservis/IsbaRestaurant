@@ -22,6 +22,7 @@ namespace IsbaRestaurant.Business.Workers
         public IUrunHareketService UrunHareketService { get; set; }
         public IOdemeTuruService OdemeTuruService { get; set; }
         public IOdemeHareketService OdemeHareketService { get; set; }
+        public IUrunNotService UrunNotService { get; set; }
 
 
         private bool disposedValue;
@@ -42,6 +43,7 @@ namespace IsbaRestaurant.Business.Workers
             UrunHareketService = new UrunHareketManager(_uow);
             OdemeTuruService = new OdemeTuruManager(_uow);
             OdemeHareketService = new OdemeHareketManager(_uow);
+            UrunNotService = new UrunNotManager(_uow);
 
         }
         public bool Commit()

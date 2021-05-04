@@ -36,6 +36,7 @@ namespace IsbaRestaurant.DataAccess.Contexts.Restaurant
         public DbSet<UrunHareket> UrunHarketleri { get; set; }
         public DbSet<OdemeTuru> OdemeTurleri { get; set; }
         public DbSet<OdemeHareket> OdemeHareketleri { get; set; }
+        public DbSet<UrunNot> UrunNotlari { get; set; }
 
 
 
@@ -63,6 +64,8 @@ namespace IsbaRestaurant.DataAccess.Contexts.Restaurant
             modelBuilder.Entity<EkMalzeme>().HasRequired(c => c.Urun).WithMany(c => c.EkMalzemeler).HasForeignKey(c => c.UrunId);
             modelBuilder.Entity<Urun>().HasRequired(c => c.UrunGrup).WithOptional().Map(c => c.MapKey("UrunGrupId"));
             modelBuilder.Entity<Porsiyon>().HasRequired(c => c.Birim).WithOptional().Map(c => c.MapKey("BirimId"));
+            modelBuilder.Entity<UrunNot>().HasRequired(c => c.Urun).WithMany(c=>c.UrunNotlari).HasForeignKey(c => c.UrunId);
+
             //Musteri ilişkileri
             modelBuilder.Entity<Telefon>().HasRequired(c => c.Musteri).WithMany(c => c.Telefonlar).HasForeignKey(c => c.MusteriId);
             modelBuilder.Entity<Adres>().HasRequired(c => c.Musteri).WithMany(c => c.Adresler).HasForeignKey(c => c.MusteriId);
@@ -98,6 +101,7 @@ namespace IsbaRestaurant.DataAccess.Contexts.Restaurant
             modelBuilder.Configurations.Add(new UrunHareketMap());
             modelBuilder.Configurations.Add(new OdemeTuruMap());
             modelBuilder.Configurations.Add(new OdemeHareketMap());
+            modelBuilder.Configurations.Add(new UrunNotMap());
         }
     }
 }

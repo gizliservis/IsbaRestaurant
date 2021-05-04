@@ -72,7 +72,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             {
                 return;
             }
-            if (txtOdemeTutari.Value<=0)
+            if (txtOdemeTutari.Value <= 0)
             {
                 return;
             }
@@ -85,10 +85,10 @@ namespace IsbaRestaurant.UI.FrontOffice
             });
             UrunHareketToplamlariGetir();
             txtOdemeTutari.Value = 0;
-            if (txtKalanTutar.Value<0)
+            if (txtKalanTutar.Value < 0)
             {
                 lblMesaj.Visible = true;
-               lblMesaj.Text=$"Müşteriye Ödenicek Para Üstü{Math.Abs(txtKalanTutar.Value).ToString("C2")}'dir";
+                lblMesaj.Text = $"Müşteriye Ödenicek Para Üstü{Math.Abs(txtKalanTutar.Value).ToString("C2")}'dir";
             }
         }
 
@@ -194,7 +194,7 @@ namespace IsbaRestaurant.UI.FrontOffice
                 masaButton.Click += MasaSec;
                 flowMasalar.Controls.Add(masaButton);
             }
-            foreach (var adisyon in worker.AdisyonService.GetList(c => c.AdisyonDurum==AdisyonDurum.Acik))
+            foreach (var adisyon in worker.AdisyonService.GetList(c => c.AdisyonDurum == AdisyonDurum.Acik))
             {
                 ControlMasaButton buttonMasa = flowMasalar.Controls.Cast<ControlMasaButton>().SingleOrDefault(c => c.MasaId == adisyon.MasaId);
                 if (buttonMasa != null)
@@ -622,7 +622,7 @@ namespace IsbaRestaurant.UI.FrontOffice
                     {
                         UrunHareket yeniEntity = hareketEntity.Clone();
                         yeniEntity.Id = Guid.NewGuid();
-                        yeniEntity.UrunHareketTip = UrunHareketTip.Ikram;              
+                        yeniEntity.UrunHareketTip = UrunHareketTip.Ikram;
                         yeniEntity.Miktar = txtMiktar.Value;
                         worker.UrunHareketService.AddOrUpdate(yeniEntity);
                         hareketEntity.Miktar -= txtMiktar.Value;
@@ -644,7 +644,7 @@ namespace IsbaRestaurant.UI.FrontOffice
                         yeniEntity.Id = Guid.NewGuid();
                         yeniEntity.Miktar = txtMiktar.Value;
                         worker.UrunHareketService.AddOrUpdate(yeniEntity);
-                        
+
                         hareketEntity.Miktar -= txtMiktar.Value;
                     }
                     layoutView1.RefreshData();
@@ -818,13 +818,13 @@ namespace IsbaRestaurant.UI.FrontOffice
             worker = new RestaurantWorker();
             gridControl1.DataSource = worker.UrunHareketService.BindingList();
             gridControlOdeme.DataSource = worker.OdemeHareketService.BindingList();
-            lblMesaj.Visible = false; 
+            lblMesaj.Visible = false;
             navigationMain.SelectedPage = pageMasa;
         }
 
         private void btnGarsonSecim_Click(object sender, EventArgs e)
         {
-            if (navigationKategori.SelectedPage==pageGarson)
+            if (navigationKategori.SelectedPage == pageGarson)
             {
                 navigationKategori.SelectedPage = pageKategoriUrunler;
             }
@@ -832,13 +832,13 @@ namespace IsbaRestaurant.UI.FrontOffice
             {
                 navigationKategori.SelectedPage = pageGarson;
             }
-           
+
 
         }
 
         private void btnMusteri_Click(object sender, EventArgs e)
         {
-            if (navigationKategori.SelectedPage==pageMusteri)
+            if (navigationKategori.SelectedPage == pageMusteri)
             {
                 navigationKategori.SelectedPage = pageKategoriUrunler;
             }
@@ -846,7 +846,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             {
                 navigationKategori.SelectedPage = pageMusteri;
             }
-        
+
         }
         private void UrunHareketToplamlariGetir()
         {
@@ -870,7 +870,7 @@ namespace IsbaRestaurant.UI.FrontOffice
 
         private void btnOdemeEkle_Click(object sender, EventArgs e)
         {
-            if (navigationKategori.SelectedPage==pageOdemeEkrani)
+            if (navigationKategori.SelectedPage == pageOdemeEkrani)
             {
                 navigationKategori.SelectedPage = pageKategoriUrunler;
             }
@@ -878,7 +878,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             {
                 navigationKategori.SelectedPage = pageOdemeEkrani;
             }
-            
+
         }
 
         private void btnOdemeTumu_Click(object sender, EventArgs e)
@@ -939,11 +939,59 @@ namespace IsbaRestaurant.UI.FrontOffice
 
         private void btnSiparisIptal_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Adisyonu İptal Edeceksiniz . Eminmisiniz","Uyarı",MessageBoxButtons.YesNo)==DialogResult.Yes)
+            if (MessageBox.Show("Adisyonu İptal Edeceksiniz . Eminmisiniz", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 secilenAdisyon.AdisyonDurum = AdisyonDurum.Iptal;
                 btnSiparisKaydet.PerformClick();
             }
+        }
+
+        private void btnNotlar_Click(object sender, EventArgs e)
+        {
+            flowUrunNotlari.Controls.Clear();
+            UrunHareket entity = (UrunHareket)layoutView1.GetFocusedRow();
+            if (entity == null)
+            {
+                return;
+            }
+            navigationKategori.SelectedPage = pageUrunNotlari;
+            txtUrunnotu.Text = entity.Aciklama;
+            foreach (var urunNot in worker.UrunNotService.GetList(c => c.UrunId == entity.UrunId))
+            {
+                SimpleButton button = new SimpleButton
+                {
+                    Name = urunNot.Id.ToString(),
+                    Text = urunNot.Notu,
+                    Width = 200,
+                    Height = 40
+
+                };
+                button.Click += UrunNotClick;
+                flowUrunNotlari.Controls.Add(button);
+            }
+        }
+
+        private void UrunNotClick(object sender, EventArgs e)
+        {
+            SimpleButton button = (SimpleButton)sender;
+            if (string.IsNullOrEmpty(txtUrunnotu.Text))
+            {
+                txtUrunnotu.Text = button.Text;
+            }
+            else
+            {
+                txtUrunnotu.Text += " , " + button.Text;
+            }
+            
+        }
+
+        private void btnUrunNotonayla_Click(object sender, EventArgs e)
+        {
+            UrunHareket entity = (UrunHareket)layoutView1.GetFocusedRow();
+            entity.Aciklama = txtUrunnotu.Text;
+            layoutView1.RefreshData();
+            navigationKategori.SelectedPage = pageKategoriUrunler;
+
         }
     }
 }

@@ -33,6 +33,7 @@ namespace IsbaRestaurant.DataAccess.UnitOfWork
         public IUrunHareketDal UrunHareketDal { get; set; }
         public IOdemeTuruDal OdemeTuruDal { get; set; }
         public IOdemeHareketDal OdemeHareketDal { get; set; }
+        public IUrunNotDal UrunNotDal { get; set; }
 
 
 
@@ -61,6 +62,7 @@ namespace IsbaRestaurant.DataAccess.UnitOfWork
             UrunHareketDal = new UrunHareketDal(_context);
             OdemeTuruDal = new OdemeTuruDal(_context);
             OdemeHareketDal = new OdemeHareketDal(_context);
+            UrunNotDal = new UrunNotDal(_context);
 
 
         }
