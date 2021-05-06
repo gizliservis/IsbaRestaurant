@@ -72,6 +72,12 @@
     <Compile Include="ControlKategoriUrun.Designer.cs">
       <DependentUpon>ControlKategoriUrun.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlKeyboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlKeyboard.Designer.cs">
+      <DependentUpon>ControlKeyboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlKonumButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     <Compile Include="ControlPorsiyonButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="KeybordButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -104,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ControlKategoriUrun.resx">
       <DependentUpon>ControlKategoriUrun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlKeyboard.resx">
+      <DependentUpon>ControlKeyboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlMenuKayit.resx">
       <DependentUpon>ControlMenuKayit.cs</DependentUpon>

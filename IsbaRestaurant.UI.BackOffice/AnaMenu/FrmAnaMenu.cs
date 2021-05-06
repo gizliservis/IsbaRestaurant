@@ -94,5 +94,11 @@ namespace IsbaRestaurant.UI.BackOffice.AnaMenu
             FrmAnamenuBilgi frm = new FrmAnamenuBilgi();
             frm.ShowDialog();
         }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            XtraForm1 frm = new XtraForm1();
+            frm.ShowDialog();
+        }
     }
 }

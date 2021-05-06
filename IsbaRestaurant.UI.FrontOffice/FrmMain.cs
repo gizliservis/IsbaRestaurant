@@ -982,7 +982,7 @@ namespace IsbaRestaurant.UI.FrontOffice
             {
                 txtUrunnotu.Text += " , " + button.Text;
             }
-            
+
         }
 
         private void btnUrunNotonayla_Click(object sender, EventArgs e)
